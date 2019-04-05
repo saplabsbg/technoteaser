@@ -10,7 +10,7 @@
 
 {::nomarkdown}
 <div>
-	<input type="checkbox" class="switch-label" id=xxx><label class=explanationbutton for=xxx><span class="switchlabel">Обяснения</span></label>
+	<input type="checkbox" id=solution11><label class=explanationbutton for=solution11><span>Обяснения</span></label>
 	<div class="explanation">
 В оригинал задачата е популярна като <a href="https://en.wikibooks.org/wiki/Puzzles/Statistical_puzzles/3_Bags_of_Marbles" target="_blank">3 Bags of Marbles</a>, като най-подвеждащото в случая е да съобразим, че въпреки избора на кутия, реално имаме информация само за едно единствено камъче. Можем да се окажем в ситуацията да сме избрали кутия с две скъпоценни камъчета (нека я наречем печеливша) по два различни начина - като изтеглим първото или като изтеглим второто скъпоценно камъче от нея. От друга страна можем да се окажем в ситуацията да сме избрали непечеливша кутия само по един единствен начин - като сме изтеглили единственото пeчелившо камъче от нея.
 <h3>Какво е разпределението на камъчетата?</h3>
