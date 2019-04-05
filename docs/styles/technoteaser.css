@@ -39,12 +39,14 @@ input[type=checkbox] {
 }
 
 .explanationbutton span:after {
-	content: attr(data-off);
+	content: '∨';
+  padding-left: 5px;
 }
 
 
 input:checked + .explanationbutton span:after {
-  content: attr(data-on);
+  content: '∧';
+  padding-left: 5px;
 }
 
 
