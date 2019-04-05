@@ -300,9 +300,9 @@ d<sub>1</sub>∗9<sup>k-1</sup> = d<sub>1</sub>∗10<sup>k-1</sup> само пр
 <tr><td align=center >5</td><td>→&nbsp;</td><td style="color:brown">3</td></tr>
 <tr><td align=center style="color:DarkBlue">6</td><td>→&nbsp;</td><td style="color:DarkBlue">2<sub style="color:black">6</sub></td></tr>
 <tr><td align=center >7</td><td>→&nbsp;</td><td style="color:red">4</td></tr>
-<tr><td align=center >8</td><td>→&nbsp;</td><td>\_</td></tr>
-<tr><td align=center >9</td><td>→&nbsp;</td><td>\_</td></tr>
-<tr><td align=center style="color:green">10</td><td>→&nbsp;</td><td>\_</td></tr>
+<tr><td align=center >8</td><td>→&nbsp;</td><td>_</td></tr>
+<tr><td align=center >9</td><td>→&nbsp;</td><td>_</td></tr>
+<tr><td align=center style="color:green">10</td><td>→&nbsp;</td><td>_</td></tr>
 <tr><td> </td><td> </td><td> - - - </td></tr>
 <tr><td> </td><td> </td><td>Поне 23+3 цифри &gt; 24</td></tr>
 </table></small>
