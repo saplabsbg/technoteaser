@@ -289,22 +289,24 @@ d<sub>1</sub>∗9<sup>k-1</sup> = d<sub>1</sub>∗10<sup>k-1</sup> само пр
 2. i<sub>1</sub> ≤ ?<br>
 Цифрaтa 1 се среща точно 2 пъти измежду вече показаните числа. Ако едно се среща 11 пъти и всички други числа (без 0) се срещат точно по веднъж, получаваме 13≠11 ⇒ i<sub>1</sub> ≤ 12.
 3. i<sub>2</sub> ≤ ?<br>
-Ако i<sub>2</sub>=6, то 5 от тези срещания ще са в непоказаните числа и поне 3 от тези срещания (без тези за 0 и 1) ще изискват повторение на съответното число в изречението отново в непоказаната част. Например:<small><table>
+Ако i<sub>2</sub>=6, то 5 от тези срещания ще са в непоказаните числа и поне 3 от тези срещания (без тези за 0 и 1) ще изискват повторение на съответното число в изречението отново в непоказаната част. Например:
+<small><table>
 <tr><td>Показани</td><td> </td><td>Непоказани</td></tr>
-<tr><td align=center style="color:green">0</td><td>→&nbsp;</td><td style="color:green">2<sub style="color:black">2</sub><td></tr>
-<tr><td align=center style="color:green">1</td><td>→&nbsp;</td><td style="color:green">2<sub style="color:black">3</sub><td></tr>
-<tr><td align=center >2<sub style="color:black">1</sub></td><td>→&nbsp;</td><td style="color:DarkBlue">6<td></tr>
-<tr><td align=center style="color:brown">3</td><td>→&nbsp;</td><td style="color:brown">2<sub style="color:black">4</sub><td></tr>
-<tr><td align=center style="color:red">4</td><td>→&nbsp;</td><td style="color:red">2<sub style="color:black">5</sub><td></tr>
-<tr><td align=center >5</td><td>→&nbsp;</td><td style="color:brown">3<td></tr>
-<tr><td align=center style="color:DarkBlue">6</td><td>→&nbsp;</td><td style="color:DarkBlue">2<sub style="color:black">6</sub><td></tr>
-<tr><td align=center >7</td><td>→&nbsp;</td><td style="color:red">4<td></tr>
-<tr><td align=center >8</td><td>→&nbsp;</td><td>\_<td></tr>
-<tr><td align=center >9</td><td>→&nbsp;</td><td>\_<td></tr>
-<tr><td align=center style="color:green">10</td><td>→&nbsp;</td><td>\_<td></tr>
-<tr><td> </td><td> </td><td> - - - <td></tr>
-<tr><td> </td><td> </td><td>Поне 23+3 цифри &gt; 24<td></tr>
-</table></small>Сумата на непоказаните числа обаче трябва да е &lt; <b title="Брой цифри в изречението">N</b>, понеже броим и числото 10 ⇒ i<sub>2</sub>≤5.<br>
+<tr><td align=center style="color:green">0</td><td>→&nbsp;</td><td style="color:green">2<sub style="color:black">2</sub></td></tr>
+<tr><td align=center style="color:green">1</td><td>→&nbsp;</td><td style="color:green">2<sub style="color:black">3</sub></td></tr>
+<tr><td align=center >2<sub style="color:black">1</sub></td><td>→&nbsp;</td><td style="color:DarkBlue">6</td></tr>
+<tr><td align=center style="color:brown">3</td><td>→&nbsp;</td><td style="color:brown">2<sub style="color:black">4</sub></td></tr>
+<tr><td align=center style="color:red">4</td><td>→&nbsp;</td><td style="color:red">2<sub style="color:black">5</sub></td></tr>
+<tr><td align=center >5</td><td>→&nbsp;</td><td style="color:brown">3</td></tr>
+<tr><td align=center style="color:DarkBlue">6</td><td>→&nbsp;</td><td style="color:DarkBlue">2<sub style="color:black">6</sub></td></tr>
+<tr><td align=center >7</td><td>→&nbsp;</td><td style="color:red">4</td></tr>
+<tr><td align=center >8</td><td>→&nbsp;</td><td>\_</td></tr>
+<tr><td align=center >9</td><td>→&nbsp;</td><td>\_</td></tr>
+<tr><td align=center style="color:green">10</td><td>→&nbsp;</td><td>\_</td></tr>
+<tr><td> </td><td> </td><td> - - - </td></tr>
+<tr><td> </td><td> </td><td>Поне 23+3 цифри &gt; 24</td></tr>
+</table></small>
+Сумата на непоказаните числа обаче трябва да е &lt; <b title="Брой цифри в изречението">N</b>, понеже броим и числото 10 ⇒ i<sub>2</sub>≤5.<br>
 Аналогично i<sub>3</sub>≤5, i<sub>4</sub>≤5, i<sub>5</sub>≤5, i<sub>6</sub>≤5, i<sub>7</sub>≤5, i<sub>8</sub>≤5 и i<sub>9</sub>≤5. Въпреки че тук можем да бъдем и доста по-стриктни в анализа, тези ограничения са достатъчно добри за тази версия на задачата.<br>
 4. Вече знаем, че имаме най-много 1 двуцифрено число измежду непоказаните ⇒ 1≤i<sub>10</sub>≤2.<br>
 
@@ -601,10 +603,11 @@ Eдин конкретен алгоритъм за генериране на т�
 \\( m^2 – n^2 \leq 10000 \iff (m + n)(m - n) \leq 10000 \Rightarrow m + n \leq \dfrac{10000}{m - n} \leq 10000 \\)
      - Каква е максималната стойност на  \\( m + n \\), такава че съществуват числа \\( 2mn \leq 10000\\)?<br>
 \\( 2mn \leq 10000 \iff mn \leq 5000 \Rightarrow n \leq \dfrac{5000}{m}, m \leq 5000 \\)   \\( \Rightarrow m+n \leq m + \dfrac{5000}{m} \leq 5001 \\). <!-- Tъй като \\( m &gt; n \iff m &gt; \dfrac{5000}{m} \\) равенство получаваме само при \\( m = 5000 \\) -->
-<br>
-Тъй като работата с тройка обекти е сравнително стандартна и често срещана ситуация, вместо да дефинираме наш собствен клас, можем да потърсим вече съществуваща имплементация с отворен код и подходящ лиценз, например клас <a href="https://commons.apache.org/proper/commons-lang/apidocs/index.html?org/apache/commons/lang3/tuple/Triple.html" target=_blank>ImmutableTriple</a> от Apache Commons Lang библиотеката.<br>
-Допълнителни оптимизации, като например това да пазим само първите две числа на тройките на Питагор (клас <a href="https://commons.apache.org/proper/commons-lang/apidocs/index.html?org/apache/commons/lang3/tuple/ImmutablePair.html" target=_blank>ImmutablePair</a>), също са възможни, но не са наложителни в конкретния случай.<br>
-<br>
+
+
+Тъй като работата с тройка обекти е сравнително стандартна и често срещана ситуация, вместо да дефинираме наш собствен клас, можем да потърсим вече съществуваща имплементация с отворен код и подходящ лиценз, например клас <a href="https://commons.apache.org/proper/commons-lang/apidocs/index.html?org/apache/commons/lang3/tuple/Triple.html" target=_blank>ImmutableTriple</a> от Apache Commons Lang библиотеката.
+Допълнителни оптимизации, като например това да пазим само първите две числа на тройките на Питагор (клас <a href="https://commons.apache.org/proper/commons-lang/apidocs/index.html?org/apache/commons/lang3/tuple/ImmutablePair.html" target=_blank>ImmutablePair</a>), също са възможни, но не са наложителни в конкретния случай.
+
 Примерен Java code:
 ```java
 private void buildResult(Set<ImmutableTriple<Integer,Integer,Integer>> result, final int limit) {
