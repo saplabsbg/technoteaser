@@ -534,8 +534,6 @@ for (int op8 = 0; op8 < OPERATIONS.length; op8++) {
 
 Колко са естествените числа n, за които n2 + 2019 е точен квадрат?
 
-
-
 {::nomarkdown}
 <div>
 	<input type="checkbox" id=solution42><label for=solution42 class=explanationbutton><span>Обяснение</span></label>
@@ -549,15 +547,14 @@ x<sup>2</sup> - n<sup>2</sup> = 2019<br>
 {:/}
 1. x - n = 3, x + n = 673, откъдето получаваме x = 338, n = 335
 2. x - n = 1, x + n = 2019, откъдето получаваме  x = 1010 , n = 1009
+
 {::nomarkdown}
 Тъй като (x - n) &lt; (x + n) други случаи (и съответно решения) в естествени числа няма.<br>
 ⇒ съществуват <b>2 числа</b>, отговарящи на условието.
 
 <h3>Решение с програма</h3>
 Примерно <a href="https://en.wikipedia.org/wiki/Brute-force_search" target=_blank>Brute-force</a> решение би било да проверим програматично всички естествени числа n например до <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html#MAX_VALUE" target=_blank>Integer.MAX_VALUE</a> = 2<sup>31</sup>-1. За да избегнем <a href="https://javapapers.com/core-java/java-overflow-and-underflow/" target=_blank>Integer overflow</a> в аритметичните изрази, трябва да дефинираме променливите n и x от тип long.
-
 {:/}
-
 ```java
 for (long n=1; n<Integer.MAX_VALUE; n++) {
     long x = (long) Math.sqrt(n*n + 2019);
