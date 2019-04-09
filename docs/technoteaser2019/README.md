@@ -709,3 +709,15 @@ System.out.println(numberOfTriples);
 ## Седмица №5
 
 
+<script>
+function hashChange() {
+	if (window.location.hash) {
+		var hashID = window.location.hash.substr(1);
+		var obj = document.getElementById(hashID + "Toggle");
+	        if (obj) {obj.checked = true;}
+	}
+}
+window.onhashchange = hashChange;
+hashChange();
+</script>
+
