@@ -738,6 +738,7 @@ System.out.println(numberOfTriples);
 Една сутрин Ася решава да посети баба си, като преди това отиде до брега, за да съзерцава изгрева.<br>
 Ако приемем, че брегът е права линия, най-близката точка от брега до къщата на Ася е A<sub>0</sub>, най-близката точка от брега до къщата на бабата на Ася е B<sub>0</sub> и разстоянието от A<sub>0</sub> до B<sub>0</sub> е 10 км, какъв е най-късият път (в км), който Ася може да измине, спечелвайки по този начин най-много време за съзерцание?<br>
 Отговорете с точност две цифри след десетичната запетая (закръглете до стотни).
+	<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=1IadWtrk59n_XitiEV35fqwo8L8feotZR8GlzjdLa_M" style="display:block; max-width:100%;height:auto;border:0;">
 </p>
 <div>
 	<input type="checkbox" id=solution52><label for=solution52 class=explanationbutton><span>Обяснение</span></label>
@@ -814,6 +815,7 @@ For X from 3.7399999999999998 to 3.7599999999999993 with step 0.001:<br>
 <p>
 Асен също живее на 3 км от брега и иска да отиде при дядо си, който в този момент е на лодка навътре в морето.<br>
 Ако лодката е на 5 км навътре в морето и на 10 км от къщата на Асен, каква е дължината на най-бързия път за Асен (в км), ако той плува два пъти по-бавно отколкото ходи?<br>Отговорете с точност 2 цифри след десетичната запетая (закръглете до стотни).
+	<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=c_8cYGziR3KEyp3CqfjYiZeLXIyeMOzV8-omlrSgpWE" style="display:block; max-width:100%;height:auto;border:0;">
 </p>
 <div>
 	<input type="checkbox" id=solution53><label for=solution53 class=explanationbutton><span>Обяснение</span></label>
