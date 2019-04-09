@@ -713,8 +713,9 @@ System.out.println(numberOfTriples);
 	
 {:/}
 
-
+<p>
 Спринтьор прави една обиколка на пистата със средна скорост V<sub>1</sub>. Времето му се струва твърде слабо, затова спонтанно решава (без да спира) да изтича втората обиколка по-бързо, така че общата средна скорост от двете обиколки да бъде два пъти по-голяма от V<sub>1</sub>. С каква средна скорост V<sub>2</sub> спринтьорът трябва да изтича втората си обиколка, за да постигне това?
+</p>
 
 {::nomarkdown}
 
@@ -732,11 +733,12 @@ System.out.println(numberOfTriples);
 	</div>	
 </div>
 <hr>
-
+<p>
 Ася живее на 3 км от брега на морето, а къщата на баба ѝ е на 5 км от брега.<br>
 Една сутрин Ася решава да посети баба си, като преди това отиде до брега, за да съзерцава изгрева.<br>
 Ако приемем, че брегът е права линия, най-близката точка от брега до къщата на Ася е A<sub>0</sub>, най-близката точка от брега до къщата на бабата на Ася е B<sub>0</sub> и разстоянието от A<sub>0</sub> до B<sub>0</sub> е 10 км, какъв е най-късият път (в км), който Ася може да измине, спечелвайки по този начин най-много време за съзерцание?<br>
 Отговорете с точност две цифри след десетичната запетая (закръглете до стотни).
+</p>
 <div>
 	<input type="checkbox" id=solution52><label for=solution52 class=explanationbutton><span>Обяснение</span></label>
 	<div class="explanation">
@@ -794,7 +796,7 @@ For X from 3.7399999999999998 to 3.7599999999999993 with step 0.001:<br>
 <h3>Решението на математика:</h3>
 
 Ще проектираме къщата на бабата (т. В) спрямо линията на брега в т. В‘ <br>
-<img style="max-width: 100%; object-fit: contain; " src="/services/js/TechQuiz/DocumentService/GetDocument.js?id=w6KPyWwjaTev_d624zOaGNGPRXNqVMn2_B4hbV36Uhk"><br>
+<img style="max-width: 100%; object-fit: contain; " src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=w6KPyWwjaTev_d624zOaGNGPRXNqVMn2_B4hbV36Uhk"><br>
 Най-късият път от А до В‘ ще бъде правата линия от А до В‘. Ако АВ‘ пресича брега (А<sub>0</sub>B<sub>0</sub>) в т. С, то АС + СВ ще бъде най-късият път и за Ася. Това твърдение се доказва лесно, защото ако предположим, че има друга т. С<sub>1</sub> върху А<sub>0</sub>B<sub>0</sub>, такава че АС<sub>1</sub>+С<sub>1</sub>В &lt; АС+ВС , то понеже С<sub>1</sub>В=С<sub>1</sub>В‘ ще следва, че АС<sub>1</sub>+С<sub>1</sub>В‘ &lt; АВ‘, което е невъзможно, тъй като най-краткият път между А и В‘ е правата линия.
 Как да намерим АВ‘=АС+СВ‘?
 Тъй като △A<sub>0</sub>AC ~ △В<sub>0</sub>В‘С, то А<sub>0</sub>С/В<sub>0</sub>С=AA<sub>0</sub>/BB<sub>0</sub>=3/5, а ние знаем, че А<sub>0</sub>С+В<sub>0</sub>С=10 ⇒ A<sub>0</sub>C=3.75, В<sub>0</sub>С=6.25<br>
@@ -809,9 +811,10 @@ For X from 3.7399999999999998 to 3.7599999999999993 with step 0.001:<br>
 	</div>
 </div>	
 <hr>
-
+<p>
 Асен също живее на 3 км от брега и иска да отиде при дядо си, който в този момент е на лодка навътре в морето.<br>
 Ако лодката е на 5 км навътре в морето и на 10 км от къщата на Асен, каква е дължината на най-бързия път за Асен (в км), ако той плува два пъти по-бавно отколкото ходи?<br>Отговорете с точност 2 цифри след десетичната запетая (закръглете до стотни).
+</p>
 <div>
 	<input type="checkbox" id=solution53><label for=solution53 class=explanationbutton><span>Обяснение</span></label>
 	<div class="explanation">
@@ -866,7 +869,7 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
 Получаваме разстояние от 10,32474671162657 ≈ <b>10,32</b> км
 <h3 title="Tук трябва да сте сигурни в познанията си по математически анализ!">Решението на математика:</h3>
 
-<img style="max-width: 100%; object-fit: contain; " src="/services/js/TechQuiz/DocumentService/GetDocument.js?id=A0DGbB3Js6CQx1Gscr8cbGdfiLL3MVJs-qoIWZYvQzE"><br>
+<img style="max-width: 100%; object-fit: contain; " src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=A0DGbB3Js6CQx1Gscr8cbGdfiLL3MVJs-qoIWZYvQzE"><br>
 
 \(A_0B_0=\sqrt{3,75^2-3^2}+\sqrt{6,25^2-5^2}=6 \)<br>
 \(AX=d_1=\sqrt{3^2+x^2}\)<br>
