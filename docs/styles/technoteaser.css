@@ -79,3 +79,27 @@ input:checked + .explanationbutton + div {
   padding:15px;
   text-size-adjust:100%;
 }
+
+
+.week h2 {
+  user-select:none;
+  touch-action:manipulation;
+  cursor: pointer;
+}
+
+input:not(:checked) + .week h2 span:after {
+  content: '∨';
+  padding-right: 5px;
+}
+input:checked + .week h2 span:after {
+  content: '∧';
+  padding-right: 5px;
+}
+
+input:not(:checked) + .week + div {
+  display:none;
+}
+
+input:checked + .week + div {
+  display:block;
+}
