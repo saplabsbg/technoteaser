@@ -1,7 +1,7 @@
 body > :first-child:before, body > [id='MathJax_Message'] + div:before {
 	content: '';
 	background-repeat: no-repeat;
-	background-image: url('https://saplabsbg.github.io/technoteaser/docs/images/sap_logo.png');
+	background-image: url('/technoteaser/docs/images/sap_logo.png');
 	background-size: 80px 40px; 
 	background-position: right;
 	top: 15px;
@@ -10,7 +10,6 @@ body > :first-child:before, body > [id='MathJax_Message'] + div:before {
 	height: 40px;
 	display: inline-block;
 	position: absolute;
-
 }
 
 body div.footer {
@@ -24,15 +23,15 @@ body div.footer {
 	background-color: #000;
 	vertical-align: middle;
 	line-height: 40px;
+	overflow-y: hidden;
+	white-space: nowrap;
 }
 
 body div.footer p.footer-element {
 	margin-left: 15px;
 	margin-bottom: 0px;
-	//font-size: 18px;
 	color: white;
 	display:inline-block;
-	//text-shadow: 1px 1px black;
 	vertical-align: middle;
 }
 
