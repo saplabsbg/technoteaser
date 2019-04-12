@@ -1,13 +1,16 @@
-.logoWrap {
-	position: relative;
+body > :first-child:before {
+	content: '';
+	background-repeat: no-repeat;
+	background-image: url('https://saplabsbg.github.io/technoteaser/docs/images/sap_logo.png');
+	background-size: 80px 40px; 
+	background-position: right;
+	top: 15px;
+	right: 25px;
 	width: 100%;
 	height: 40px;
-}
-
-.logo {
+	display: inline-block;
 	position: absolute;
-	top: 0px;
-	right: 0px;
+
 }
 
 .footer {
