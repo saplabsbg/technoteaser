@@ -8,7 +8,7 @@ public class SelfReferencingSentence {
 
 	public static void main(String[] args) {
 		int count = 0;
-		
+
 		for (int i0 = 2; i0 <= 3; i0++)
 		for (int i1 = 2; i1 <= 12; i1++)
 		for (int i2 = 1; i2 <= 5; i2++)
@@ -20,10 +20,10 @@ public class SelfReferencingSentence {
 		for (int i8 = 1; i8 <= 5; i8++)
 		for (int i9 = 1; i9 <= 5; i9++)
 		for (int i10 = 1; i10 <= 2; i10++) {
-			
+
 			int[] currentNumbers = new int[] {i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10};
 			int[] actualCounts = new int[] {2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-			
+
 			for (int i = 0; i <= 10; i++) {
 				int num = currentNumbers[i];
 				if (num < 10) { // a digit
@@ -38,7 +38,7 @@ public class SelfReferencingSentence {
 					}
 				}
 			}
-			
+
 			if (Arrays.equals(currentNumbers, actualCounts)) {
 				count++;
 				System.out.println(IntStream.range(0, 11)

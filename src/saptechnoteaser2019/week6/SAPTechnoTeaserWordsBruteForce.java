@@ -11,7 +11,7 @@ public class SAPTechnoTeaserWordsBruteForce {
 	private static enum LetterType {
 		VOWEL, CONSONANT, CONSECUTIVE_CONSONANT;	
 	}
-	
+
 	private static final Comparator<Character> SAP_LETTER_COMPARATOR = (Character c1, Character c2) -> {
 		if (c1 == 'S') {
 			c1 = 'П'; //comparing САП with c2
@@ -20,18 +20,18 @@ public class SAPTechnoTeaserWordsBruteForce {
 		}
 		return c1.compareTo(c2);
 	};
-	
+
 	static private Map<Character, Integer> currentVowels = new HashMap<>(); 
 	static private Map<Character, Integer> currentConsonants = new HashMap<>();
-	
+
 	public static void main(String[] args) {
-        // initialize the vowels and the consonants
+		// initialize the vowels and the consonants
 		currentVowels.put('А', 2);
 		currentVowels.put('Е', 1);
 		currentVowels.put('О', 1);
 		currentVowels.put('И', 1);
 		currentVowels.put('Ъ', 1);
-		
+
 		currentConsonants.put('Н', 2);
 		currentConsonants.put('Т', 1);
 		currentConsonants.put('Х', 1);
@@ -41,23 +41,23 @@ public class SAPTechnoTeaserWordsBruteForce {
 		currentConsonants.put('К', 1);
 		currentConsonants.put('Ц', 1);
 		currentConsonants.put('S', 1); //1 digit for САП
-		
+
 		long result = calculateNumberOfWords((char)0, null, 0);
 		System.out.println("Number of words:" + result);		
 	}
 
 	private static long calculateNumberOfWords(char lastLetter, LetterType lastLetterType, int numberOfConsonantPairs) {
-			
+
 		Set<Character> availableVowels = new HashSet<>(currentVowels.keySet());
 		Set<Character> availableConsonants = new HashSet<>(currentConsonants.keySet());
-		
+
 		if (availableVowels.isEmpty() && availableConsonants.isEmpty()) {
 			// recursion base case
 			return 1;		
 		} 
-		
+
 		long result = 0; 
-		
+
 		if (lastLetterType != LetterType.VOWEL) {
 			for(Character nextVowelChar : availableVowels) {
 				int occurrencesOfNextVowel = currentVowels.get(nextVowelChar);
@@ -71,10 +71,10 @@ public class SAPTechnoTeaserWordsBruteForce {
 				currentVowels.put(nextVowelChar, occurrencesOfNextVowel);
 			}
 		} 
-		
-        if (lastLetterType != LetterType.CONSECUTIVE_CONSONANT) {
+
+		if (lastLetterType != LetterType.CONSECUTIVE_CONSONANT) {
 			LetterType nextLetterType = lastLetterType==LetterType.CONSONANT ? LetterType.CONSECUTIVE_CONSONANT : LetterType.CONSONANT;
-			
+
 			for(Character nextConsonantChar : availableConsonants) {
 				if (lastLetterType == LetterType.CONSONANT) {
 					if (numberOfConsonantPairs%2 == 0 && SAP_LETTER_COMPARATOR.compare(lastLetter, nextConsonantChar) >= 0) {
@@ -84,14 +84,14 @@ public class SAPTechnoTeaserWordsBruteForce {
 						continue;
 					}
 				}
-				
+
 				int occurrencesOfNextConsonant = currentConsonants.get(nextConsonantChar);
 				if (occurrencesOfNextConsonant == 1) {
 					currentConsonants.remove(nextConsonantChar);
 				} else {
 					currentConsonants.put(nextConsonantChar, occurrencesOfNextConsonant-1);
 				}
-				
+
 				int nextNumberOfConsonantPairs = lastLetterType==LetterType.CONSONANT ? numberOfConsonantPairs + 1 : numberOfConsonantPairs;
 				if (nextConsonantChar == 'S') {
 					//allow Consonant S Consonant triple
@@ -99,14 +99,14 @@ public class SAPTechnoTeaserWordsBruteForce {
 				} else {
 					result += calculateNumberOfWords(nextConsonantChar, nextLetterType, nextNumberOfConsonantPairs);
 				}
-				
+
 				//revert the input before we continue 
 				currentConsonants.put(nextConsonantChar, occurrencesOfNextConsonant);
 			}
 		}
-        
-        return result;
+
+		return result;
 	}
-	
-	
+
+
 }

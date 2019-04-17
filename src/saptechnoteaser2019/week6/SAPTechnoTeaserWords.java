@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class SAPTechnoTeaserWords {
-	
+
 	private static final Comparator<Character> SAP_LETTER_COMPARATOR = (Character c1, Character c2) -> {
 		if (c1 == 'S') {
 			c1 = 'П'; //comparing САП with c2
@@ -16,11 +16,11 @@ public class SAPTechnoTeaserWords {
 		}
 		return c1.compareTo(c2);
 	};
-	
+
 	static private Map<Character, Integer> inputOfConsonants = new HashMap<Character, Integer>();
-	
+
 	public static void main(String[] args) {
-		
+
 		inputOfConsonants.put('Н', 2);
 		inputOfConsonants.put('Т', 1);
 		inputOfConsonants.put('Х', 1);
@@ -30,7 +30,7 @@ public class SAPTechnoTeaserWords {
 		inputOfConsonants.put('К', 1);
 		inputOfConsonants.put('Ц', 1);
 		inputOfConsonants.put('S', 1);
-		
+
 		long result = buildResult(3, true, 7);
 		System.out.println("Options for the consonants with 3 pairs:" + result);
 		long resultFor4Pairs =  buildResult(4, true, 6);
@@ -43,22 +43,22 @@ public class SAPTechnoTeaserWords {
 		//result = result*6!/2!
 		result *= 3*4*5*6;
 		System.out.println("Result:" + result);
-		
+
 	}
-	
+
 	private static long buildResult(int numberOfConsonantPairsInResult, boolean nextPairIsInAscOrder, int numberOfPositions) {
 		if (numberOfPositions == 0 && inputOfConsonants.size() == 0) {
 			// recursion base case
 			return 1;
 		}
-		
+
 		if (inputOfConsonants.size() > numberOfPositions*2 + 1) {
 			// recursion base case
 			return 0;
 		}  
-		
+
 		long result = 0;
-		
+
 		Set<Character> availableConsonants = new HashSet<>(inputOfConsonants.keySet());
 		for(Character nextConsonantChar : availableConsonants) {
 			int occurrencesOfNextConsonant = inputOfConsonants.get(nextConsonantChar);
@@ -66,8 +66,7 @@ public class SAPTechnoTeaserWords {
 				inputOfConsonants.remove(nextConsonantChar);
 			} else {
 				inputOfConsonants.put(nextConsonantChar, occurrencesOfNextConsonant-1);
-			}
-			
+			}		
 
 			result += buildResult(numberOfConsonantPairsInResult, nextPairIsInAscOrder, numberOfPositions-1);
 
@@ -80,7 +79,7 @@ public class SAPTechnoTeaserWords {
 					if (!nextPairIsInAscOrder && SAP_LETTER_COMPARATOR.compare(nextConsonantChar, nextConsonantCharForPair) <= 0) {
 						continue;
 					}
-					
+
 					int occurrencesOfNextCharForPair = inputOfConsonants.get(nextConsonantCharForPair);
 					if (occurrencesOfNextCharForPair == 1) {
 						inputOfConsonants.remove(nextConsonantCharForPair);
@@ -89,7 +88,7 @@ public class SAPTechnoTeaserWords {
 					}
 
 					result += buildResult(numberOfConsonantPairsInResult-1, !nextPairIsInAscOrder, numberOfPositions-1);
-					
+
 					// case Consonant S Consonant 
 					if (nextConsonantCharForPair == 'S' && numberOfConsonantPairsInResult > 1) {
 						Set<Character> availableConsonantsForSecondPair = new HashSet<>(inputOfConsonants.keySet());
@@ -101,28 +100,27 @@ public class SAPTechnoTeaserWords {
 								continue;
 							}
 							int occurrencesOfNextCharForSecondPair = inputOfConsonants.get(nextConsonantCharForSecondPair);
-							
+
 							if (occurrencesOfNextCharForSecondPair == 1) {
 								inputOfConsonants.remove(nextConsonantCharForSecondPair);
 							} else {
 								inputOfConsonants.put(nextConsonantCharForSecondPair, occurrencesOfNextCharForSecondPair-1);
 							}
 							result += buildResult(numberOfConsonantPairsInResult-2, nextPairIsInAscOrder, numberOfPositions-1);
-							
-							//revert the input before we continue 
+
+							//revert the input before we continue - case Consonant S Consonant
 							inputOfConsonants.put(nextConsonantCharForSecondPair, occurrencesOfNextCharForSecondPair);
 						}
 					}
-					
-					//revert the input before we continue 
+
+					//revert the input before we continue - Consonant Pair
 					inputOfConsonants.put(nextConsonantCharForPair, occurrencesOfNextCharForPair);
 				}
-
 			}
-			//revert the input before we continue 
+			//revert the input before we continue - Consonant
 			inputOfConsonants.put(nextConsonantChar, occurrencesOfNextConsonant);
 		}
-		
+
 		return result;
 	}
 }

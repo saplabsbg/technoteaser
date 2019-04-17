@@ -4,9 +4,9 @@ import java.util.Random;
 public class BagsOfMarbles {
 
 	private static enum MarbleType {VALUABLE, NOT_VALUABLE}; 
-	
+
 	private static final int NUMBER_OF_EXPERIMENTS = 10000; 
-	
+
 	public static void main(String[] args) {
 		MarbleType[][] boxesExperiment1 = {
 				{MarbleType.VALUABLE, MarbleType.VALUABLE},
@@ -19,7 +19,7 @@ public class BagsOfMarbles {
 				{MarbleType.NOT_VALUABLE, MarbleType.NOT_VALUABLE}
 		};
 		performExperiment("2 boxes with 2 valuable marbles, 4 boxes with 1 valuable marble", boxesExperiment1);
-		
+
 		MarbleType[][] boxesExperiment2 = {
 				{MarbleType.VALUABLE, MarbleType.VALUABLE},
 				{MarbleType.VALUABLE, MarbleType.VALUABLE},
@@ -32,11 +32,11 @@ public class BagsOfMarbles {
 		};
 		performExperiment("4 boxes with 2 valuable marbles, 4 boxes with 1 valuable marble", boxesExperiment2);
 	}
-	
-	
+
+
 	private static void performExperiment(String experimentName, MarbleType[][] boxes) {
 		Random randomGenerator = new Random();
-		
+
 		int winningPositionCount = 0;
 		int notWinningPositionCount = 0;
 		int experiment = 0;		
@@ -48,7 +48,7 @@ public class BagsOfMarbles {
 			if (marble != MarbleType.VALUABLE) {
 				continue;
 			}
-			
+
 			int secondMarbleIndex = firstMarbleIndex == 0 ? 1 : 0;
 			if (box[secondMarbleIndex] == MarbleType.VALUABLE) {
 				winningPositionCount++;
@@ -57,7 +57,7 @@ public class BagsOfMarbles {
 			}
 			experiment++;
 		}
-		
+
 		System.out.println(experimentName + ":");
 		System.out.println("\t Winning: " + winningPositionCount + "; ");
 		System.out.println("\t Not winning: " + notWinningPositionCount + "; ");

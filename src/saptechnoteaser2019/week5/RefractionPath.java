@@ -6,8 +6,8 @@ public class RefractionPath {
 	private static final double GRANDPA_TO_SHORE_DISTANCE = 5;
 	private static final double ASSEN_TO_GRANDPA_SHORELINE_DISTANCE = 6;
 	private static final double WALK_TO_SWIM_SPEED_RATIO = 2;
-	
-	
+
+
 	public static void main(String[] args) {
 		double x= findXforTheLeastTimePath(0, 6, 1);
 		x = findXforTheLeastTimePath(x-1, x+1, 0.1);
@@ -16,7 +16,7 @@ public class RefractionPath {
 		x = findXforTheLeastTimePath(x-0.001, x+0.001, 0.0001);
 		x = findXforTheLeastTimePath(x-0.0001, x+0.0001, 0.00001);
 	}	
-	
+
 	private static double findXforTheLeastTimePath(double fromX, double toX, double step) {
 		double leastTime = Double.MAX_VALUE;
 		double distanceOfTheLeastTimePath = 0;

@@ -5,17 +5,17 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class ExpressionsWithoutBracketsIterative {
-	
+
 	private static final String[] OPERATIONS = {"*", "+", "-", "/", ""}; //allow lexicographical order
 	private static final int[] INPUT = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	
+
 	public static void main(String[] args) throws ScriptException {
 		ScriptEngineManager factory = new ScriptEngineManager();
-	    // create a JavaScript engine
-	    ScriptEngine engine = factory.getEngineByName("JavaScript");	    
-	    
-	    int count = 0;
-	    
+		// create a JavaScript engine
+		ScriptEngine engine = factory.getEngineByName("JavaScript");	    
+
+		int count = 0;
+
 		for(String operation1 : OPERATIONS)
 		for(String operation2 : OPERATIONS)
 		for(String operation3 : OPERATIONS)

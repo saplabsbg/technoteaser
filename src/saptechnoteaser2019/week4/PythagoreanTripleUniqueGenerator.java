@@ -3,9 +3,9 @@ package saptechnoteaser2019.week4;
 public class PythagoreanTripleUniqueGenerator {
 
 	private static int LIMIT = 10000;
-	
+
 	public static void main(String[] args) {
-		
+
 		int count = 0;
 		// k = a + b
 		for(int k = 3; k <= LIMIT; k += 2) {
@@ -31,10 +31,10 @@ public class PythagoreanTripleUniqueGenerator {
 				m--;
 			}
 		}
-		
+
 		System.out.println("Number of Pythagorean triples (a,b,c) for which a < b < c and a ≤ " + LIMIT + ": " + count);
 	}
-	
+
 	private static int gcd(int a, int b) {
 		if (a == 0) {
 			return b;
