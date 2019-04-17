@@ -120,8 +120,9 @@ int[][] setup = { {1,1}, {1,1}, {1,1}, {1,1}, {1,0}, {1,0}, {1,0}, {1,0} };
 
 {::nomarkdown}
 <div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 85%;">successful:6572; unsuccessful:3428</div>		
-			
-<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week1/BagsOfMarbles.java" target="_blank">Примерен код</a>		
+
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week1/BagsOfMarbles.java" target="_blank">Примерен код</a>
 	</div> 
 </div>
 {:/}
