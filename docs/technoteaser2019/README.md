@@ -122,7 +122,7 @@ int[][] setup = { {1,1}, {1,1}, {1,1}, {1,1}, {1,0}, {1,0}, {1,0}, {1,0} };
 <div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 85%;">successful:6572; unsuccessful:3428</div>		
 
 <br>			
-<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week1/BagsOfMarbles.java" target="_blank">Примерен код</a>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week1/BagsOfMarbles.java" target="_blank">Примерен Java код</a>
 	</div> 
 </div>
 {:/}
@@ -380,6 +380,9 @@ for (int i10 = 1; i10 <= 2; i10++) {
 Решение №3: [0→2, 1→11, 2→3, 3→2, 4→1, 5→1, 6→1, 7→1, 8→1, 9→1, 10→1]<br>
 <br>
 И след толкова сметки, които могат да оставят погрешно впечатление, че задачата е трудна, трябва да уточним, че въпросният анализ може да се замени (в този случай доста успешно) с по-елемнтарна оценка на допустимите стойности на числата в изречението и по-неефективно решение, което би било напълно достатъчно за намиране на верния отговор.
+
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week2/SelfReferencingSentence.java" target="_blank">Примерен Java код</a>
 	</div> 
 </div>
 </div>
@@ -520,6 +523,9 @@ for (int op8 = 0; op8 < OPERATIONS.length; op8++) {
 27. 123∗4-5+67-89=465
 
 {::nomarkdown}
+
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week3/ExpressionsWithoutBracketsRecursive.java" target="_blank">Примерен Java код за рекурсивно решение</a>, <a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week3/ExpressionsWithoutBracketsIterative.java" target="_blank">Примерен Java код за итеративно решение</a>
 	</div> 
 </div>
 </div>
@@ -703,6 +709,8 @@ System.out.println(numberOfTriples);
 {::nomarkdown}
 <div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;">99773</div>
 
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week4/PythagoreanTripleGenerator.java" target="_blank">Примерен Java код, генериращ повтарящи се тройки</a>, <a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week4/PythagoreanTripleUniqueGenerator.java" target="_blank">Примерен Java код, генериращ уникалните тройки точно по веднъж</a>
 	</div> 
 </div>
 </div>
@@ -811,6 +819,8 @@ For X from 3.7399999999999998 to 3.7599999999999993 with step 0.001:<br>
 Защо това е така – вижте решението на физика в следващата задача.<br>
 От тук нататък повтаряме решението на математика без нуждата от допълнително построение върху чертежа, показвайки, че △A<sub>0</sub>AC ~ △В<sub>0</sub>ВС	
 	
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week5/ReflectionPath.java" target="_blank">Примерен Java код</a>
 	</div>
 </div>	
 <hr>
@@ -902,7 +912,9 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
 Как светлината намира винаги най-бързия път между две точки?<br>
 Всъщност това тя прави не благодарение на квантовите си свойства, като преминава през всички възможни пътища и като прави квантов скок за най-бързия от тях. Светлината е вълна, а правилото за най-бърз път важи за вълните по принцип, включително и за тези, които нямат отношение към квантовата механика, като например звуковите и морските вълни.<br>
 Дали това е просто случайно следствие на вълновите свойства в природата, или пък природата не е имала друг избор, това е вече главоблъсканица от философско измерение, но както е видно по-горе понякога и няколко реда код вършат достатъчно добра работа.	
-	
+
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week5/RefractionPath.java" target="_blank">Примерен Java код</a>
 	</div>
 </div>
 </div>
@@ -1189,6 +1201,10 @@ Overal number of options for the consonants: 12275280<br>
 Result: 4419100800
 </div>
 
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week6/SAPTechnoTeaserWordsBruteForce.java" target="_blank">Примерен Java код с Brute-force подход</a>, <br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week6/SAPTechnoTeaserWords.java" target="_blank">Примерен Java код за оптимизирано решение</a>
+
 	</div>
 </div>
 
@@ -1254,6 +1270,8 @@ System.out.println(getCollatzNumbersCount(1, 61));
 Хипотезата на Колац е известна и като най-лесната (за разбиране) недоказана все още хипотеза в математиката. Може би това е и една от причините да бъде давана често за пример. Има и различни парични награди за доказателство, потвърждаващо или оборващо хипотезата, достигащи до £1000.<br>
 Mатематическите задачи на хилядолетието, всички без една все още нерешени и носещи награди от по 1 милион долара всяка\, можете да намерите <a href="http://www.claymath.org/millennium-problems" target=_blank>тук</a>.
 
+<br>			
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/week6/CollatzNumbersOnDistance.java" target="_blank">Примерен Java код</a>
 	</div>
 </div>
 </div>
