@@ -906,10 +906,12 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
 </div>
 </div>
 
+
 <input type="checkbox" id=week6Toggle>
 <label for=week6Toggle class="week">
 <h2 id=week6>Седмица №6 <span></span></h2>
 </label>	
+<div>
 <p>
 Ако \(a \ne 0, b \ne 0, c \ne 0, \)  \(а +b + c \ne 0\) и<br>
 \(\dfrac{a + b}{c}=m \\ \dfrac{b + c}{a}=n\)<br>
