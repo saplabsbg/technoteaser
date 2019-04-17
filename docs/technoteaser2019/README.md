@@ -906,7 +906,353 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
 </div>
 </div>
 
+<input type="checkbox" id=week6Toggle>
+<label for=week6Toggle class="week">
+<h2 id=week6>Седмица №6 <span></span></h2>
+</label>	
+<p>
+Ако \(a \ne 0, b \ne 0, c \ne 0, \)  \(а +b + c \ne 0\) и<br>
+\(\dfrac{a + b}{c}=m \\ \dfrac{b + c}{a}=n\)<br>
+да се намери \( \dfrac{a + c}{b} = \text{?} \)
+</p>
+	<input type="checkbox" id=solution61><label class="explanationbutton" for=solution61><span>Обяснения</span></label>
+	<div class="explanation">
+
+\( \dfrac{a + b}{c}=m \iff  \dfrac{a + b}{c}+1=m+1  \iff \dfrac{a + b + c}{c}=m+1\) <br>
+\( \dfrac{b + c}{a}=n \iff \dfrac{a + b + c}{a}=n+1 \) <br>
+\( \text{ От } a+b+c \ne 0 \Rightarrow \)
+<ol><li>
+\( \dfrac{a + b + c}{c}=m+1 \iff \dfrac{c}{a + b + c}=\dfrac{1}{m+1} \text{  (1)} \) 
+</li><li>
+\( \dfrac{a + b + c}{a}=n+1 \iff \dfrac{a}{a + b + c}=\dfrac{1}{n+1} \text{  (2)} \) 
+</li></ol>
+\(  \text{Събираме (1) и (2)}\) <br>
+\( \dfrac{c}{a + b + c} + \dfrac{a}{a + b + c} = \dfrac{1}{m+1}+\dfrac{1}{n+1} \iff \) <br>
+\(  \dfrac{a+c}{a + b + c} = \dfrac{m+1+n+1}{(m+1)(n+1)} \iff \) <br>
+\(  \dfrac{a+b+c}{a + b + c } - \dfrac{b}{a + b + c} = \dfrac{m+n+2}{(m+1)(n+1)} \iff \) <br>
+\(  \dfrac{b}{a + b + c} = 1 - \dfrac{m+n+2}{(m+1)(n+1)} \iff \)  <br>
+\( \dfrac{b}{a + b + c} = \dfrac{mn-1}{(m+1)(n+1)} \iff \) <br>
+\( \dfrac{a + b + c}{b} = \dfrac{(m+1)(n+1)}{mn-1} \iff \) <br>
+\( \dfrac{a + c}{b} +1 = \dfrac{mn+m+n+1}{mn-1} \iff \) <br>
+\( \mathbf{ \dfrac{a + c}{b}  = \dfrac{m+n+2}{mn-1} } \)
+
+	</div>
+</div>
+
+<hr>
+<p>
+Ако за дума считаме всеки набор от букви, то колко различни думи могат да бъдат съставени от думата САПТЕХНОБЛЪСКАНИЦА (като броим и самата нея), сменяйки местата на буквите, така че да са изпълнени следните условия:
+<ol type='1'>
+<li> Буквите С, А и П да присъстват в думата задължително заедно (без други букви между тях) и в този ред.</li>
+<li> Да няма две съседни гласни.</li>
+<li> Да няма три съседни съгласни.</li>
+<li> За двойките съседни съгласни в думата да е изпълнено, че за всяка нечетна по ред двойка първата съгласна е лексикографски по-малка от втората, а за всяка четна по ред двойка първата съгласна е лексикографски по-голяма от втората.</li>
+</ol>
+Пример: думата САПТЕХНОБЛЪСКАНИЦА отговаря на всички условия, като за двойките съседни съгласни е изпълнено, че (1) П&lt;Т, (2) Х&gt;Н, (3) Б&lt;Л, (4) С&gt;К
+</p>
+<div>
+	<input type="checkbox" id=solution62><label class="explanationbutton" for=solution62><span>Обяснения</span></label>
+	<div class="explanation">
+
+С какво трябва да се съобразим при <a href="https://en.wikipedia.org/wiki/Brute-force_search" target=_blank>Brute-force</a> подход?
+
 {:/}
+
+- Буквите С, А и П можем да разглеждаме като една буква (нека я означим с S), като:
+     - S разглеждаме като съгласна буква.
+     - Трябва да напишем наша логика за лексикографско сравнение на две букви, когато едната от тях е S, като например просто заменяме S с П, когато S е първа буква и S със С, когато S е втора буква и продължаваме със стандартната логика за сравняване. Трябва да внимаваме да не използваме тази логика за сортиране на думи, включително в сортирани структури от данни, тъй като <nobr>S&lt;С, a С==S, както и S==П, а П&lt;S</nobr>.
+- Тъй като задачата по същество търси брой пермутации с повторение, най-лесният начин за генерирането на думите точно по веднъж е рекурсивният.
+
+``` Java
+private final Comparator<Character> SAP_LETTER_COMPARATOR = (Character c1, Character c2) -> {
+	if (c1 == 'S' && c2 == 'S') {
+		throw new IllegalArgumentException("Comparing 2 S characters");
+	}
+	if (c1 == 'S') {
+		c1 = 'П';
+	} else if (c2 == 'S') {
+		c2 = 'С';
+	}
+	return c1.compareTo(c2);
+};
+```
+Инициализация на буквите, с които работим:
+``` Java
+static private Map<Character, Integer> inputOfVowels = new HashMap<Character, Integer>(); 
+static private Map<Character, Integer> inputOfConsonants = new HashMap<Character, Integer>();
+static {
+	inputOfVowels.put('А', 2);
+	inputOfVowels.put('Е', 1);
+	inputOfVowels.put('О', 1);
+	inputOfVowels.put('И', 1);
+	inputOfVowels.put('Ъ', 1);
+	
+	inputOfConsonants.put('Н', 2);
+	inputOfConsonants.put('Т', 1);
+	inputOfConsonants.put('Х', 1);
+	inputOfConsonants.put('Б', 1);
+	inputOfConsonants.put('Л', 1);
+	inputOfConsonants.put('С', 1);
+	inputOfConsonants.put('К', 1);
+	inputOfConsonants.put('Ц', 1);
+	inputOfConsonants.put('S', 1);
+}
+```
+``` Java
+private static long calculateNumberOfWords(char lastLetter, LetterType lastLetterType, int numberOfConsonantPairs) {
+		
+	Set<Character> availableVowels = new HashSet<>(currentVowels.keySet());
+	Set<Character> availableConsonants = new HashSet<>(currentConsonants.keySet());
+	
+	if (availableVowels.isEmpty() && availableConsonants.isEmpty()) {
+		// recursion base case
+		return 1;		
+	} 
+	
+	long result = 0; 
+	
+	if (lastLetterType != LetterType.VOWEL) {
+		for(Character nextVowelChar : availableVowels) {
+			int occurrencesOfNextVowel = currentVowels.get(nextVowelChar);
+			if (occurrencesOfNextVowel == 1) {
+				currentVowels.remove(nextVowelChar);
+			} else {
+				currentVowels.put(nextVowelChar, occurrencesOfNextVowel-1);
+			}
+			result += calculateNumberOfWords(nextVowelChar, LetterType.VOWEL, numberOfConsonantPairs);
+			//revert the input before we continue 
+			currentVowels.put(nextVowelChar, occurrencesOfNextVowel);
+		}
+	} 
+	
+    if (lastLetterType != LetterType.CONSECUTIVE_CONSONANT) {
+		LetterType nextLetterType = lastLetterType==LetterType.CONSONANT ? LetterType.CONSECUTIVE_CONSONANT : LetterType.CONSONANT;
+		
+		for(Character nextConsonantChar : availableConsonants) {
+			if (lastLetterType == LetterType.CONSONANT) {
+				if (numberOfConsonantPairs%2 == 0 && 
+					SAP_LETTER_COMPARATOR.compare(lastLetter, nextConsonantChar) >= 0) continue;
+
+				if (numberOfConsonantPairs%2 == 1 && 
+					SAP_LETTER_COMPARATOR.compare(lastLetter, nextConsonantChar) <= 0) continue;		
+			}	
+			int occurrencesOfNextConsonant = currentConsonants.get(nextConsonantChar);
+			if (occurrencesOfNextConsonant == 1) {
+				currentConsonants.remove(nextConsonantChar);
+			} else {
+				currentConsonants.put(nextConsonantChar, occurrencesOfNextConsonant-1);
+			}
+			
+			int nextNumberOfConsonantPairs = lastLetterType==LetterType.CONSONANT ? numberOfConsonantPairs + 1 : numberOfConsonantPairs;
+			if (nextConsonantChar == 'S') {
+				//allow Consonant S Consonant triple
+				result += calculateNumberOfWords(nextConsonantChar, LetterType.CONSONANT, nextNumberOfConsonantPairs);
+			} else {
+				result += calculateNumberOfWords(nextConsonantChar, nextLetterType, nextNumberOfConsonantPairs);
+			}
+			
+			//revert the input before we continue 
+			currentConsonants.put(nextConsonantChar, occurrencesOfNextConsonant);
+		}
+	}
+    
+    return result;
+}
+```
+``` Java
+long result = calculateNumberOfWords((char)0, null, 0);
+System.out.println("Number of words:" + result);
+```
+И въоръжени с юнашко търпение, от порядъка на час, получаваме:
+
+{::nomarkdown}
+
+<div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;">4419100800</div>
+<br>
+Може ли по-добре? Би било странно да не може.<br>
+Алгоритмите, които броят всички възможности чрез генерирането им, при задачи от областта на комбинаториката, имат експоненциална сложност и това се вижда лесно във формулите от самата комбинаториката. Ако игнорираме условията за съседни гласни и съгласни, като все още броим буквите С, А и П като една, броят на всички думи по формулата за брой <a href="https://store.fmi.uni-sofia.bg/fmi/algebra/Resources/combinatorics.pdf" target=_blank>пермутации с повторения</a> ще бъде равен на <nobr>\( \dfrac{16!}{2!*2!} \) = 5230697472000.</nobr> Идеите за оптимизация обикновено са свързани просто с използването на формулите от комбинаториката там, където това е възможно.<br>
+Имаме 10 съгласни (с повтарящо се Н, а САП е една съгласна) и шест гласни (с повтарящо се А).
+- По колко различни начина могат да се разпределят шест гласни, оставяйки места за 10 единични или двойка съседни съгласни между тях?<br>
+Ако съгласните (независимо дали са единични или двойка съседни) означим с _, а всяка от гласните с Г<sub>i</sub>, ще получим следните възможности:  
+<ol>
+<li><nobr>_ Г<sub>1</sub> _ Г<sub>2</sub> _ Г<sub>3</sub> _ Г<sub>4</sub> _ Г<sub>5</sub> _ Г<sub>6</sub> _ </nobr> за думи със седем места за съгласни, в три от които ще бъдат двойка съседни.</li>
+<li><nobr>_ Г<sub>1</sub> _ Г<sub>2</sub> _ Г<sub>3</sub> _ Г<sub>4</sub> _ Г<sub>5</sub> _ Г<sub>6</sub> + </nobr>
+<nobr>Г<sub>1</sub> _ Г<sub>2</sub> _ Г<sub>3</sub> _Г <sub>4</sub> _ Г<sub>5</sub> _ Г<sub>6</sub> _</nobr> за думи с шест места за съгласни, в четири от които ще бъдат двойка съседни.</li>
+<li><nobr>Г<sub>1</sub> _ Г<sub>2</sub> _ Г<sub>3</sub> _ Г<sub>4</sub> _ Г<sub>5</sub> _ Г<sub>6</sub></nobr> за думи с пет места, всички от които за двойка (без единични) съгласни.</li>
+</ol>
+Ако намерим възможностите за разпределение на съгласните за конкретен случай и умножим това число с 6!/2! (броят на възможностите за разпределение на гласните), ще получим и броя на думите за този случай.
+
+{:/}
+
+```Java
+private int countConsonantOptions(int numberOfConsonantPairsInResult, 
+		boolean nextPairIsInAscOrder, int numberOfPositions) {
+	if (numberOfPositions == 0 && inputOfConsonants.size() == 0) {
+		//end of Recursion
+		return 1;
+	}
+	if (inputOfConsonants.size() > numberOfPositions*2) {
+		return 0;
+	}  
+	
+	int result = 0;
+	Character[] availableConsonants = inputOfConsonants.keySet().toArray(
+		new Character[inputOfConsonants.keySet().size()]);
+	for(Character nextConsonantChar : availableConsonants) {
+		int nextCharOccurrences = inputOfConsonants.get(nextConsonantChar);
+		if (nextCharOccurrences == 1) {
+			inputOfConsonants.remove(nextConsonantChar);
+		} else {
+			inputOfConsonants.put(nextConsonantChar, nextCharOccurrences-1);
+		}
+		
+		result += countConsonantOptions(numberOfConsonantPairsInResult, 
+			nextPairIsInAscOrder, numberOfPositions-1);
+		
+		if (numberOfConsonantPairsInResult > 0) {
+			Character[] availableConsonantsForPair = inputOfConsonants.keySet().toArray(
+				new Character[inputOfConsonants.keySet().size()]);
+			for (Character nextConsonantCharForPair : availableConsonantsForPair) {
+				if (nextPairIsInAscOrder && 
+					letterComparator.compare(nextConsonantChar, nextConsonantCharForPair) >= 0) {
+						continue;
+				};
+				if (!nextPairIsInAscOrder && 
+					letterComparator.compare(nextConsonantChar, nextConsonantCharForPair) <= 0) {
+						continue;
+				};
+				int nextCharForPairOccurrences = inputOfConsonants.get(nextConsonantCharForPair);
+				if (nextCharForPairOccurrences == 1) {
+					inputOfConsonants.remove(nextConsonantCharForPair);
+				} else {
+					inputOfConsonants.put(nextConsonantCharForPair, nextCharForPairOccurrences-1);
+				}
+				
+				result += countConsonantOptions(numberOfConsonantPairsInResult-1, 
+					!nextPairIsInAscOrder, numberOfPositions-1);
+  
+				// case Consonant S Consonant 
+				if (nextConsonantCharForPair == 'S' && numberOfConsonantPairsInResult > 1) {
+					Set<Character> availableConsonantsForSecondPair = new HashSet<>(inputOfConsonants.keySet());
+					for (Character nextConsonantCharForSecondPair:availableConsonantsForSecondPair) {
+						if (!nextPairIsInAscOrder &&
+							SAP_LETTER_COMPARATOR.compare(nextConsonantCharForPair, nextConsonantCharForSecondPair) >= 0)  continue;
+						if (nextPairIsInAscOrder && 
+							SAP_LETTER_COMPARATOR.compare(nextConsonantCharForPair, nextConsonantCharForSecondPair) <= 0)  continue;		
+						int occurrencesOfNextCharForSecondPair = inputOfConsonants.get(nextConsonantCharForSecondPair);
+						if (occurrencesOfNextCharForSecondPair == 1) {
+							inputOfConsonants.remove(nextConsonantCharForSecondPair);
+						} else {
+							inputOfConsonants.put(nextConsonantCharForSecondPair, occurrencesOfNextCharForSecondPair-1);
+						}
+						buildResult(numberOfConsonantPairsInResult-2, nextPairIsInAscOrder, numberOfPositions-1);
+						//revert the input before we continue 
+						inputOfConsonants.put(nextConsonantCharForSecondPair, occurrencesOfNextCharForSecondPair);
+					}
+				}                               
+				inputOfConsonants.put(nextConsonantCharForPair, nextCharForPairOccurrences);
+			}
+		}
+		//revert the input before we continue
+		inputOfConsonants.put(nextConsonantChar, nextCharOccurrences);
+	}
+	return result;
+}
+```
+```Java
+int resultFor3Pairs = countConsonantOptions(3, true, 7);
+System.out.println("Options for the consonants with 3 pairs: " + resultFor3Pairs);
+int resultFor4Pairs =  countConsonantOptions(4, true, 6);
+resultFor4Pairs *= 2;
+System.out.println("Options for the consonants with 4 pairs: " + resultFor4Pairs);
+int resultFor5Pairs =  countConsonantOptions(5, true, 5);
+System.out.println("Options for the consonants with 5 pairs: " + resultFor5Pairs);
+
+long result = resultFor3Pairs + resultFor4Pairs + resultFor5Pairs;
+System.out.println("Overal number of options for the consonants: " + result);
+//result = result*6!/2!
+result *= 3*4*5*6;
+System.out.println("Result: " + result);
+```
+
+{::nomarkdown}
+
+<div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;">
+Options for the consonants with 3 pairs: 7993440<br>
+Options for the consonants with 4 pairs: 2074500<br>
+Options for the consonants with 5 pairs: 132840<br>
+Overal number of options for the consonants: 12275280<br>
+Result: 4419100800
+</div>
+
+	</div>
+</div>
+
+<hr>
+<p>
+За произволно естествено число  \( n\_0 \), по-голямо от 1, можем да намерим числото \(n\_1\) по правилото:<br>
+\(  n\_{i+1}=\begin{cases} \dfrac{n\_i}{2},  \text{ ако } n\_i \text{ е четно} \\ 3n\_i+1, \text{ ако } n\_i  \text{ е нечетно} \end{cases} \)<br>
+Ако \(n\_1 \ne 1\), намираме \(n\_2\) като прилoжим същото правило върху \(n\_1\).<br>
+Казваме, че \( n\_0 \) е на разстояние \( x \) от 1, когато след точно \( x \) прилагания на правилото получаваме за пръв път 1.<br>
+Колко естествени числа са на разстояние 61 от 1?
+</p>
+
+<div>
+	<input type="checkbox" id=solution63><label class="explanationbutton" for=solution63><span>Обяснения</span></label>
+	<div class="explanation">
+<img style="width: 150px; object-fit: contain; float: right; margin-left: 5px;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=qFjcXvx-DM4rBer1Uo-8Z1t41tzk0KttJYMqtWMF-dA">Задачата, свързана с това правило, е известна под много наименования. Може би най-популярна е като <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target=_blank>хипотезата на Колац</a>, според която всяко естествено число ще достигне до 1 след карен брой прилагания на правилото.
+
+Най-голямото число, което е на разстояние 61 от 1, е това число, което на всяка стъпка намалява наполовина, т.е. 2<sup>61</sup><br>
+Изчисляването на разстоянията на всички числа до 2<sup>61</sup> обаче няма да е ефективно. Вместо това ще се опитаме да изведем правило, което работи в обратна посока, т.е. за дадено \(n\) да намерим числата, които са на разстояние 1 от \(n\). Така ще можем да намерим последователно кои са числата \(N_1\) на разстояние 1 от 1, кои са числата \(N_2\) на разстояние 1 от \(N_1\) и следователно на разстояние 2 от 1 т.н.<br>
+До числото \(n_{i+1}\)  можем да достигнем винаги от числото \(n_{i}=2n_{i+1}\), понеже така образуваното \(n_{i}\) е четно.<br>
+До числото \(n_{i+1}\)  можем да достигнем от числото \(n_{i}=\dfrac{n_{i+1}-1}{3}\), когато \(n_{i}=\dfrac{n_{i+1}-1}{3}\) е нечетно и ≠ 1 (тъй като при 1 по условие правилото не се прилага).<br>
+Получаваме обърнато правило на Колац:<br>
+\( N_{i+1} \text{ може да бъде равно на } \begin{cases}  2N_{i} \text{ всеки път }  \\  \dfrac{N_i-1}{3} \text{ , когато } \dfrac{N_i-1}{3} \text{ е цяло, положително, нечетно и} \ne 1  \end{cases}  \)
+<br>
+\( N_{i+1}  \) e нечетно, когато може да бъде представено като  \( 2k+1  \), т.е. \( N_{i+1} = \dfrac{N_i-1}{3} =2k+1 \iff N_i=6k+4 \) 
+<br>
+\( N_{i+1} \text{ може да бъде равно на }  \begin{cases}  2N_{i} \text{ всеки път }  \\  \dfrac{N_i-1}{3} \text{ , когато } N_i \text{ &gt; 4 и дава остатък 4 при деление на 6} \end{cases}  \) <br>
+Обърнатото правило не е функция, понеже приложено върху естествените числа, които дават остатък 4 при деление на 6, връща повече от един резултат.
+Затова математически правилното изписване на релацията изглежда така:<br>
+\(  R(n) =  \begin{cases} \{2n\}  \text{, когато } n \equiv 0,1,2,3,5 \text{ (mod 6) } \\   \{2n, \dfrac{n-1}{3}\}  \text{, когато } n \equiv 4 \text{ (mod 6) }  \end{cases} \)
+<br>
+Това ни навежда на въпроса може ли да изведем едно число по два различни начина, т.е. използвайки този алгоритъм да преброим едно и също число повече от веднъж?<br>
+Тъй като и двете правила дефинират един и същи граф, но с обърната посока на връзките между числата, а оригиналното правило дефинира един единствен път на дадено число (евентуално към 1), то това ни гарантира и един единствен път в обратна посока от 1 към даденото число (ако такъв съществува). <br>
+Граф или дърво? Всъщност това е без значение. Дори и да не ползваме хипотезата на Колац, която макар и недоказана, е потвърдена за числата, с които работим, правилото на Колац ни гарантира, че ако достигнем 1, то процесът спира и сме намерили еднозначно пътя и дължините на всички числа, през които сме минали. В противен случай или сме достигнали до цикъл, или получаваме разходяща редица, но и в двата случая ще става дума за числа, от които не се интересуваме, тъй като те няма да са на крайно разстояние от 1.<br>
+Остана да преброим числата на разстояние 61 от 1, за което елементарна имплементация с рекурсия върши достатъчно добра работа:
+
+{:/}
+
+```java
+private int getCollatzNumbersCount(long fromNumber, int atDistance) {
+          if (atDistance == 0) {
+                       return 1;
+         }
+         int res = getCollatzNumbersCount(fromNumber*2, atDistance-1);
+         if (fromNumber>4 && fromNumber%6==4) { 
+                 res += getCollatzNumbersCount((fromNumber-1)/3, atDistance-1);
+ }
+         return res;
+}
+```
+```java
+System.out.println(getCollatzNumbersCount(1, 61));
+```
+
+{::nomarkdown}
+
+<div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 70%;">1040490</div>
+<hr>
+Можем ли да предположим, че хипотезата на Колац е вярна, тъй като е потвърдена за всички числа до 87∗10<sup>60</sup>?<br>
+Всъщност в математиката са известни доста "подвеждащи" примери, в които дадено твърдение изглежда вярно, понеже е проверено до на пръв поглед големи числа. Например най-големият общ делител на числата \( n^{17}+9 \) и \( (n+1)^{17}+9 \) e 1 за на пръв поглед всички естествени числа \( n \). Дори да напишем програма, която започва от \( n=1 \) и проверява последователно всички следващите числа, един персонален компютър и един човешки живот няма да са ни достатъчни, за да намерим друг резултат. Причината за това е, че правилото се нарушава за пръв път при \( n=8424432925592889329288197322308900672459420460792433\).
+А когато говорим за математика, не трябва да забравяме, че всяко крайно число, колкото и голямо да е то, е пренебрежимо малко на фона на безкрайно многото оставащи по-големи от него числа.<br>
+<br>
+Хипотезата на Колац е известна и като най-лесната (за разбиране) недоказана все още хипотеза в математиката. Може би това е и една от причините да бъде давана често за пример. Има и различни парични награди за доказателство, потвърждаващо или оборващо хипотезата, достигащи до £1000.<br>
+Mатематическите задачи на хилядолетието, всички без една все още нерешени и носещи награди от по 1 милион долара всяка\, можете да намерите <a href="http://www.claymath.org/millennium-problems" target=_blank>тук</a>.
+
+	</div>
+</div>
+</div>
 
 <script>
 function hashChange() {
@@ -919,7 +1265,11 @@ function hashChange() {
 window.onhashchange = hashChange;
 hashChange();
 </script>
-
+<br><br>
 <div class="footer">
 <a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><p class="footer-element">Виж повече за развойния център на SAP в София</p></a><a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/sap_logo.png" width="40" height="20"></a> <a href="https://www.facebook.com/saplabsbg" target="_blank"><p class="footer-element">Харесай страницата ни във Facebook</p></a><a href="https://www.facebook.com/saplabsbg" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/fb_logo.png" width="30" height="20"></a> <a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><p class="footer-element">Разгледай отворените позиции при нас</p></a><a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/network.png" width="25" height="25"></a>
 </div>
+
+{:/}
+
+
