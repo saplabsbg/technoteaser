@@ -20,7 +20,7 @@
 
 {::nomarkdown}
 <div>
-	<input type="checkbox" id=solution11><label class="explanationbutton" for=solution11><span>Обяснения</span></label>
+	<input type="checkbox" id=solution11><label class="explanationbutton" for=solution11><span>Обяснение</span></label>
 	<div class="explanation">
 В оригинал задачата е популярна като <a href="https://en.wikibooks.org/wiki/Puzzles/Statistical_puzzles/3_Bags_of_Marbles" target="_blank">3 Bags of Marbles</a>, като най-подвеждащото в случая е да съобразим, че въпреки избора на кутия, реално имаме информация само за едно единствено камъче. Можем да се окажем в ситуацията да сме избрали кутия с две скъпоценни камъчета (нека я наречем печеливша) по два различни начина - като изтеглим първото или като изтеглим второто скъпоценно камъче от нея. От друга страна можем да се окажем в ситуацията да сме избрали непечеливша кутия само по един единствен начин - като сме изтеглили единственото пeчелившо камъче от нея.
 <h3>Какво е разпределението на камъчетата?</h3>
@@ -935,7 +935,7 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
 да се намери \( \dfrac{a + c}{b} = \text{?} \)
 </p>
 <div>
-	<input type="checkbox" id=solution61><label class="explanationbutton" for=solution61><span>Обяснения</span></label>
+	<input type="checkbox" id=solution61><label class="explanationbutton" for=solution61><span>Обяснение</span></label>
 	<div class="explanation">
 
 \( \dfrac{a + b}{c}=m \iff  \dfrac{a + b}{c}+1=m+1  \iff \dfrac{a + b + c}{c}=m+1\) <br>
@@ -971,7 +971,7 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
 Пример: думата САПТЕХНОБЛЪСКАНИЦА отговаря на всички условия, като за двойките съседни съгласни е изпълнено, че (1) П&lt;Т, (2) Х&gt;Н, (3) Б&lt;Л, (4) С&gt;К
 </p>
 <div>
-	<input type="checkbox" id=solution62><label class="explanationbutton" for=solution62><span>Обяснения</span></label>
+	<input type="checkbox" id=solution62><label class="explanationbutton" for=solution62><span>Обяснение</span></label>
 	<div class="explanation">
 
 С какво трябва да се съобразим при <a href="https://en.wikipedia.org/wiki/Brute-force_search" target=_blank>Brute-force</a> подход?
@@ -1223,7 +1223,7 @@ Result: 4419100800
 </p>
 
 <div>
-	<input type="checkbox" id=solution63><label class="explanationbutton" for=solution63><span>Обяснения</span></label>
+	<input type="checkbox" id=solution63><label class="explanationbutton" for=solution63><span>Обяснение</span></label>
 	<div class="explanation">
 <img style="width: 150px; object-fit: contain; float: right; margin-left: 5px;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=qFjcXvx-DM4rBer1Uo-8Z1t41tzk0KttJYMqtWMF-dA">Задачата, свързана с това правило, е известна под много наименования. Може би най-популярна е като <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target=_blank>хипотезата на Колац</a>, според която всяко естествено число ще достигне до 1 след карен брой прилагания на правилото.
 
