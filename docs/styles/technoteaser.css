@@ -129,6 +129,6 @@ ul.answersWithRadio li.correctAnswer:before {
   color: darkgreen;
 }
 ul.answersWithRadio li.notCorrectAnswer:before {
-  content: '\29BE\00a0\00a0';
+  content: '\2A00\00a0\00a0';
   color: darkred;
 }
