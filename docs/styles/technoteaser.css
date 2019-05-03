@@ -104,10 +104,11 @@ input:checked + .week + div {
   display:block;
 }
 
-ul.answersWithCheckbox {
+ul.answersWithCheckbox, ul.answersWithRadio {
    list-style: none;
    margin-top:15px;
 }
+
 ul.answersWithCheckbox li:before {
   content: '\2610\00a0\00a0';
 }
@@ -117,5 +118,17 @@ ul.answersWithCheckbox li.correctAnswer:before {
 }
 ul.answersWithCheckbox li.notCorrectAnswer:before {
   content: '\2718\00a0\00a0';
+  color: darkred;
+}
+
+ul.answersWithRadio li:before {
+  content: '\2A00\00a0\00a0'; 
+}
+ul.answersWithRadio li.correctAnswer:before {
+  content: '\25C9\00a0\00a0';
+  color: darkgreen;
+}
+ul.answersWithRadio li.notCorrectAnswer:before {
+  content: '\29BE\00a0\00a0';
   color: darkred;
 }
