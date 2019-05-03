@@ -106,6 +106,7 @@ input:checked + .week + div {
 
 ul.answersWithCheckbox {
    list-style: none;
+   margin-top:15px;
 }
 ul.answersWithCheckbox li:before {
   content: '\2610\00a0\00a0';
