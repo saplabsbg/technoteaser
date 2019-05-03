@@ -765,7 +765,16 @@ System.out.println(numberOfTriples);
 Общата средната скорост за двете обиколки е равна на целия път, разделен на цялото време, т.е. V<sub>средно</sub>=2∗S/(t<sub>1</sub>+t<sub>2</sub>).<br>
 Искаме V<sub>средно</sub>=2V<sub>1</sub>=2S/t<sub>1</sub>.<br>
 Т.е. \( \dfrac{2S}{t_1} = \dfrac{2S}{t_1+t_2}  \), откъдето следва, че t<sub>2</sub>=0, което е невъзможно и 
-<br><b>независимо колко бързо тича, спринтьорът няма как да постигне обща средна скорост, равна на 2∗V1</b>.		
+<br><b>независимо колко бързо тича, спринтьорът няма как да постигне обща средна скорост, равна на 2∗V1</b>.	
+<ul class="answersWithRadio">
+	<li class="notCorrectAnswer"> V<sub>2</sub> не може да се определи, защото зависи от дължината на пистата</li>
+	<li class="notCorrectAnswer"> V<sub>2</sub>=2∗V<sub>1</sub></li>
+	<li class="notCorrectAnswer"> V<sub>2</sub>=3∗V<sub>1</sub></li>
+	<li class="notCorrectAnswer"> V<sub>2</sub>=4∗V<sub>1</sub></li>
+	<li class="notCorrectAnswer"> V<sub>2</sub>=8∗V<sub>1</sub></li>
+	<li class="correctAnswer"> Независимо колко бързо тича, спринтьорът няма как да постигне обща средна скорост, равна на 2∗V<sub>1</sub></li>
+</ul>
+
 	</div>	
 </div>
 <hr>
