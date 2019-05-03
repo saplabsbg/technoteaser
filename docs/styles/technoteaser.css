@@ -103,3 +103,10 @@ input:not(:checked) + .week + div {
 input:checked + .week + div {
   display:block;
 }
+
+ul.answersWithCheckbox {
+		 list-style: none;
+}
+ul.answersWithCheckbox li:before {
+		content: '\2610\00a0\00a0';
+}
