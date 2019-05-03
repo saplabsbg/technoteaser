@@ -105,8 +105,16 @@ input:checked + .week + div {
 }
 
 ul.answersWithCheckbox {
-		 list-style: none;
+   list-style: none;
 }
 ul.answersWithCheckbox li:before {
-		content: '\2610\00a0\00a0';
+  content: '\2610\00a0\00a0';
+}
+ul.answersWithCheckbox li.correctAnswer:before {
+  content: '✔\00a0\00a0';
+  color: darkgreen;
+}
+ul.answersWithCheckbox li.notCorrectAnswer:before {
+  content: '✘\00a0\00a0';
+  color: darkred;
 }
