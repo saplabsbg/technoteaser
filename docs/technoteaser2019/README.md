@@ -1456,7 +1456,7 @@ Mатематическите задачи на хилядолетието, вс
 
 {:/}
 
-``` Java
+```java
 List <ImmutablePair<Integer,Integer>> generatePairs(int withSum) {
 	ArrayList<ImmutablePair<Integer,Integer>> result = new ArrayList<>();
 	for (int i=1; i < withSum; i++) {
@@ -1466,11 +1466,11 @@ List <ImmutablePair<Integer,Integer>> generatePairs(int withSum) {
 }
 ```
 
-``` Java
+```java
 private static final int SUM = 2019;
 ```
 
-``` Java
+```java
 int maxSumOfProducts = 0;
 
 for (ImmutablePair<Integer, Integer> pair1 : generatePairs(SUM)) {
