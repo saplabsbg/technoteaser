@@ -1493,7 +1493,7 @@ System.out.println(maxSumOfProducts);
 {::nomarkdown}
 
 <div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;">1019089</div>
-
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/specialedition/MaxSumOfProducts.java" target=_blank>Примерен Java код</a><br>
 <h3 id="game2,game2solution5,Решение_на_математика">Решението на математика:</h3>
 <img style="max-width: 250px; object-fit: contain; float:right;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=5FwROhTk4DZEFI8DgX8mGqTRYhyg3Yfplqe4EhyxjXU">
 Вариант на тази задача (с условие \(a+b+c+d=63\)) е дадена на олимпиада по математика в Австралия през 2013 г. за ученици.
