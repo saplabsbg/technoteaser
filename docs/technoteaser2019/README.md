@@ -1450,7 +1450,7 @@ Mатематическите задачи на хилядолетието, вс
 	<input type="checkbox" id=game2solution5><label class="explanationbutton" for=game2solution5><span>Обяснение</span></label>
 	<div class="explanation">
 
-<h3 id=",game2solution5,Решение_на_програмиста">Решението на програмиста:</h3>
+<h3 id="game2,game2solution5,Решение_на_програмиста">Решението на програмиста:</h3>
 Тъй като 2019 не е твърде голямо число, можем да си позволим <a href="https://en.wikipedia.org/wiki/Brute-force_search" target=_blank>Brute-force</a> подход.<br>
 За да генерираме всички възможни стойности на \( a \), \( b \), \( c \) и \( d \)  е достатъчно да напишем една фукция, която генерира всички двойки числа, чиято сума е равна на подаден параметър. За работа с двойки числа ще ползваме класа <a href="https://commons.apache.org/proper/commons-lang/apidocs/index.html?org/apache/commons/lang3/tuple/ImmutablePair.html" target=_blank>ImmutablePair</a> от Apache Commons Lang библиотеката.
 
@@ -1494,7 +1494,7 @@ System.out.println(maxSumOfProducts);
 
 <div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;">1019089</div>
 
-<h3 id=",game2solution5,Решение_на_математика">Решението на математика:</h3>
+<h3 id="game2,game2solution5,Решение_на_математика">Решението на математика:</h3>
 <img style="max-width: 250px; object-fit: contain; float:right;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=5FwROhTk4DZEFI8DgX8mGqTRYhyg3Yfplqe4EhyxjXU">
 Вариант на тази задача (с условие \(a+b+c+d=63\)) е дадена на олимпиада по математика в Австралия през 2013 г. за ученици.
 Разбира се учениците не могат да ползват математически анализ, а задачата има по-лесно решение.<br>
