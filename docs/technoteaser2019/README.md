@@ -31,7 +31,7 @@
 	<input type="checkbox" id=solution11><label class="explanationbutton" for=solution11><span>Обяснение</span></label>
 	<div class="explanation">
 В оригинал задачата е популярна като <a href="https://en.wikibooks.org/wiki/Puzzles/Statistical_puzzles/3_Bags_of_Marbles" target="_blank">3 Bags of Marbles</a>, като най-подвеждащото в случая е да съобразим, че въпреки избора на кутия, реално имаме информация само за едно единствено камъче. Можем да се окажем в ситуацията да сме избрали кутия с две скъпоценни камъчета (нека я наречем печеливша) по два различни начина - като изтеглим първото или като изтеглим второто скъпоценно камъче от нея. От друга страна можем да се окажем в ситуацията да сме избрали непечеливша кутия само по един единствен начин - като сме изтеглили единственото пeчелившо камъче от нея.
-<h3>Какво е разпределението на камъчетата?</h3>
+<h3 id="week1,solution11,Разпределение">Какво е разпределението на камъчетата?</h3>
 Означаваме броя на кутиите с по 1 скъпоценно камъче (т.е. броя на непечелившите кутии) с <b title="Брой кутии с едно скъпоценно камъче">x</b>.<br>
 Очевидно имаме поне 1 кутия с 2 скъпоценни камъчета, в противен случай шансът за второ скъпоценно камъче в избраната от нас кутия ще бъде 0%.<br>
 1. Предполагаме, че първоначално в играта е имало 1 единствена кутия с 2 скъпоценни камъчета в нея. 
@@ -1521,8 +1521,11 @@ System.out.println(maxSumOfProducts);
 function hashChange() {
 	if (window.location.hash) {
 		var hashID = window.location.hash.substr(1);
-		var obj = document.getElementById(hashID + "Toggle");
-	        if (obj) {obj.checked = true;}
+	        var hashArr = hashID.split(",");
+	        for (i in arr) {
+			var obj = document.getElementById(hashArr[i] + (i==0 ? "Toggle" : ""));
+			if (obj) {obj.checked = true;}
+		}
 	}
 }
 window.onhashchange = hashChange;
@@ -1534,5 +1537,3 @@ hashChange();
 </div>
 
 {:/}
-
-
