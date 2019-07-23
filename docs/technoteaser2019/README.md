@@ -1413,17 +1413,17 @@ Mатематическите задачи на хилядолетието, вс
 <div>
 	<input type="checkbox" id=game2solution4><label class="explanationbutton" for=game2solution4><span>Обяснение</span></label>
 	<div class="explanation">
-<ul>
-<li style="color:darkred">  0  0  0 = 24 </li>
-<li style="color:darkred"> 1  1  1 = 25 </li>
-<li style="color:darkgreen">  2  2  2 = 26 <font color=black>→ \( (2+2)! + 2 = 4! + 2 = 26 \)</font></li>
-<li style="color:darkgreen"> 3  3  3 = 27 <font color=black>→ \( 3*3*3 = 27\) </font></li>
-<li style="color:darkgreen"> 4  4  4 = 28 <font color=black>→ \( 4! + \sqrt{4} + \sqrt{4} = 24+2+2 = 28\) </font></li>
-<li style="color:darkgreen"> 5  5  5 = 29 <font color=black>→ \( 5!/5 + 5 = 4!+5 = 24+5 = 29\) </font></li>
-<li style="color:darkgreen"> 6  6  6 = 30 <font color=black>→ \( 6*6 - 6 = 5*6 = 30\) </font></li>
-<li style="color:darkred"> 7  7  7 = 31 </li>
-<li style="color:darkgreen"> 8  8  8 = 32 <font color=black>→ \( (\sqrt{8+8})!+8 = 4!+8 = 24+8 = 32 \) </font></li>
-<li style="color:darkgreen"> 9  9  9 = 33 <font color=black>→ \( \sqrt{9} * 9 +  (\sqrt{9})! = 3*9 + 3! = 27+6 = 33\) </font></li>
+<ul class="answersWithCheckbox">
+<li class="notCorrectAnswer" style="color:darkred">  0  0  0 = 24 </li>
+<li class="notCorrectAnswer" style="color:darkred"> 1  1  1 = 25 </li>
+<li class="correctAnswer" style="color:darkgreen">  2  2  2 = 26 <font color=black>→ \( (2+2)! + 2 = 4! + 2 = 26 \)</font></li>
+<li class="correctAnswer" style="color:darkgreen"> 3  3  3 = 27 <font color=black>→ \( 3*3*3 = 27\) </font></li>
+<li class="correctAnswer" style="color:darkgreen"> 4  4  4 = 28 <font color=black>→ \( 4! + \sqrt{4} + \sqrt{4} = 24+2+2 = 28\) </font></li>
+<li class="correctAnswer" style="color:darkgreen"> 5  5  5 = 29 <font color=black>→ \( 5!/5 + 5 = 4!+5 = 24+5 = 29\) </font></li>
+<li class="correctAnswer" style="color:darkgreen"> 6  6  6 = 30 <font color=black>→ \( 6*6 - 6 = 5*6 = 30\) </font></li>
+<li class="notCorrectAnswer" style="color:darkred"> 7  7  7 = 31 </li>
+<li class="correctAnswer" style="color:darkgreen"> 8  8  8 = 32 <font color=black>→ \( (\sqrt{8+8})!+8 = 4!+8 = 24+8 = 32 \) </font></li>
+<li class="correctAnswer" style="color:darkgreen"> 9  9  9 = 33 <font color=black>→ \( \sqrt{9} * 9 +  (\sqrt{9})! = 3*9 + 3! = 27+6 = 33\) </font></li>
 </ul>
 
 Защо не можем да съставим аритметичен израз за 0  0  0 = 24 ?<br>
