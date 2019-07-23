@@ -81,17 +81,17 @@ input:checked + .explanationbutton + div {
 }
 
 
-.week h2 {
+.week h2, .week h1 {
   user-select:none;
   touch-action:manipulation;
   cursor: pointer;
 }
 
-input:not(:checked) + .week h2 span:after {
+input:not(:checked) + .week h2 span:after, input:not(:checked) + .week h1 span:after {
   content: '∨';
   padding-right: 5px;
 }
-input:checked + .week h2 span:after {
+input:checked + .week h2 span:after, input:checked + .week h1 span:after {
   content: '∧';
   padding-right: 5px;
 }
