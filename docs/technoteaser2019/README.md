@@ -1314,7 +1314,7 @@ Mатематическите задачи на хилядолетието, вс
 
 <input type="checkbox" id=game2Toggle>
 <label for=game2Toggle class="week">
-<h1 id="week1"> SAP Техноблъсканица специално издание <span></span></h1>
+<h1 id="game2"> SAP Техноблъсканица 2019 специално издание <span></span></h1>
 </label>	
 <div>
 <p>За извършено нарушение подозират Ангел, Борис, Васил и Георги.<br>
