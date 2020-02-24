@@ -1,3 +1,7 @@
+html { 
+  overflow-y: scroll; 
+}
+
 body > :first-child:before, body > [id='MathJax_Message'] + div:before {
 	content: '';
 	background-repeat: no-repeat;
