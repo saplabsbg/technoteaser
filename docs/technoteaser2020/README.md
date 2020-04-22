@@ -12,12 +12,12 @@
 </label>	
 <div>
 <h3 id="week1,question1">Най-доброто лекарство</h3>
-При проучвания на лечението на рядко заболяване са направени независими едно от друго изпитания на 2 лекарства (лекарство А и лекарство Б).
+<p>При проучвания на лечението на рядко заболяване са направени независими едно от друго изпитания на 2 лекарства (лекарство А и лекарство Б).
 Всеки доброволец е трябвало да взема едно от лекарствата в продължение на една седмица, за да се установи дали то е ефикасно, или не.<br>Проучванията продължили 2 седмици.
 През първата седмица лекарство А е било ефикасно и е излекувало 63 души от общо 90 доброволци (което прави 70% от участвалите). Лекарство Б е било ефикасно при 8 от общо 10 доброволци (80% от участвалите).
 През втората седмица лекарство А е било ефикасно при 4 от 10 доброволци (или 40% от участвалите), а лекарство Б е било ефикасно при 45 от 90 доброволци (или 50% от участвалите).
 
-<table style="border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; font-weight: bold;"  border="1px">
+<table style="border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; font-weight: bold; ">
 	<tr style="background-color: LightGray;">
 		<td style="padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">Седмица</td><td align=center style="padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">Лекарство A</td><td align=center style="padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">Лекарство Б</td>
 	</tr>
@@ -36,7 +36,7 @@
 	<li> Лекарство Б е по-ефикасно</li>
 	<li> Двете лекарства са еднакво добри</li>
 </ul>
-
+</p>
 <div>
 	<input type="checkbox" id=solution11><label class="explanationbutton" for=solution11><span>Обяснение</span></label>
 	<div class="explanation">
@@ -50,9 +50,9 @@
 	</div> 
 </div>
 <h3 id="week1,question2">Здрависване с 9 човека</h3>
-На първата мениджърска среща след COVID-19 пандемията присъстват на място в стаята 27 човека. <br>
+<p>На първата мениджърска среща след COVID-19 пандемията присъстват на място в стаята 27 човека. <br>
 Възможно ли е всеки в стаята да се здрависа с точно 9 човека?<br>
-Разбира се, други хора не участват <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=XM8dNAdgLdQLXr82FT-8KNvS3JdX4Sg3XOnI5C9bj64" width="20px" alt="Усмивка" title="Усмивка">, закъснели няма <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=MgD-x1EIDmjmllRROG9xvGp9I34YL-vXULekz3nmBe4" width="20px" alt="Онемял" title="Онемял"> и всички са все още в добро психично здраве, т.е. никой не се здрависва сам със себе си <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=hCbLs0jTqHI9jYS92iQ7u1lSkHzoztPJEyuXGFiuVA8" width="20px" alt="Изчервяване" title="Изчервяване">
+Разбира се, други хора не участват <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=XM8dNAdgLdQLXr82FT-8KNvS3JdX4Sg3XOnI5C9bj64" width="20px" alt="Усмивка" title="Усмивка">, закъснели няма <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=MgD-x1EIDmjmllRROG9xvGp9I34YL-vXULekz3nmBe4" width="20px" alt="Онемял" title="Онемял"> и всички са все още в добро психично здраве, т.е. никой не се здрависва сам със себе си <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=hCbLs0jTqHI9jYS92iQ7u1lSkHzoztPJEyuXGFiuVA8" width="20px" alt="Изчервяване" title="Изчервяване"></p>
 <div>
 	<input type="checkbox" id=solution12><label class="explanationbutton" for=solution12><span>Обяснение</span></label>
 	<div class="explanation">
@@ -61,11 +61,11 @@
 </div>
 
 <h3 id="week1,question3">Здрависване с х човека</h3>
-Все още обсъждаме мениджърската среща <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=FHKYiDwH8gHO-gAYwsykDJPznhss7NBYoMCgWl6MPuc" width="20px" alt="Изчервяване" title="Изчервяване">!<br>
+<p>Все още обсъждаме мениджърската среща <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=FHKYiDwH8gHO-gAYwsykDJPznhss7NBYoMCgWl6MPuc" width="20px" alt="Изчервяване" title="Изчервяване">!<br>
 В стаята все още има 27 човека.<br>
-Ако всеки се е здрависал с еднакъв брой хора, колко най-много може да е той, ако знаем, че не се е здрависал всеки с всеки?
+Ако всеки се е здрависал с еднакъв брой хора, колко най-много може да е той, ако знаем, че не се е здрависал всеки с всеки?</p>
 <div>
-	<input type="checkbox" id=solution12><label class="explanationbutton" for=solution13><span>Обяснение</span></label>
+	<input type="checkbox" id=solution13><label class="explanationbutton" for=solution13><span>Обяснение</span></label>
 	<div class="explanation">
 От решението на предишната задача вече знаем, че в стаята всеки може да се здрависа с четен (еднакъв) брой хора. Ако всеки се здрависа с 26 човека, това ще означава здрависване всеки с всеки. Следващата възможност е всеки да се здрависа с 24 човека (всички останали без двама). За да проверим, че това е възможно, нека помислим за съответстващо правило за здрависване. Понеже здрависванията са много, всъщност, ще бъде по-лесно да помислим за правило, по което двама души не се здрависват.<br>
 Ако подредим хората в кръг, тогава всеки ще има по двама съседи (отляво и отдясно по един) и това би било удобно условие за не-здрависване.<br>
@@ -80,8 +80,14 @@
 </div>
 </div>
 <!-- end of week 1-->
+<input type="checkbox" id=week1Toggle>
+<label for=week1Toggle class="week">
+<h2 id=week1>Седмица №2 <span></span></h2>
+</label>
+<div>
+<h3 id="week2,question1">Очаквайте скоро</h3>
 
-
+</div>
 
 
 <script>
