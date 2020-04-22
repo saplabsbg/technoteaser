@@ -80,9 +80,9 @@
 </div>
 </div>
 <!-- end of week 1-->
-<input type="checkbox" id=week1Toggle>
-<label for=week1Toggle class="week">
-<h2 id=week1>Седмица №2 <span></span></h2>
+<input type="checkbox" id=week2Toggle>
+<label for=week2Toggle class="week">
+<h2 id=week2>Седмица №2 <span></span></h2>
 </label>
 <div>
 <h3 id="week2,question1">Очаквайте скоро</h3>
