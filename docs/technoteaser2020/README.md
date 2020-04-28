@@ -1,7 +1,7 @@
 # SAP Техноблъсканица 2020
 
 {::nomarkdown}
-
+<div style="display:none"><img src="https://winwithsap.hana.ondemand.com/services/web/TechQuiz/user/images/sharePicture.png"></div>
 <link rel="stylesheet" href="../styles/technoteaser.css">
 <link rel="stylesheet" href="../styles/footer.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
