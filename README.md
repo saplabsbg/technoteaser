@@ -1,3 +1,5 @@
+
+<div style="display:none"><img src="https://winwithsap.hana.ondemand.com/services/web/TechQuiz/user/images/sharePicture.png"></div>
 <link rel="stylesheet" href="docs/styles/footer.css">
 
 # <a href="./docs/technoteaser2020">SAP Техноблъсканица 2020</a>
