@@ -183,8 +183,247 @@ Tъй като участие в 8 игри е теоретичният мини
 <h2 id=week3>Седмица №3 <span></span></h2>
 </label>	
 <div>
-<h3 id="week3,question1">Очаквайте скоро!</h3>
-<p></p>
+<h3 id="week3,question1">Счупеният асансьор</h3>
+<p>Асансьор в 100-етажна сграда се е развалил и работят само два аварийни бутона. Единият бутон е син, с който асаньорът се изкачва 7 етажа, при условие че асансьорът се намира под 94-тия етаж. Другият бутон е жълт, с който асансьорът слиза 9 етажа, при условие че асансьорът е над 9-тия етаж.<br>
+Ако асаньорът е на 1-вия етаж, с колко най-малко придвижвания (натискане на авариен бутон) можем да го закараме на 72-рия етаж.</p>
+<div>
+	<input type="checkbox" id=solution31><label class="explanationbutton" for=solution31><span>Обяснение</span></label>
+	<div class="explanation">
+Нека предположим, че трябва да натиснем общо \( x \) пъти синия и \( y \) пъти жълтия бутон. Тогава:<br>
+\( 1 + 7x -9y = 72 \implies 7x=9y+71 \iff x=y+10+ \dfrac{2y+1}{7} \)<br>
+Тъй като \( x \) и \( y \) са цели положителни числа (или 0), то  \( y = 3,10,17 \dots , y \equiv 3 ~( \text{mod } 7 ) \)<br>
+При \( y = 3 \) получаваме \( x = 14 \) или общо 17 придвижвания.<br>
+При \( y = 10 \) получаваме \( x = 23 \) или общо 33 придвижвания.<br>
+Сравнително лесно се забелязва, че с всяка следваща възможна стойност за  \( y \) крайният брой придвижвания само се увеличава. <br>
+Възможно решение ли е \( y = 3 \) и \( x = 14 \)?
+Макар и не всеки път да са възможни и двата бутона, сигурни сме, че поне един от тях е възможен, например:<br>
+\(1 + 10*7 = 71, 71 - 3*9=44, 44 + 4*7 = 72\)<br>
+<b>Отговор: 17</b> <br>
+Задачата е достатъчно лесна и за решение чрез програма, която генерира и проверява последователно всички възможни двойки  \( x \) и \( y \)  (отново естествени числа или 0), като стандартният алгоритъм за това е:
+<ol>
+<li>Генерираме последователно всяко естествено число  (\( sum \))  </li>
+<li>За всяко \( sum \) генерираме всички възможни двойки \( x \) и \( y \), такива че \( x + y = sum \)</li>
+<li>Проверяваме всяка получена двойка \( x \) и \( y \) дали удовлетворява уравнението \( 1 + 7x -9y = 72 \)</li>
+</ol>
+Тъй като ние генерираме сумата на \( x \) и \( y \)  последователно, можем да сме сигурни, че когато уравнението е изпълнено за пръв път, сме намерили най-малката възможна сума.
+{:/}
+
+```java
+IntStream.iterate(0, i -> i + 1).filter(sum -> {
+	return IntStream.rangeClosed(0, sum).filter(x -> {
+		int y = sum - x;
+		if (1 + 7*x - 9*y == 72) {
+			System.out.println(sum + ": x=" + x + ", y=" + y);
+			return true;
+		} else {
+			return false;
+		}
+	}).findFirst().isPresent();
+}).findFirst();
+```
+{::nomarkdown}
+<div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%;">17: x=14, y=3
+</div>
+	</div>
+</div>
+<h3 id="week3,question2">Рекурсия</h3>
+<p> \( f(n) = \begin{cases} n-3 ~~~\text{ , при } n\gt2020 \\ f^n(4n) \text{ , в противен случай }\end{cases} \)
+<br>където<br>
+\( f^1(n) = f(n) \) <br> \( f^2(n) = f(f(n)) \) <br> <!-- \( f^3(n) = f(f(f(n))) \) <br> --> \( \cdots \) <br> \( f^p(n) = \underbrace{f( \dots f(f(}_\text{p пъти} n)) \dots) \)<br>
+<nobr>Да се намер \( f(1)=\text{ ?} \)</nobr><br>
+Ако \( f(1) \) не е изчислимо, отговорете с английската буква u (от undefined).</p>
+<div>
+	<input type="checkbox" id=solution32><label class="explanationbutton" for=solution32><span>Обяснение</span></label>
+	<div class="explanation">
+Първото нещо, с което трябва да се съобразим, е, че \( f^m(f^n(x)) = f^{m+n}(x)  = f^{m+n -1}(f(x)) \) <br> <!-- = f^n(f^m(x))  -->
+<br>
+<h4>Решението на програмиста:</h4>
+Дефиницията на функцията е достатъчно лесна, за да можем да я имплементираме дословно:
+{:/}
+
+```java
+private int f(int n) {
+	if (n > 2020) {
+		return n - 3;
+	} else {
+		int currentResult = f(4*n);
+		for(int i = 1; i < n; i++) {
+			currentResult = f(currentResult);
+		}
+		return currentResult;
+	}
+}
+```
+Една малко по-оптимална имплементация би била итеративната, например:
+```java
+int n = 1;
+int timesToApply= 1;
+while(timesToApply > 0) {
+	timesToApply --;
+	if (n > 2020) {
+		n -= 3;
+	} else {
+		timesToApply += n;
+		n *= 4;
+	}
+}
+System.out.println(n);
+```
+{::nomarkdown}
+<div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%;">2020</div>
+<br>
+<h4>Решението на математика:</h4>
+<big> 
+\( f(1) = f^1(4) = f^4(4*4) = f^4(16) \) <br>
+\( f^4(16) = f^3(f(16)) = f^3(f^{16}(16*4)) = f^{3+16}(64)\) <br>
+\( f^{3+16}(64) = f^{2+16+64}(256) = f^{1+16+64+256}(1024) = f^{16+64+256+1024}(4096) \)<br>
+\( f^{16+64+256+1024}(4096) = f^{1360}(2020 + 3*692) = f^{1360-692}(2020) = f^{668}(2020) \)<br>
+\( f^{668}(2020) = f^{667+2020}(4*2020) = f^{667+2020}(2020 + 3*2020) = f^{667}(2020) \)<br>
+\( f^{667}(2020) = f^{666 + 2020}(4*2020) = f^{666 + 2020}(2020 + 3*2020) = f^{666}(2020) \)<br>
+\( \cdots  \)<br>
+\( f^{668}(2020) = f^{667}(2020) = \cdots = f^{1}(2020)  \)<br>
+\( f^1(2020) = f^{2020}(4*2020) = f^{2019+1}(2020 + 3*2019+3) = f^1(2020+3) = 2020 \)<br>
+\( \mathbf{\implies f(1) = 2020} \)<br>
+</big>
+<br>
+За естествени числа функцията може да се дефинира по следния еквивалентен и много по-лесен за изчисление начин:
+\( f(n) =  \begin{cases} 2018 ~\text{ , при } n \lt 2020  \text{ и } n \equiv 2 \pmod 3  \\ 2019 ~\text{ , при } n \lt 2020  \text{ и } n \equiv 0 \pmod 3  \\ 2020 ~\text{ , при } n \le 2020  \text{ и } n \equiv 1 \pmod 3  \\  n-3 \text{ , при } n \gt 2020  \end{cases}  \)
+	</div>
+</div>
+<h3 id="week3,question3">Четирите четворки</h3>
+<p>Разполагаме с четири четворки: <font color="darkred"><b>4 4 4 4</b></font>, с двуаргументните аритметични операции събиране (<font color="darkred"><b>+</b></font>), изваждане (<font color="darkred"><b>-</b></font>), умножение (<font color="darkred"><b>∗</b></font>) и деление (<font color="darkred"><b>/</b></font>), както и с едноаргументната аритметична операция квадратен корен (<font color="darkred"><b>√</b></font>), приложима както върху числа, така и върху подизрази. Всяка операция можем да ползваме произволен, краен брой пъти. Съседни цифри, между които не поставим операция, участват в израза като многоцифрено число.<br>
+Приемаме, че важат стандартните приоритети на операциите (умножението и делението са с по-висок приоритет от събирането и изваждането), операциите са ляво асоциативни (т.е. операции с един и същи приоритет се изпълняват от ляво надясно, например <font color="darkred">4/4/4∗4</font>=1) и не можем да използваме скоби за смяна на така дефинираната последователност на изчисленията.<br>
+Като ползваме тези правила, се опитваме да съставим валидни аритметични изрази, които са равни съответно на 1, 2, 3 и т.н.<br>
+Примери с валидни изрази:<br>
+<ol>
+	<li><span style="font-size:small">\( \sqrt{44}/\sqrt{44} = 1\)</span></li>
+	<li><span style="font-size:small">\( \sqrt{4/\sqrt{4/\sqrt{4*4}}} = 2 \)</span></li>
+	<li style="list-style-type: none;">...</li>
+</ol>
+Кое е първото (най-малкото) естествено число, за което не можем да съставим валиден аритметичен израз?</p>
+<div>
+	<input type="checkbox" id=solution33><label class="explanationbutton" for=solution33><span>Обяснение</span></label>
+	<div class="explanation">
+Примерни аритметични изрази:
+<ol>
+	<li> \( 44/44  = 1 \)</li>
+	<li> \( 4/4 + 4/4 = 2 \)</li>
+	<li> \( 4/4+4/\sqrt{4} = 3 \)</li>
+	<li> \( \sqrt{4*4+4-4} = 4 \)</li>
+	<li> \( \sqrt{4*4}+4/4 = 5 \)</li> 
+	<li> \( 4+\sqrt{4-4+4} = 6 \)</li> 
+	<li> \( 44/4-4 = 7 \)</li> 
+	<li> \( 4+4+4-4 = 8 \)</li>
+	<li> \( 4+4+4/4 = 9 \)</li> 
+	<li> \( 4+4+4/\sqrt{4} = 10\)</li> 
+	<li> \( 44/\sqrt{4*4} = 11\)</li>
+	<li> \( 4+4+\sqrt{4*4} = 12\)</li> 
+	<li> \( 44/4+\sqrt{4} = 13\)</li> 
+	<li> \( 4+4+4+\sqrt{4} = 14 \)</li> 
+	<li> \( 44/4+4 = 15 \)</li> 
+	<li> \( 4*4*4/4  = 16 \)</li>
+	<li> \( 4*4+4/4  = 17 \)</li>
+	<li> \( 4*4+4-\sqrt{4} = 18 \) </li> 
+	<li style="color:darkred">Не съществува аритметичен израз, равен на 19</li>
+</ol>
+<b>Имплементационни детайли:</b><br>
+Тъй като операцията корен квадратен е едноаргументна, тя може да се ползва произволно много пъти, т.е. не е възможно да генерираме всички възможни аритметични изрази. От друга страна обаче, ние се интересуваме само от аритметични изрази, които връщат като резултат цяло число, и това ни позволява да направим следните ограничения:
+<ul>
+<li>\( \sqrt{\sqrt{4}}=\sqrt{2} \) e ирационално число и един лесен начин да получим като краен резултат цяло число е да имаме деление или изваждане със същото ирационално число, т.е. получаваме подизрази от вида  \( \sqrt{\sqrt{4}}/\sqrt{\sqrt{4}} = \sqrt{\sqrt{\sqrt{4}}}/\sqrt{\sqrt{\sqrt{4}}} = \dots = 1 \), които обаче са еквивалентни и можем да пропуснем, фокусирайки се само върху изрази и подизрази с минимален брой операции за коренуване. </li>
+<li>Три вложени квадратни корена върху един единствен аритметичен подизраз може да доведе до краен резултат цяло число при положение, че не ползваме деление, само в следните случаи: <ul><li>\( \sqrt{\sqrt{\sqrt{4}}}*\sqrt{\sqrt{\sqrt{4*4*4}}}=2 \)</li>  <li>\( \sqrt{\sqrt{\sqrt{4*4}}}*\sqrt{\sqrt{\sqrt{4*4}}}=2 \)</li>   <li>\( \sqrt{\sqrt{\sqrt{4*4*4}}}*\sqrt{\sqrt{\sqrt{4}}}=2 \)</li> <li style="list-style-type: none;">...</li> <li>\( \sqrt{\sqrt{\sqrt{4}}}*\sqrt{\sqrt{\sqrt{4}}}*\sqrt{\sqrt{\sqrt{4}}}*\sqrt{\sqrt{\sqrt{4}}}=2 \)</li></ul>
+Тези случаи можем да изпуснем, тъй като аритметичен израз, равен на 2, можем да получим и по друг начин - нещо, което е видно и в примерите към условието.
+</li>
+<li> 4 и повече вложени квадратни корени върху един единствен подизраз или число не могат да участват в аритметичен израз, който да бъде равен на цяло число, без да попадаме в първия случай.</li>
+</ul>
+<br>
+За да указваме еднозначно аргумента на операцията квадратен корен, ще ползваме записа sqrt(&lt;подизраз&gt;), например sqrt(4).<br>
+Използвайки мета-езика на Бекус-Наур (<a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form" target=_blank>Backus–Naur form</a>), можем да дефинираме (рекурсивно) възможните аритметични изрази, от които се интересуваме, по следния начин: <br>
+<style>
+.definition { color: black;}
+.definition::before {content: "<";}
+.definition::after {content: ">";}
+.separator {color:black;}
+.obsolete {color:grey;}
+</style>
+<ul>
+<li><span class="definition">op</span> ::= + <span class="separator">|</span>  - <span class="separator">|</span>  * <span class="separator">|</span>  / </li>
+<li><span class="definition">expr1</span> ::= 4 <span class="separator">|</span>  sqrt(4) <span class="separator">|</span>  sqrt(sqrt(4))</li>
+<li><span class="definition">expr2</span> ::= 44 <span class="separator">|</span>  sqrt(44) <span class="separator">|</span>  sqrt(sqrt(44)) <span class="separator">|</span>  <span class="definition">expr1</span> <span class="definition">op</span> <span class="definition">expr1</span> <span class="separator">|</span>  sqrt(<span class="definition">expr1</span> <span class="definition">op</span> <span class="definition">expr1</span>) </li>
+<li><span class="definition">expr3</span> ::= 444 <span class="separator">|</span>  <span class="obsolete">sqrt(444)</span> <span class="separator">|</span>  <span class="definition">expr1</span> <span class="definition">op</span> <span class="definition">expr2</span> <span class="separator">|</span>  sqrt(<span class="definition">expr1</span> <span class="definition">op</span> <span class="definition">expr2</span>) <span class="separator">|</span>  <span class="definition">expr2</span> <span class="definition">op</span> <span class="definition">expr1</span> <span class="separator">|</span>  sqrt(<span class="definition">expr2</span> <span class="definition">op</span> <span class="definition">expr1</span>)</li>
+<li><span class="definition">expr4</span> ::= 4444 <span class="separator">|</span> <span class="obsolete">sqrt(4444)</span> <span class="separator">|</span>  <span class="definition">expr2</span> <span class="definition">op</span> <span class="definition">expr2</span> <span class="separator">|</span>  sqrt(<span class="definition">expr2</span> <span class="definition">op</span> <span class="definition">expr2</span>) <span class="separator">|</span>  <span class="definition">expr3</span> <span class="definition">op</span> <span class="definition">expr1</span> <span class="separator">|</span>  sqrt(<span class="definition">expr3</span> <span class="definition">op</span> <span class="definition">expr1</span>) <span class="separator">|</span>  <span class="definition">expr1</span> <span class="definition">op</span> <span class="definition">expr3</span> <span class="separator">|</span>  sqrt(<span class="definition">expr1</span> <span class="definition">op</span> <span class="definition">expr3</span>)</li>
+</ul>
+Някои излишни случаи, които не водят до изрази, равняващи се на цяло число, са добавени за пълнота в сиво.<br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2020/week3/TheFour4s.java" target="_blank">Примерен Java код</a>
+<hr>
+Задачата с четирите четворки е била поставена за пръв път в края на 19<sup>-ти</sup> век, като бързо става  популярна сред любителите на математиката. Разбира се, съществували са различни интерпретации за това кои операции са основни и позволени. През 30<sup>-те</sup> години на миналия век задачата отново набира популярност. Тогава известният физик Пол Дирак (<a href="https://en.wikipedia.org/wiki/Paul_Dirac" target=_blank>Paul Dirac</a>), който освен физик е бил и голям любител на математическите пъзели, успява да даде елегантно решение за произволно естествено число, като използва в допълнение двуаргументната операция логаритъм. (\( a=b^c \iff \log_{b}a = c \), \( \log_{b}(b^a) = a \))
+<ul style="align:left; width: 1px; overflow: visible;">
+	<li>$$ \log_{\sqrt{4}/4}(\log_4\sqrt{4}) = \log_{1/2}(\log_4 4^{1/2}) = \log_{1/2}1/2=1$$</li>
+	<li>$$ \log_{\sqrt{4}/4}(\log_4\sqrt{\sqrt{4}}) = \log_{1/2}(\log_4 4^{\frac{1}{2}*\frac{1}{2}}) = \log_{1/2}(\log_4 4^{(1/2)^2}) = \log_{1/2}(1/2)^2=2$$</li>
+	<li>$$ \log_{\sqrt{4}/4}(\log_4\sqrt{\sqrt{\sqrt{4}}}) = \log_{1/2}(\log_4 4^{(1/2)^3}) = \log_{1/2}(1/2)^3=3$$</li>
+	<li style="list-style-type: none;">...</li>
+	<li>$$ \log_{\sqrt{4}/4}(\log_4\underbrace{\sqrt{\dots \sqrt{4}}}_\text{n пъти}) = \log_{1/2}(\log_4 4^{(1/2)^n}) = \log_{1/2}(1/2)^n=n$$</li>
+</ul>
+	</div>
+</div>
+</div>
+<!-- end of week 3-->
+<input type="checkbox" id=week4Toggle>
+<label for=week4Toggle class="week">
+<h2 id=week4>Седмица №4 <span></span></h2>
+</label>	
+<div>
+<h3 id="week4,question1">Числото на Петко</h3>
+<p>Петко си намислил едно голямо число, за което твърдял, че:
+<ol>
+	<li>Числото се дели на 1</li>
+	<li>Числото се дели на 2</li>
+	<li>Числото се дели на 3</li>
+	<li style="list-style-type: none;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... </li>
+	<li value="30">Числото се дели на 30</li>
+	<li value="31">Числото се дели на 31</li>
+</ol>
+В последствие се оказало, че две последователни твърдения са неверни, а всички останали са верни.<br>
+Кои са неверните твърдения?</p>
+<div>
+	<input type="checkbox" id=solution41><label class="explanationbutton" for=solution41><span>Обяснение</span></label>
+	<div class="explanation">
+		Очаквайте скоро!
+	</div>
+</div>
+<h3 id="week4,question2">Голямата полемика</h3>
+<p>Група от 45 ученици обсъждали разпалено решението на една задача. Първоначално 13 от учениците вярвали в правотата на решение и отговор 1, други 15 от учениците - в отговор 2, и останалите 17 - в отговор 3. Задачата била толкова трудна и противоречива, че всеки път, когато двама ученика с различни отговори се срещали да обсъдят решението, те взаимно се убеждавали, че грешат. В резултат на това и двамата започвали да вярват в решението и отговора, в което първоначално никой от тях не вярвал.<br>
+Кои от следните твърдения са верни?<br>
+Приемаме, че всеки ученик може да промени отговора си произволен брой пъти, дискусиите в групата се провеждат винаги по двама и външни хора не участват.
+<ul class="answersWithCheckbox">
+	<li>Възможно е след определено време във всеки отговор да вярват един и същи брой ученици.</li>
+	<li>Няма как след определено време във всеки отговор да вярват един и същи брой ученици.</li>
+	<li>Няма как след определено време един и същи брой ученици да вярват в отговор 1 и отговор 3.</li>
+	<li>Възможно е след определено време всеки ученик да вярва, че отговор 1 е верен.</li>
+	<li>Възможно е след определено време всеки ученик да вярва, че отговор 2 е верен.</li>
+	<li>Възможно е след определено време всеки ученик да вярва, че отговор 3 е верен.</li>
+	<li>Няма как след определено време всички ученици да вярват в един и същи отговор, независимо кой е той.</li>
+</ul>
+</p>
+<div>
+	<input type="checkbox" id=solution42><label class="explanationbutton" for=solution42><span>Обяснение</span></label>
+	<div class="explanation">
+		Очаквайте скоро!
+	</div>
+</div>
+<h3 id="week4,question3">Oгърлици</h3>
+<p>Колко различни огърлици могат да бъдат направени от 4 жълти, 6 сини и 8 червени мъниста, като ползваме винаги всички налични мъниста?<br>
+Две огърлици са различни, когато не можем да получим цветовата наредба на мънистата на едната огърлица чрез завъртане и/или преобръщане на другата огърлицата.<br>
+Топчетата мъниста от един цвят са еднакви и неразличими помежду си, т.е. разменяйки местата на две мънистa с еднакъв цвят, няма да променим огърлицата.<br>
+Пример: Трите огърлици от снимката са еднакви и трябва да бъдат преброени като една уникална огърлица, а номерирането на мънистата е условно.<br>
+Средната огърица получаваме след завъртане на лявата на 180°, а дясната получаваме от средната като я обърнем надясно.
+<img style="display:block; max-width: 100%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=u1IlL-QV0lNpsWPI9dfs7flyBfMJk4mYMYWHHhN8Ptc">
+</p>
+<div>
+	<input type="checkbox" id=solution43><label class="explanationbutton" for=solution43><span>Обяснение</span></label>
+	<div class="explanation">
+		Очаквайте скоро!
+	</div>
+</div>
 </div>
 <!-- end of week 3-->
 
