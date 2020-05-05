@@ -13,7 +13,7 @@ import javax.script.ScriptException;
 /* 
  * The Four 4s
  * SAPTechnoteaser 2020, Week3, Question3
- * @see https://saplabsbg.github.io/technoteaser/docs/technoteaser2020/#week3,question3 for description and explanation
+ * @see <a href="https://saplabsbg.github.io/technoteaser/docs/technoteaser2020/#week3,question3">Description and explanation</a>
  * 
  */
 public class TheFour4s {
