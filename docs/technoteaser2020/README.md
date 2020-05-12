@@ -416,7 +416,7 @@ System.out.println(n);
 	<div class="explanation">
 <h4>Решението на програмиста:</h4>
 Тъй като възможностите за групиране на учениците не са много, можем да проверим всяка една от тях. <br>
-<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2020/week4/TheBigDispute.java" target="_blank">Примерен Java код</a><br><br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2020/week4/TheBigDispute.java" target="_blank">Примерен Java код</a><br>
 <h4>Решението на математика:</h4>
 В една толкова динамична среда, в която всичко се променя, трябва да потърсим свойство на системата или стойност, които остават постоянни във времето. В математиката една такава непроменяща се стойност се нарича инварианта (<a href="https://en.wikipedia.org/wiki/Invariant_(mathematics)" target=_blank>Invariant</a>).<br>
 
@@ -494,7 +494,8 @@ System.out.println(n);
 <h3 id="week5,question1">Въртележка</h3>
 <p>Детска въртележка има 36 седалки, разположени по окръжност, на еднакво разстояние една от друга. На всяка от седалките може да седи най-много по едно дете. Въртележката може да работи безопасно само когато децата, които се возят на нея, седят по такъв начин, че тя е балансирана, т.е. ако приемем, че всички деца са с еднакво тегло, то центърът им на тежестта трябва да съвпада с центъра на въртележката (центъра на окръжността, която седалките описват).<br>
 При какъв брой деца, возещи се едновременно, съществува подредба, така че въртележката да може да работи безопасно? Маркирайте всички верни отговори!<br>
-Примери: Едно дете, където и да седи, не може да се вози безопасно. Две деца, ако седят на срещуположни седалки, ще могат да се возят безопасно.<br><b style="color:grey">(12 точки)</b>
+Примери: Едно дете, където и да седи, не може да се вози безопасно. Две деца, ако седят на срещуположни седалки, ще могат да се возят безопасно.<br>
+<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=8rMMrusiucnaMYhUtlC-VggfXZx1ISei0bKUHZ8oNkA">
 </p>
 <div>
 	<input type="checkbox" id=solution51><label class="explanationbutton" for=solution51><span>Обяснение</span></label>
@@ -506,8 +507,7 @@ System.out.println(n);
 <p><!-- \(x + \dfrac{1}{x} = 5\).<br> -->
 Числовата редица \( \{a_i\} \) е дефинирана чрез следното правило:<br>
 \( \begin{cases} a_1 = x + \dfrac{1}{x} = 5 \\ a_2 = x^2 + \dfrac{1}{x^2} \\ \cdots \\ a_i=x^i + \dfrac{1}{x^i} \end{cases} \)<br>
-Коя е последната цифра на числото \( a_{2020} \)?<br>
-<b style="color:grey">(13 точки)</b>
+Коя е последната цифра на числото \( a_{2020} \)?
 </p>
 <div>
 	<input type="checkbox" id=solution52><label class="explanationbutton" for=solution52><span>Обяснение</span></label>
@@ -524,8 +524,7 @@ System.out.println(n);
 	<li>За сметка на това търговците винаги разполагали с всички видове и достатъчно на брой банкноти и монети, затова връщали рестото с минималния възможен брой банкноти (и монети от по 1 и 2 лв.).</li>
 	<li>Въпреки това рестото всеки път се състояло от поне две банкноти (и/или монети от по 1 и 2 лв.).</li>
 </ul>
-Колко най-много на брой покупки е направила Мери?<br>
-<b style="color:grey">(18 точки)</b>
+Колко най-много на брой покупки е направила Мери?
 </p>
 <div>
 	<input type="checkbox" id=solution53><label class="explanationbutton" for=solution53><span>Обяснение</span></label>
