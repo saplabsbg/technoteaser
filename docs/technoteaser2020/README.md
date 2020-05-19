@@ -560,21 +560,21 @@ Mоже би най-интуитивният от тях е да подреди�
 От подхода за огледални решения знаем, че ако имаме балансирана подредба за 5 деца, то <b>имаме подредба и за</b> 36-5 = <b>31 деца</b><br>
 
 <table border=0 style="margin: 10px 0 10px 0; background-color: transparent;">
-<tr style="background-color: transparent;"><td rowspan=2 style="border-width: 0;">
+<tr style="background-color: transparent; border-width: 0;"><td rowspan=2 style="border-width: 0;">
 <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=lpVeHDvV8gbdA9XUc9uPT-fJBuSeruMqw6ToxpL9oJs" width=300px style="background-color: transparent;">
 </td>
 <td style="font-size: xx-large; padding:20px 10px 0px 10px; vertical-align: bottom; border-width: 0;"> + </td>
 <td rowspan=2 style="border-width: 0;">
 <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=cIx2T0u3KnpcXIA4x42YTw6iNCJAP8pSzsuM4mEzaWU" width=300px style="background-color: transparent;">
 </td></tr>
-<tr style="background-color: transparent;"><td style="font-size: xx-large; padding:0px 10px 10px 10px; vertical-align: bottom; border-width: 0">  &#8595; </td></tr>
-<tr style="background-color: transparent;"><td colspan=3 style="align:center; text-align:center; border-width: 0;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=yWxrzQRyfuj1wyx0Wp-2HGpbDKHR4GxxD6lHXswM1kI" width=300px style="background-color: transparent;"></td></tr>
-<tr style="background-color: transparent;">
+<tr style="background-color: transparent; border-width: 0;"><td style="font-size: xx-large; padding:0px 10px 10px 10px; vertical-align: bottom; border-width: 0">  &#8595; </td></tr>
+<tr style="background-color: transparent; border-width: 0;"><td colspan=3 style="align:center; text-align:center; border-width: 0;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=yWxrzQRyfuj1wyx0Wp-2HGpbDKHR4GxxD6lHXswM1kI" width=300px style="background-color: transparent;"></td></tr>
+<tr style="background-color: transparent; border-width: 0;">
 <td style="border-width: 0;"></td>
 <td style="font-size: xx-large; align:center; text-align:center; border-width: 0;">  &#8595;  </td>
 <td style="align:left; text-align:left; padding: 0 0 5px 0; font-size: large; vertical-align: bottom; border-width: 0;"> (огледално решение)</td>
 </tr>
-<tr style="background-color: transparent;"><td colspan=3 style="padding: 5px 0 0 0; align:center; text-align:center; border-width: 0;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=mYUQ8FZQodLo4V4x6mXi5XaX3F_qDZCLRdkLV0KZ1mQ" width=300px style="background-color: transparent;"></td></tr>
+<tr style="background-color: transparent; border-width: 0;"><td colspan=3 style="padding: 5px 0 0 0; align:center; text-align:center; border-width: 0;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=mYUQ8FZQodLo4V4x6mXi5XaX3F_qDZCLRdkLV0KZ1mQ" width=300px style="background-color: transparent;"></td></tr>
 </table>
 Може ли да има безопасна подредба за 35 деца? <br>
 От подхода за намиране на огледални решения следва, че ако има подредба за 35 деца, то ще има такава и за 1 дете, а това, както е указано и в примерите към условието, очевидно не е възможно.<br>
