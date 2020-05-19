@@ -531,7 +531,7 @@ System.out.println(n);
 Mоже би най-интуитивният от тях е да подредим децата така, че да се образува <b>правилна геометрична фигура</b> (правилен многоъгълник) , което означава, че между всеки две съседни деца на въртележката ще има един и същи брой свободни седалки. В примера от условието имаме две деца, които стоят на срещуположни седалки, между които  (и от двете страни на окръжността) има по 17 празни седалки.<br>
 <b>1. Сегментиране</b><br>
 Друг поглед върху задачата е да третираме въртележката като "торта", която трябва да разрежем на еднакви парчета (сегменти). Така във всеки сегмент ще можем да поставим по едно дете (разбира се на едно и също място). 36 се дели без остатък на 2, 3, 4, 6, 9, 12, 18 и 36, и това са възможностите ни за "разрязване" на въртележката на еднакви сегменти. Като поставим по едно дете във всеки сегмент, получаваме балансирана подредба за съответно 2, 3, 4, 6, 9, 12, 18 и 36 деца. Ако третираме въртележката като един единствен сегмент, балансирана подредба не съществува (освен за 0 деца), т.е. въпреки че 36 се дели на 1, този случай трябва да бъде изключен.<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=T1IMESpPmrBvu5dzsfW5JjHEm3PUckI0dMYQNTuDQ8E" width=300px style="margin-left:35px"><br>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=T1IMESpPmrBvu5dzsfW5JjHEm3PUckI0dMYQNTuDQ8E" width=300px style="margin-left:35px; background-color: transparent;"><br>
 1.1 Можем ли да разширим възможностите за броя деца в балансирана подредба, като във всеки сегмент поставим по две (или повече) деца?<br>
 Всъщност можем и това не нарушава идеята за "правилна фигура", макар и връзката да не е толкова директна. Тъй като всеки сегмент е еднакъв (като брой седалки и подредба на деца), то и центърът на тежестта на всеки сегмент ще е на еднакво разстояние от центъра на въртележката, т.е. центровете на тежестта на сегментите отново ще образуват правилна фигура. Какво можем да постигнем по този начин:
 <ul>
@@ -540,13 +540,13 @@ Mоже би най-интуитивният от тях е да подреди�
 <li>9 сегмента (всеки с по 4 седалки) и с по 3 деца,  ще ни дадат безопасна подредба за 27 деца;</li>
 -->
 <li>2 сегмента, всеки с по 18 седалки и с по 17 деца, ще ни дадат <b>безопасна подредба за 34 деца;</b>
-<br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=sLMhi0US7E4obhNJ-rkAO5nbTih5KYlhVMboW0NWCH0" width=300px>
+<br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=sLMhi0US7E4obhNJ-rkAO5nbTih5KYlhVMboW0NWCH0" width=300px style="background-color: transparent;">
 </li>
 <li>3 сегмента, всеки с по 12 седалки и с по 11 деца, ще ни дадат <b>безопасна подредба за 33 деца;</b>
 <br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=zywCqrmiR07HuF6uoeIzA5VzQABBa5yPzN1CkcB9Dvs" width=300px>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=zywCqrmiR07HuF6uoeIzA5VzQABBa5yPzN1CkcB9Dvs" width=300px style="background-color: transparent;">
 </li>
-<li>4 сегмента, всеки с по 9 седалки и с по 8 деца, ще ни дадат <b>безопасна подредба за 32 деца;</b><br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=eFe9-PAstwoZYLBtD3HkujEiumJMe975qBpz-Nn2Bdo" width=300px><br></li>
+<li>4 сегмента, всеки с по 9 седалки и с по 8 деца, ще ни дадат <b>безопасна подредба за 32 деца;</b><br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=eFe9-PAstwoZYLBtD3HkujEiumJMe975qBpz-Nn2Bdo" width=300px style="background-color: transparent;"><br></li>
 </ul>
 
 За съжаление, само с този подход, дори и след пълна проверка на всички възможности, няма да можем да достигнем до всички решения на задачата. <br>
@@ -559,22 +559,22 @@ Mоже би най-интуитивният от тях е да подреди�
 Една непосредствена проверка показва, че от балансирана подредба за 2 и за 3 деца можем да достигнем до балансирана подредба за 5 деца. От графиката по-долу се вижда, че тази подредба не може да се раздели на еднакви сегменти (липсва симетрия), поради което е силно неинтуитивна. <br>
 От подхода за огледални решения знаем, че ако имаме балансирана подредба за 5 деца, то <b>имаме подредба и за</b> 36-5 = <b>31 деца</b><br>
 
-<table border=0 style="margin: 10px 0 10px 0">
+<table border=0 style="margin: 10px 0 10px 0; background-color: transparent;">
 <tr><td rowspan=2>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=lpVeHDvV8gbdA9XUc9uPT-fJBuSeruMqw6ToxpL9oJs" width=300px>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=lpVeHDvV8gbdA9XUc9uPT-fJBuSeruMqw6ToxpL9oJs" width=300px style="background-color: transparent;">
 </td>
 <td style="font-size: xx-large; padding:20px 10px 0px 10px; vertical-align: bottom;"> + </td>
 <td rowspan=2>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=cIx2T0u3KnpcXIA4x42YTw6iNCJAP8pSzsuM4mEzaWU" width=300px>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=cIx2T0u3KnpcXIA4x42YTw6iNCJAP8pSzsuM4mEzaWU" width=300px style="background-color: transparent;">
 </td></tr>
 <tr><td style="font-size: xx-large; padding:0px 10px 10px 10px; vertical-align: bottom;">  &#8595; </td></tr>
-<tr><td colspan=3 style="align:center; text-align:center;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=yWxrzQRyfuj1wyx0Wp-2HGpbDKHR4GxxD6lHXswM1kI" width=300px></td></tr>
+<tr><td colspan=3 style="align:center; text-align:center;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=yWxrzQRyfuj1wyx0Wp-2HGpbDKHR4GxxD6lHXswM1kI" width=300px style="background-color: transparent;"></td></tr>
 <tr>
 <td></td>
 <td style="font-size: xx-large; align:center; text-align:center;">  &#8595;  </td>
 <td style="align:left; text-align:left; padding: 0 0 5px 0; font-size: large; vertical-align: bottom; "> (огледално решение)</td>
 </tr>
-<tr><td colspan=3 style="padding: 5px 0 0 0; align:center; text-align:center;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=mYUQ8FZQodLo4V4x6mXi5XaX3F_qDZCLRdkLV0KZ1mQ" width=300px></td></tr>
+<tr><td colspan=3 style="padding: 5px 0 0 0; align:center; text-align:center;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=mYUQ8FZQodLo4V4x6mXi5XaX3F_qDZCLRdkLV0KZ1mQ" width=300px style="background-color: transparent;"></td></tr>
 </table>
 Може ли да има безопасна подредба за 35 деца? <br>
 От подхода за намиране на огледални решения следва, че ако има подредба за 35 деца, то ще има такава и за 1 дете, а това, както е указано и в примерите към условието, очевидно не е възможно.<br>
