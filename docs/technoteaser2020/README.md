@@ -724,12 +724,12 @@ Kакто вече видяхме по-горе, последната цифра
 <li>Нека представим шестимата души като върхове на граф, като връзката между двама души, които са приятели, е синя, а връзката между двама души, които са непознати, е червена.<br>
 От всеки връх имаме точно 5 връзки (по една към останалите 5 върха), т.е. или имаме поне 3 сини, или поне 3 червени връзки.<br>
 Нека предположим, че имаме поне 3 сини връзки (случаят с поне 3 червени връзки ще бъде аналогичен).<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=1O2eXrRY1HUC4AjjH27pMZXsSa6ERCYeBXMa47pkYPQ" width="100px" style="margin-right: 10px; padding-right: 10px; display: block;">
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=1O2eXrRY1HUC4AjjH27pMZXsSa6ERCYeBXMa47pkYPQ" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;">
 Разглеждаме трите върха, към които имаме синя връзка  - това са трима човека с общ приятел.
 Ако измежду тях има синя връзка (двама, които се познават), то те, заедно с първоначалния връх (общ познат), ще образуват група от трима пълни приятели.
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=iRRIhZIlgq_xzmLUsXhhysgooEYy2OTmzbbuBbVvVQE" width="100px" style="margin-right: 10px; padding-right: 10px; display: block;">
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=iRRIhZIlgq_xzmLUsXhhysgooEYy2OTmzbbuBbVvVQE" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;">
 Ако измежду тях няма синя връзка (т.е. всички връзки са червени), то те тримата ще бъдат напълно непознати.
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=ynsg_Cc5-irCCW2Cr3GJ4kPPk5nMeZNRaemycZUcruw" width="100px" style="margin-right: 10px; padding-right: 10px; display: block;"><br>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=ynsg_Cc5-irCCW2Cr3GJ4kPPk5nMeZNRaemycZUcruw" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 <font color="darkgreen">✔ Винаги можем да намерим трима, които са или пълни приятели, или напълно непознати.</font><br><br>
 Това твърдение е познато като Теорема за приятелите и непознатите (<a href="https://en.wikipedia.org/wiki/Theorem_on_friends_and_strangers" target=_blank>Theorem on friends and strangers</a>).<hr>
 </li>
@@ -744,21 +744,21 @@ Kакто вече видяхме по-горе, последната цифра
 </li>
 <li>
 На представения по-долу граф, в който всеки човек е номериран от 1 до 6, a приятелствата са представени като връзки, е показано как може всеки да познава точно двама въпреки групата от трима напълно непознати (1, 2 и 3).  
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=EcmvTuyaJEaNLho6BEYcxqYFECc9-7USfMYIzp97C7E" width="200px" style="margin-right: 10px; padding-right: 10px; display: block;"><br>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=EcmvTuyaJEaNLho6BEYcxqYFECc9-7USfMYIzp97C7E" width="200px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 Т.е. не е вярно, че: <br>
 <font color="darkred">✘ Ако имаме група oт трима напълно непознати, то няма как всеки от шестимата да познава по точно двама души.</font>
 <hr>
 </li>
 <li>
 Ако двама човека се познават помежду си и познават всички останали (нека това са 1 и 2), а останалите (3, 4, 5 и 6) не се познават помежду си, тогава всеки двама души ще имат общ приятел. Фактът, че 3, 4, 5 и 6 не се познават, означава, че нямаме група от 4 пълни приятели.<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=E_h_YoRqIC8eEEt1_s6IFDQtKyirGmK_jOF96eGWoq0" width="250px" style="margin-right: 10px; padding-right: 10px; display: block;"><br>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=E_h_YoRqIC8eEEt1_s6IFDQtKyirGmK_jOF96eGWoq0" width="250px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 Т.е. не е вярно, че: <br>
 <font color="darkred">✘ Ако знаем, че всеки двама имат поне по един общ приятел, то задължително има група от четирима пълни приятели.</font>
 <hr>
 </li>
 <li>
 В <a href="https://bg.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%BD%D0%B0_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%82%D0%B5" target=_blank>теорията на графите</a> приятелски граф (<a href="https://en.wikipedia.org/wiki/Friendship_graph" target=_blank>Friendship graph</a>, наричан още Dutch windmill graph или n-fan) е граф с един централен връх, който е свързан с всички останали (периферни) върхове, които на свой ред имат точно една допълнителна (втора) връзка с друг периферен връх. Формата наподобява вятърна мелница или вентилатор. Графите се обозначават като F<sub>n</sub>, където индексът n указва броя на "перките" (цикличните графи C<sub>3</sub>), като на графиката можем да видим съответно графите F<sub>2</sub>, F<sub>3</sub> и F<sub>4</sub>.
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=NZo9VMXoOeyKgpAMZijA-xUCnfk2eudFivnAFGnjtr0" width="500px" style="margin-right: 10px; padding-right: 10px; display: block;"><br>
+<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=NZo9VMXoOeyKgpAMZijA-xUCnfk2eudFivnAFGnjtr0" width="500px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 Съществува и Приятелска теорема, според която краен граф със свойството всеки два върха да имат точно 1 общ съсед, е задължително приятелски граф от вече описания вид. Но приятелските графи имат 5 (за F<sub>2</sub>) или 7 (за F<sub>3</sub>) върха, т.е. не съществува приятелски граф с 6 върха, което означава, че: <br>
 <font color="darkgreen">✔ Няма как всеки двама души да имат точно по един общ приятел (измежду останалите четирима).</font><hr> 
 </li>
