@@ -24,7 +24,7 @@ public class RomanDiceProbabilityTree {
 		
 		RomanDiceProbabilityTree tree = new RomanDiceProbabilityTree();
 		
-		//initialize the probability tree for all valid numbers 
+		//initialize the probability tree for all valid numbers
 		IntStream.range(0, BIGGEST_VALID_ROMAN_NUMBER + 1).forEachOrdered(i -> tree.addRomanNumber(i, getInRomanNumberals(i)));
 		
 		RationalNumber overalProbability = new RationalNumber(0,1);
