@@ -679,7 +679,7 @@ if (redDiceWins > yellowDiceWins) {
 
 Макар и изчисляването на вероятностите да е малко по-сложно, то не се променя съществено.<br>
 За две последователни хвърляния на червеното зарче получаваме следния резултат:
-<table class="dice2"  style="background-color:#F9966B">
+<table class="dice2">
 <tr>
 	<th colspan="3" style="text-align: center;">Червено зарче</th>
 </tr>
@@ -710,7 +710,7 @@ if (redDiceWins > yellowDiceWins) {
 От 2 хвърляния на червеното зарче получаваме 6 с вероятност 25/36, 9 с вероятност 10/36 и 12 с вероятност 1/36.
 <br><br>
 За две последователни хвърляния на жълтото зарче получаваме:
-<table class="dice2"  style="background-color: #FFFFCC">
+<table class="dice2" >
 <tr>
 	<th colspan="3" style="text-align: center;">Жълто зарче</th>
 </tr>
@@ -741,7 +741,7 @@ if (redDiceWins > yellowDiceWins) {
 От 2 хвърляния на жълтото зарче получаваме 10 с вероятност 1/4, 7 с вероятност 1/2 и 4 с вероятност 1/4.
 <br><br>
 За две последователни хвърляния на зеленото зарче получаваме:
-<table class="dice2"  style="background-color: #C3FDB8">
+<table class="dice2" >
 <tr>
 	<th colspan="3" style="text-align: center;">Зелено зарче</th>
 </tr>
