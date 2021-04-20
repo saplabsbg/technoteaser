@@ -126,10 +126,15 @@
 </ol>
 Получихме <b>9315</b> различни програми за един студент за 7 дена.
 <h4 id="week2,solution22,ProgramSolution">Решението на програмиста:</h4>
-<pre><code>enum TwoDaysActivities {DiplomaThesis, Party, Excursion};
+
+{:/}
+
+```java
+enum TwoDaysActivities {DiplomaThesis, Party, Excursion};
 enum OneDayActivities {Study, PlayPCGames, Nothing};
-</code></pre>
-<pre><code>int doSchedule(int numberOfDays, String alreadyPlannedActivities) {
+```
+```java
+int doSchedule(int numberOfDays, String alreadyPlannedActivities) {
 	if (numberOfDays == 0) {
 		System.out.println(alreadyPlannedActivities);
 		return 1;
@@ -148,8 +153,13 @@ enum OneDayActivities {Study, PlayPCGames, Nothing};
 		return result;
 	}
 }
-</code></pre>
-<pre><code>System.out.println (doSchedule(7, ""));</code></pre>
+```
+```java
+System.out.println (doSchedule(7, ""));</code></pre>
+```
+
+{::nomarkdown}
+
 <div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%; ">9315</div>
 	</div>
 </div>
@@ -1111,7 +1121,7 @@ if (redDiceWins > yellowDiceWins) {
 	<li> Всеки друг валиден резултат от четвъртото хвърляне ще доведе до число, което е по-малко от 2021 и няма как да достигне до 2021 с последващи хвърляния на зарчето.</li>
 </ul>
 Вероятността числото да е ≥ 2021 е равна на сбора от вероятностите на положителните сценарии от по-горе, т.е. \( \dfrac{4}{8^3} + \dfrac{1}{8^3*3} + \dfrac{1}{8^4} = \dfrac{4*8*3+3+8}{8^4*3}=\dfrac{107}{12288} \).<br>
-Следователно вероятността числото да е по-малко от 2021 e \(1-\dfrac{107}{12288}= \mathbf{\dfrac{12181}{12288}}\),<br><b><nobr>Oтговор: 12181/12288</nobr></b>.
+Следователно вероятността числото да е по-малко от 2021 e \(1-\dfrac{107}{12288}= \mathbf{\dfrac{12181}{12288}}\).<br><b><nobr>Oтговор: 12181/12288</nobr></b>
 	</div>
 </div>
 <h3 id="week6,question3">Уравнението на SAP</h3>
