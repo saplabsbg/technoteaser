@@ -155,7 +155,7 @@ int doSchedule(int numberOfDays, String alreadyPlannedActivities) {
 }
 ```
 ```java
-System.out.println (doSchedule(7, ""));</code></pre>
+System.out.println (doSchedule(7, ""));
 ```
 
 {::nomarkdown}
