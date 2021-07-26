@@ -1014,7 +1014,7 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
      - Трябва да напишем наша логика за лексикографско сравнение на две букви, когато едната от тях е S, като например просто заменяме S с П, когато S е първа буква и S със С, когато S е втора буква и продължаваме със стандартната логика за сравняване. Трябва да внимаваме да не използваме тази логика за сортиране на думи, включително в сортирани структури от данни, тъй като <nobr>S&lt;С, a С==S, както и S==П, а П&lt;S</nobr>.
 - Тъй като задачата по същество търси брой пермутации с повторение, най-лесният начин за генерирането на думите точно по веднъж е рекурсивният.
 
-``` Java
+```Java
 private final Comparator<Character> SAP_LETTER_COMPARATOR = (Character c1, Character c2) -> {
 	if (c1 == 'S' && c2 == 'S') {
 		throw new IllegalArgumentException("Comparing 2 S characters");
@@ -1028,7 +1028,7 @@ private final Comparator<Character> SAP_LETTER_COMPARATOR = (Character c1, Chara
 };
 ```
 Инициализация на буквите, с които работим:
-``` Java
+```Java
 static private Map<Character, Integer> inputOfVowels = new HashMap<Character, Integer>(); 
 static private Map<Character, Integer> inputOfConsonants = new HashMap<Character, Integer>();
 static {
@@ -1049,7 +1049,7 @@ static {
 	inputOfConsonants.put('S', 1);
 }
 ```
-``` Java
+```Java
 private static long calculateNumberOfWords(char lastLetter, LetterType lastLetterType, int numberOfConsonantPairs) {
 		
 	Set<Character> availableVowels = new HashSet<>(currentVowels.keySet());
@@ -1110,7 +1110,7 @@ private static long calculateNumberOfWords(char lastLetter, LetterType lastLette
     return result;
 }
 ```
-``` Java
+```Java
 long result = calculateNumberOfWords((char)0, null, 0);
 System.out.println("Number of words:" + result);
 ```
