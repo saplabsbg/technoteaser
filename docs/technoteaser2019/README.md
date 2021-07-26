@@ -803,7 +803,7 @@ System.out.println(numberOfTriples);
 2. Ще изчислим пътя за всяка точка на отстояние +- 1 км от С<sub>1</sub>, със стъпка 0,1 км. Така ще намерим следваща точка с най-добър път С<sub>2</sub>
 3. Ще продължим да намаляваме проверявания интервал и съответно стъпката между проверяваните точки, докато се убедим, че сме намерили най-късия път със задоволителна точност.
 
-```Java
+```java
 public double getXforTheLeastTimePath(double fromX, double toX, double step) {
 	double minPath =  Double.MAX_VALUE;
 	double xForTheMinPath = 0;
@@ -818,7 +818,7 @@ public double getXforTheLeastTimePath(double fromX, double toX, double step) {
 	}
 }
 ```
-```Java
+```java
 double x= getXforTheLeastTimePath(0, 10, 1);
 x = getXforTheLeastTimePath(x-1, x+1, 0.1);
 x = getXforTheLeastTimePath(x-0.1, x+0.1, 0.01);
@@ -876,7 +876,7 @@ For X from 3.7399999999999998 to 3.7599999999999993 with step 0.001:<br>
 
 {:/}
 
-```Java
+```java
 public double getXforTheLeastTimePath(double fromX, double toX, double step) {
 	double leastTime = 100000;
 	double distanceOfTheLeastTimePath = 0;
@@ -896,7 +896,7 @@ public double getXforTheLeastTimePath(double fromX, double toX, double step) {
 	return xForTheLeastTimePath;
 }
 ```
-```Java
+```java
 double x= getXforTheLeastTimePath(0, 6, 1);
 x = getXforTheLeastTimePath(x-1, x+1, 0.1);
 x = getXforTheLeastTimePath(x-0.1, x+0.1, 0.01);
@@ -1014,7 +1014,7 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
      - Трябва да напишем наша логика за лексикографско сравнение на две букви, когато едната от тях е S, като например просто заменяме S с П, когато S е първа буква и S със С, когато S е втора буква и продължаваме със стандартната логика за сравняване. Трябва да внимаваме да не използваме тази логика за сортиране на думи, включително в сортирани структури от данни, тъй като <nobr>S&lt;С, a С==S, както и S==П, а П&lt;S</nobr>.
 - Тъй като задачата по същество търси брой пермутации с повторение, най-лесният начин за генерирането на думите точно по веднъж е рекурсивният.
 
-```Java
+```java
 private final Comparator<Character> SAP_LETTER_COMPARATOR = (Character c1, Character c2) -> {
 	if (c1 == 'S' && c2 == 'S') {
 		throw new IllegalArgumentException("Comparing 2 S characters");
@@ -1028,7 +1028,7 @@ private final Comparator<Character> SAP_LETTER_COMPARATOR = (Character c1, Chara
 };
 ```
 Инициализация на буквите, с които работим:
-```Java
+```java
 static private Map<Character, Integer> inputOfVowels = new HashMap<Character, Integer>(); 
 static private Map<Character, Integer> inputOfConsonants = new HashMap<Character, Integer>();
 static {
@@ -1049,7 +1049,7 @@ static {
 	inputOfConsonants.put('S', 1);
 }
 ```
-```Java
+```java
 private static long calculateNumberOfWords(char lastLetter, LetterType lastLetterType, int numberOfConsonantPairs) {
 		
 	Set<Character> availableVowels = new HashSet<>(currentVowels.keySet());
@@ -1110,7 +1110,7 @@ private static long calculateNumberOfWords(char lastLetter, LetterType lastLette
     return result;
 }
 ```
-```Java
+```java
 long result = calculateNumberOfWords((char)0, null, 0);
 System.out.println("Number of words:" + result);
 ```
@@ -1135,7 +1135,7 @@ System.out.println("Number of words:" + result);
 
 {:/}
 
-```Java
+```java
 private int countConsonantOptions(int numberOfConsonantPairsInResult, 
 		boolean nextPairIsInAscOrder, int numberOfPositions) {
 	if (numberOfPositions == 0 && inputOfConsonants.size() == 0) {
@@ -1210,7 +1210,7 @@ private int countConsonantOptions(int numberOfConsonantPairsInResult,
 	return result;
 }
 ```
-```Java
+```java
 int resultFor3Pairs = countConsonantOptions(3, true, 7);
 System.out.println("Options for the consonants with 3 pairs: " + resultFor3Pairs);
 int resultFor4Pairs =  countConsonantOptions(4, true, 6);
