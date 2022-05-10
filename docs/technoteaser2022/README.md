@@ -108,7 +108,7 @@
 
 \( (10x + 5)^2 = 100x^2 + 100x + 25 = 100(x^2 + x) + 25 \) <br>
 
-В последния израз първото събираемо завършва на две нули, затова целият сбор завършва на 25. Обаче цифрата 2 не е разрешена. Следователно не съществува точен квадрат, чийто десетичен запис се състои само от цифрите  3,  5,  7  и  8,  независимо по колко пъти е използвана всяка от тях.<br><br>
+В последния израз първото събираемо завършва на две нули, затова целият сбор завършва на 25. Обаче цифрата 2 не е разрешена. Следователно не съществува точен квадрат, чийто десетичен запис се състои само от цифрите  3,  5,  7  и  8,  независимо по колко пъти е използвана всяка от тях.<br>
 <b>Отговор: 0</b>
 <hr>
 © Задача на Добромир Кралчев
@@ -133,7 +133,97 @@
 	<div>
 		<input type="checkbox" id=solution31><label class="explanationbutton" for=solution31><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+<h4 id="week3,solution31,ProgramSolution">Решението на програмиста:</h4>
+Тъй като наличните стаи са само 10, то пълното генериране и преброяване на възможните конфигурации за настанявания изглежда разумно решение.
+За да бъде алгоритъмът ефективен, обаче, трябва да генерираме всяка една възможна конфигурация за настаняване само веднъж. Причината за това е, че всички възможни пермутации на 10 елемента са \( 10! = 3628800 \), докато всички възможни пермутации на 10 елемента, от които един с повторение (в случая това са 6-те свободни стаи), са  \(  \dfrac{10!}{6!} = 5040 \).<br>
+Имаме 5 вида стаи:
+<pre><code>enum Room { ASIA, BIBI, VILI, DIDI, EMPTY}
+Room getNeighbor(Room p) {
+  switch (p) {
+   case ASIA: return Room.BIBI;
+   case BIBI: return Room.ASIA;
+   case VILI: return Room.DIDI;
+   case DIDI: return Room.VILI;
+   default: return null;
+  }
+ }
+ Room getUnwantedNeighbor(Room p) {
+  switch (p) {
+   case ASIA: return Room.VILI;
+   case VILI: return Room.ASIA;
+   default: return null;
+  }
+}
+</code></pre>
+Наличността на всяка от стаите можем да пазим в подходяща структура от данни:
+<pre><code>Map<Room, Integer> rooms = new HashMap<>();
+  rooms.put(Room.ASIA, 1);
+  rooms.put(Room.BIBI, 1);
+  rooms.put(Room.VILI, 1);
+  rooms.put(Room.DIDI, 1);
+  rooms.put(Room.EMPTY, 6);</code></pre>
+
+<pre><code>int findPossibleConfigurations (Map<Room, Integer> availableRooms, Room unwantedNeighbor) {
+  
+    if (availableRooms.size() == 0) {
+      //Recursion base case
+      return 1;
+    }
+    
+    int currentResult = 0;
+    Room[] rooms = availableRooms.keySet().toArray(new Room[availableRooms.size()]);
+    
+    for (Room currentRoomType : rooms) {
+      
+      if (!currentRoomType.equals(unwantedNeighbor)) {
+        int availableRoomsOfCurrentType = availableRooms.get(currentRoomType);
+        if (availableRoomsOfCurrentType == 1) {
+          availableRooms.remove(currentRoomType);
+        } else {
+          availableRooms.put(currentRoomType, availableRoomsOfCurrentType - 1);
+        }
+        //add also the neighbor in the next room
+        Room requiredNeighbor = getNeighbor(currentRoomType);
+        if (requiredNeighbor != null) {
+          availableRooms.remove(requiredNeighbor);
+        }
+        
+        currentResult += findPossibleConfigurations (availableRooms, getUnwantedNeighbor(currentRoomType));
+        
+        //revert changes
+        if (requiredNeighbor != null) {
+          availableRooms.put(requiredNeighbor, 1);
+        }
+        availableRooms.put(currentRoomType, availableRoomsOfCurrentType);
+      }
+    }
+    
+    return currentResult;
+  }</code></pre>
+<pre><code>System.out.println(findPossibleConfigurations(rooms, null));</code></pre>
+<div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%; ">210</div><br>
+
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week3/RoomDistribution.java" target=_blank>Примерен Java код</a><br><br>
+
+<h4 id="week3,solution31,MathSolution">Решението на математика:</h4>
+Нека първо разгледаме по-лесния случай, при който в коридора има точно 4 свободни стаи.<br>
+Възможните разпределения по стаи са (АБ)(ВД),(АБ)(ДВ),(БА)(ДВ),(ВД)(АБ),(ВД)(БА),(ДВ)(БА) или общо 6.   
+В допълнение имаме и 2 неприемливи комбинации - (БА)(ВД) и (ДВ)(АБ), при които Ася и Вили стоят в съседни стаи.<br>
+Какви възможности имаме за добавяне на празни стаи между двойките?
+За всички 6 възможни комбинации можем да добавяме празни стаи на 3 места - преди първата двойка съседни стаи, между двете двойки съседни стаи и след втората двойка съседни стаи: <nobr>_ <sub>1</sub>, (съседни стаи), _ <sub>2</sub>, (съседни стаи), _ <sub>3</sub>.</nobr><br>
+По колко начина можем да разпределим останалите 6 свободни стаи измежду тези 3 възможни места?<br>
+Както вече знаем от задачата за <a href="https://saplabsbg.github.io/technoteaser/docs/technoteaser2021/#week4,question1" target=_blank>Голямото разпределяне</a> от миналата година, можем да разпределим стаите, ако ги подредим в редица и добавим 2 еднакви разделителя, т.е. <nobr>&#9898;&#9898;<b><big>||</big></b>&#9898;&#9898;&#9898;&#9898;</nobr> ще отговаря на разпределението 2 стаи на позиция _ <sub>1</sub>, 0 стаи на позиция _ <sub>2</sub> и 4 стаи на позиция _ <sub>3</sub>. Всички възможности за разпределение получаваме като <a href="https://bg.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%86%D0%B8%D1%8F_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)" target=_blank>комбинация</a> (без повторение) на 2 елемента от клас 8, или:<br>
+<div style="align:left; width: 1px; overflow: visible;">$$ C^2_{8} = {8 \choose 2} = \dfrac{8!}{2!(8-2)!} = \dfrac{8*7}{2} = 4*7 = 28 $$</div>
+	</div>
+</div>
+Тъй като имаме 6 възможни разпределения по двойки, към които можем да добавим свободните стаи, получаваме \( 28*6 = 168 \) възможности.<br>
+Не трябва да забравяме и 2-те неприемливи разпределения, тъй като те биха станали приемливи, ако между Ася и Вили има поне една свободна стая. Така към тези 2 случая трябва да видим по колко начина можем да разпределим 5 свободни стаи (без тази, която поставяме между Ася и Вили). Аналогично на предходния случай, това е комбинация на 2 елемента от клас 7, или 
+<div style="align:left; width: 1px; overflow: visible;">$$ C^2_{7} = {7 \choose 2} = \dfrac{7!}{2!(7-2)!} = \dfrac{7*6}{2} = 7*3 = 21 $$</div>
+	</div>
+</div>
+Така за двете първоначално неприемливи конфигурации получаваме \(2*21=42\) приемливи такива, а всички възможни начини за настаняване са \(168+42=210\).<br>
+
+<b>Отговор: 210</b>
 		</div>
 	</div>
 	<h3 id="week3,question2">Голямата пица</h3>
@@ -150,7 +240,46 @@
 	<div>
 		<input type="checkbox" id=solution32><label class="explanationbutton" for=solution32><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+<h4 id="week3,solution32,ProgramSolution">Решението на програмиста:</h4>
+Лесно можем да изчислим по колко точно пица е получил всеки. За да не работим с твърде малки числа, можем да приемем (без това да е задължително), че пицата има 100 парчета. По този начин и крайният резултат за това кой колко (дробно число) парчета пица получава ще бъде всъщност количеството в проценти от цялата пица.
+<pre><code>static final int NUMBER_OF_PEOPLE = 100;</code></pre>
+<pre><code>double pizzaAmmount = 100;
+  double maxPizzaAmmountTaken = 0;
+  int maxPizzaAmmountTakenBy = 0;
+  
+  for (int i = 1; i <= NUMBER_OF_PEOPLE; i++) {
+    double pizzaAmmountForCurrentPerson = pizzaAmmount*i/100;
+    if (pizzaAmmountForCurrentPerson > maxPizzaAmmountTaken) {
+    maxPizzaAmmountTaken = pizzaAmmountForCurrentPerson;
+    maxPizzaAmmountTakenBy = i;
+    }
+    pizzaAmmount -= pizzaAmmountForCurrentPerson;
+  }
+  System.out.println("The maximum pizza amount goes to person " + maxPizzaAmmountTakenBy + 
+     " taking " + maxPizzaAmmountTaken + " out of " + NUMBER_OF_PEOPLE + " pieces");</code></pre>
+<div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%;">The maximum pizza amount goes to person 10 taking 6.2815650955529465 out of 100 pieces</div>
+<br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week3/TheBigPizza.java" target=_blank>Примерен Java код</a><br><br>
+
+<h4 id="week3,solution32,MathSolution">Решението на математика:</h4>
+<ul>
+	<li>Първият човек е взел точно \(1\%\) от пицата, като след него останали \(\dfrac{99}{100}\) части от първоначалната пицата.</li>
+	<li>Вторият човек е взел \(2\%\) от останалото, т.е. \(\dfrac{2}{100}*\dfrac{99}{100}\), като след него останали  \(\dfrac{99}{100} - \dfrac{2}{100}*\dfrac{99}{100} = \dfrac{99}{100}*\dfrac{98}{100} \) части от пицата.</li>
+	<li>Третият човек е взел \(3\%\) от \(\dfrac{99}{100}*\dfrac{98}{100}\) или \(\dfrac{3}{100}*\dfrac{99}{100}*\dfrac{98}{100}\), оставяйки след себе си \(\dfrac{99}{100}*\dfrac{98}{100}*\dfrac{97}{100}\)</li>
+	<li style="list-style-type: none;">...</li>
+	<li>n-тия по ред човек е взел \(\dfrac{99}{100}*\dfrac{98}{100}* \cdots * \dfrac{99-(n-2)}{100}*\dfrac{n}{100} = \dfrac{99!}{(99-(n-1)))!}*\dfrac{n}{100^n} = \dfrac{99!}{(100-n)!}*\dfrac{n}{100^n}  \)</li>
+	<li>n+1 по ред човек е взел \( \dfrac{99!}{(100-n-1)!}*\dfrac{n+1}{100^{n+1}}  \)</li>
+	<li style="list-style-type: none;">...</li>
+</ul>
+Тъй като е сложно да се изследват тези изрази поотделно, можем да разгледаме съотношението между количеството пица, което n+1 по ред човек е взел ( \(P_{n+1}\) ), спрямо това, което n-тият човек е взел ( \(P_{n}\) ):<br>
+\( \dfrac{P_{n+1}}{P_{n}} = \dfrac{ \dfrac{99!}{(100-n-1)!}*\dfrac{n+1}{100^{n+1}}  }{ \dfrac{99!}{(100-n)!}*\dfrac{n}{100^n} } = \dfrac{99!}{(100-n-1)!}*\dfrac{n+1}{100^{n+1}} * \dfrac{(100-n)!}{99!}*\dfrac{100^n}{n} = \dfrac{100-n}{100}* \dfrac{n+1}{n} \) <br>
+
+\(P_{n+1} \gt P_{n}\)  тогава и само тогава, когато \( \dfrac{P_{n+1}}{P_{n}} \gt 1 \)<br>
+Следователно парчетата пица ще растат дотогава, докато \( \dfrac{(100-n)(n+1)}{100n} \gt 1 \)
+\( \iff (100-n)(n+1) \gt 100n \iff 100 \gt n^2+n \).<br>
+Тъй като \(n\) е цяло число, можем лесно да проверим, че неравенството е изпълнено, когато \(1 \le n \le 9\).<br>
+Когато \(n=9\) знаем, че  \( \dfrac{P_{10}}{P_9} \gt 1 \), т.е. до десетия по ред човек парчетата пица се увеличават, след което започват да намаляват.<br>
+Следователно <b>10-тият по ред човек е получил най-голямото парче пица</b>, което представлява \( \dfrac{99!}{90!} * \dfrac{10}{100^{10}} \approx 6.28\% \) от пицата.
 		</div>
 	</div>
 	<h3 id="week3,question3">Неравенства</h3>
@@ -159,43 +288,98 @@
 	<div>
 		<input type="checkbox" id=solution33><label class="explanationbutton" for=solution33><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+<h4 id="week3,solution33,ProgramSolution">Решението на програмиста:</h4>
+Едно интуитивно решение с програма би могло да се реализира чрез последователното обхождане на целите числа като стойност на \(b\) и съответно проверка дали съществува цяло число за \(a\), такова че неравенствата да са изпълнени.<br>
+Какви са ограниченията за \(a\) при конкретна стойност на \(b\)?<br>
+(1)  \( \dfrac{2021}{2022} \lt \dfrac{a}{b} \iff a \gt \dfrac{2021*b}{2022} \) и това е долна граница за \(a\), която можем да разпишем малко по-подробно по следния начин:
+<ul>
+	<li>Ако \( \dfrac{2021*b}{2022} \) е цяло число, то \( a \ge \dfrac{2021*b}{2022}+1\)</li>
+	<li>Ако \( \dfrac{2021*b}{2022} \) не е цяло число, то \( a \ge \left \lceil \dfrac{2021*b}{2022} \right \rceil \)</li>
+</ul>
+(2)  \( \dfrac{a}{b} \lt \dfrac{2022}{2023} \iff a \lt \dfrac{2022*b}{2023} \), като получаваме неравенство, даващо ни горна граница за \(a\):
+<ul>
+	<li>Ако \( \dfrac{2022*b}{2023}\) е цяло число, то \( a \le \dfrac{2022*b}{2023} -1\)</li>
+	<li>Ако \( \dfrac{2022*b}{2023}\) не е цяло число, то \( a \le \left \lfloor \dfrac{2022*b}{2023} \right \rfloor\)</li>
+</ul>
+Използвайки целочислено деление в Java, тези ограничения могат да се имплементират като: 
+<pre><code>public long getLowerBound () {
+	return 2021*b / 2022 + 1;
+}
+
+public long getUpperBound () {
+	if (2022 * b % 2023 == 0) {
+		return 2022 * b / 2023 - 1;
+	} else {
+		return 2022 * b / 2023;
+	}
+}
+</code></pre><br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week3/LowestDenominatorInequality.java" target=_blank>Примерен Java код</a><br><br>
+
+<b>Отговор: 4045</b><br><br>
+
+<h4 id="week3,solution33,MathSolution">Решението на математика:</h4>
+Тъй като търсим гранична стойност, първата ни цел трябва да бъде преобразуване на неравенствата от строги в нестроги такива, тъй като именно равенството в едно нестрого неравенство дефинира граничния случай.<br>
+Преходът от строго към нестрого неравенство е труден, когато работим с рационални (дробни) числа. Затова първата цел ще бъде чрез еквивалентни преобразувания да достигнем до неравенства на цели числа.<br>
+Ако обърнем местата на числителите и знаменателите (вземайки реципрочните стойности) и обърнем посоката на неравенствата, ще получим идентични неравенства, т.е. <br>
+\( \dfrac{2021}{2022} \lt \dfrac{a}{b} \lt \dfrac{2022}{2023} \iff \dfrac{2022}{2021} \gt \dfrac{b}{a} \gt \dfrac{2023}{2022} \iff 1+\dfrac{1}{2021} \gt \dfrac{b}{a} \gt 1+\dfrac{1}{2022}\)<br>
+\( \iff \dfrac{1}{2021} \gt \dfrac{b}{a}-1 \gt \dfrac{1}{2022} \iff \dfrac{1}{2021} \gt \dfrac{b-a}{a} \gt \dfrac{1}{2022} \)<br>
+\( \iff 2021 \lt \dfrac{a}{b-a} \lt 2022 \iff 2021(b-a) \lt a \lt 2022(b-a)\)<br>
+Тъй като за целите числа знаем, че \( x \lt y \) тогава и само тогава, когато \( x+1 \le y \) и аналогично \( x \gt y \iff x \ge y-1\), то <br>
+\(  2021(b-a) \lt a \lt 2022(b-a) \iff 2021(b-a) + 1 \le a \le (b-a)2022 - 1 \), т.е.<br> 
+\( 2021(b-a) +1 \le 2022(b-a)-1 \) откъдето получаваме \( b-a \ge 2\).<br>
+Вземайки граничния случай, при който \( b-a = 2\), или \( a = b-2\) и замествайки в неравенството по-горе, получаваме<br>
+\( 2021*2+1 \le b-2 \le 2022*2-1\), където първото неравенство ни дава точно минималната стойност за \(b\):<br>
+\(  2021*2+1 \le b-2 \iff b \ge 2021*2+3 \iff b \ge 4045 \) <br>
+Лесно можем да съобразим, че когато \( b-a \gt 2\), примерно 3, то възможните стойности за \(b\) ще са по-големи, както и да проверим, че при \(a=4043\) и \(b=4045\) неравенствата са изпълнени, получавайки най-малка възможна стойност за \(b\) съответно <b>4045</b>.
+<hr>
+<h4>За малките числа</h4><br>
+Колко малко може да бъде едно число?<br>
+Всички знаем, че няма граница за това. Можем да направим аналогия с безкрайността, с която сме свикнали да работим като понятие и за която знаем, че е по-голяма от всяко конкретно число. По същия начин в домейна на положителните реални числа "безкрайно малкото число" е по-малко от всяко конкретно число, независимо колко малко е то.<br>
+Безкрайно малките числа (<a href="https://en.wikipedia.org/wiki/Infinitesimal" target=_blank>Infinitesimal numbers</a>) не са част от стандартнaта бройна система на реалните числа, но намират приложение в други бройни системи, към които обикновено са добавени както безкрайността, така и безкрайно малкото като величини.			
 		</div>
 	</div>
 </div>
 <!-- end of week 3-->
-<!--
 <input type="checkbox" id=week4Toggle>
 <label for=week4Toggle class="week">
 <h2 id=week4>Седмица №4 <span></span></h2>
 </label>	
 <div>
-	<h3 id="week4,question1">week4,question1</h3>
-	<p>Q 4.1</p>
+	<h3 id="week4,question1">Турнир</h3>
+	<p>В първия кръг на турнир по шах всеки участник е изиграл точно една игра с всески друг. Във всяка игра спечелилият е получил 1 точка, загубилият - 0 точки, а когато играта е завършвала с реми, двамата играчи са получавали по половин точка.<br>
+За втория кръг не се класирали 10-те участника с най-малко точки.<br>
+Оказало се, че всеки участник в първи кръг е спечелил половината си точки от игрите си спрямо отпадналите. Това важало включително и за отпадналите 10-ма, т.е. всеки един от тях е спечелил половината си точки от игрите си спрямо останалите 9-ма.<br>
+Колко шахматисти са участвали в първи кръг?</p>
 	<div>
 		<input type="checkbox" id=solution41><label class="explanationbutton" for=solution41><span>Обяснение</span></label>
 		<div class="explanation">
-Q 4.1 Solution
+Очаквайте скоро!
 		</div>
 	</div>
-	<h3 id="week4,question2">week4,question2</h3>
-	<p> Q 4.2 Solution </p>
+	<h3 id="week4,question2">Везна с тежести</h3>
+	<p>Търговец е закупил нова везна, която показва дали от двете страни е поставено едно и също тегло или не. За претегляне на конкретното тегло стока в цяло число кг, обаче, търговецът трябва да ползва тежести (също в цяло число кг), чието тегло той знае предварително.<br>Какъв е най-малкият брой тежести, с които трябва да разполага търговецът, за да може да измери всяко цяло число килограми от 1 до 13 включително, ако търговецът може да поставя своите тежести и от двете страни на везната?<br> Пример: ако допуснем, че търговецът разполага с тежест от 3 кг и с тежест от 5 кг, то той може да ги постави от различните страни на везната и по този начин да измери 2 кг стока. Може също така да ги постави от една и съща страна, измервайки стока за 8 кг, т.е. с тези две тежести той може да измери 2, 3, 5 и 8 кг стока.</p>
 	<div>
 		<input type="checkbox" id=solution42><label class="explanationbutton" for=solution42><span>Обяснение</span></label>
 		<div class="explanation">
-Q 4.2 Solution
+Очаквайте скоро!
 		</div>
 	</div>
-	<h3 id="week4,question3">week4,question3</h3>
-	<p> Q 4.3  </p>
+	<h3 id="week4,question3">Изчисли функцията</h3>
+	<p>Фунцията \(f(x) : \mathbb{R} \to \mathbb{R} \) е дефинирана за реалните числа от затворения интервал [0, 1] и има следните свойства:
+<ul>
+	<li>\(f\left(\dfrac{x}{3}\right) = \dfrac{1}{2}f(x)\)</li>
+	<li>\(f(1-x) = 1 - f(x)\)</li>
+	<li>Функцията е ненамаляваща, т.е. ако \(x_2 \gt x_1\), то \(f(x_2) \ge f(x_1)\) </li>
+</ul>
+Да се намери \(f\left(\dfrac{2021}{2022}\right) = \text{?} \)</p>
 	<div>
 		<input type="checkbox" id=solution43><label class="explanationbutton" for=solution43><span>Обяснение</span></label>
 		<div class="explanation">
-Q 4.2 Solution
+Очаквайте скоро!
 		</div>
 	</div>
 </div>
--->
 <!-- end of week 4-->
 <!--
 <input type="checkbox" id=week5Toggle>
