@@ -137,7 +137,10 @@
 Тъй като наличните стаи са само 10, то пълното генериране и преброяване на възможните конфигурации за настанявания изглежда разумно решение.
 За да бъде алгоритъмът ефективен, обаче, трябва да генерираме всяка една възможна конфигурация за настаняване само веднъж. Причината за това е, че всички възможни пермутации на 10 елемента са \( 10! = 3628800 \), докато всички възможни пермутации на 10 елемента, от които един с повторение (в случая това са 6-те свободни стаи), са  \(  \dfrac{10!}{6!} = 5040 \).<br>
 Имаме 5 вида стаи:
-<pre><code>enum Room { ASIA, BIBI, VILI, DIDI, EMPTY}
+{:/}
+
+```java
+enum Room { ASIA, BIBI, VILI, DIDI, EMPTY}
 Room getNeighbor(Room p) {
   switch (p) {
    case ASIA: return Room.BIBI;
@@ -154,16 +157,18 @@ Room getNeighbor(Room p) {
    default: return null;
   }
 }
-</code></pre>
+```
 Наличността на всяка от стаите можем да пазим в подходяща структура от данни:
-<pre><code>Map<Room, Integer> rooms = new HashMap<>();
+```java
+Map<Room, Integer> rooms = new HashMap<>();
   rooms.put(Room.ASIA, 1);
   rooms.put(Room.BIBI, 1);
   rooms.put(Room.VILI, 1);
   rooms.put(Room.DIDI, 1);
-  rooms.put(Room.EMPTY, 6);</code></pre>
-
-<pre><code>int findPossibleConfigurations (Map<Room, Integer> availableRooms, Room unwantedNeighbor) {
+  rooms.put(Room.EMPTY, 6);
+ ```
+```java
+int findPossibleConfigurations (Map<Room, Integer> availableRooms, Room unwantedNeighbor) {
   
     if (availableRooms.size() == 0) {
       //Recursion base case
@@ -199,8 +204,14 @@ Room getNeighbor(Room p) {
     }
     
     return currentResult;
-  }</code></pre>
-<pre><code>System.out.println(findPossibleConfigurations(rooms, null));</code></pre>
+  }
+ ```
+```java
+System.out.println(findPossibleConfigurations(rooms, null));
+```
+
+{::nomarkdown}
+
 <div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%; ">210</div><br>
 
 <a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week3/RoomDistribution.java" target=_blank>Примерен Java код</a><br><br>
@@ -237,8 +248,14 @@ Room getNeighbor(Room p) {
 		<div class="explanation">
 <h4 id="week3,solution32,ProgramSolution">Решението на програмиста:</h4>
 Лесно можем да изчислим по колко точно пица е получил всеки. За да не работим с твърде малки числа, можем да приемем (без това да е задължително), че пицата има 100 парчета. По този начин и крайният резултат за това кой колко (дробно число) парчета пица получава ще бъде всъщност количеството в проценти от цялата пица.
-<pre><code>static final int NUMBER_OF_PEOPLE = 100;</code></pre>
-<pre><code>double pizzaAmmount = 100;
+
+{:/}
+
+```java
+static final int NUMBER_OF_PEOPLE = 100;
+```
+```java
+double pizzaAmmount = 100;
   double maxPizzaAmmountTaken = 0;
   int maxPizzaAmmountTakenBy = 0;
   
@@ -251,7 +268,11 @@ Room getNeighbor(Room p) {
     pizzaAmmount -= pizzaAmmountForCurrentPerson;
   }
   System.out.println("The maximum pizza amount goes to person " + maxPizzaAmmountTakenBy + 
-     " taking " + maxPizzaAmmountTaken + " out of " + NUMBER_OF_PEOPLE + " pieces");</code></pre>
+     " taking " + maxPizzaAmmountTaken + " out of " + NUMBER_OF_PEOPLE + " pieces");
+```
+
+{::nomarkdown}
+
 <div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%;">The maximum pizza amount goes to person 10 taking 6.2815650955529465 out of 100 pieces</div>
 <br>
 <a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week3/TheBigPizza.java" target=_blank>Примерен Java код</a><br><br>
@@ -297,8 +318,11 @@ Room getNeighbor(Room p) {
 	<li>Ако \( \dfrac{2022*b}{2023}\) не е цяло число, то \( a \le \left \lfloor \dfrac{2022*b}{2023} \right \rfloor\)</li>
 </ul>
 Използвайки целочислено деление в Java, тези ограничения могат да се имплементират като: 
-<pre><code>public long getLowerBound () {
-	return 2021*b / 2022 + 1;
+{:/}
+
+```java
+public long getLowerBound () {
+	return 2021 * b / 2022 + 1;
 }
 
 public long getUpperBound () {
@@ -308,7 +332,10 @@ public long getUpperBound () {
 		return 2022 * b / 2023;
 	}
 }
-</code></pre><br>
+```
+
+{::nomarkdown}
+
 <a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week3/LowestDenominatorInequality.java" target=_blank>Примерен Java код</a><br><br>
 
 <b>Отговор: 4045</b><br><br>
@@ -349,7 +376,15 @@ public long getUpperBound () {
 	<div>
 		<input type="checkbox" id=solution41><label class="explanationbutton" for=solution41><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+Нека в първи кръг е имало \(n\) участници.<br>
+Това означава, че са се изиграли \( \dfrac {n*(n-1)}{2} \) игри, които са дали общо  \( \dfrac {n*(n-1)}{2} \) точки, разпределени между участниците.<br>
+Отпадналите 10-ма са изиграли  \( \dfrac {10*9}{2} = 45 \) игри помежду си, от които са си разпределили \( 45 \) точки. Тъй като това са били половината от техните точки, можем да заключим, че след първи кръг те са имали общо \( 90\) точки. <br>
+Аналогично продължилите на 2-ри кръг \( n-10\) участника са изиграли помежду си \( \dfrac {(n-10)(n-11)}{2} \) игри и съответно са разпределили същия брой точки  помежду си. Тъй като това са отново половината от техните точки, то след първи кръг те трябва да са имали общо \( (n-10)(n-11) \) точки.<br>
+Така получаваме уравнението  \( \dfrac {n*(n-1)}{2} = 90 + (n-10)(n-11) \iff n^2 - 41n +400 = 0 \iff (n-16)(n-25)=0\)<br>
+Непосредствена проверка показва, че \( n= 16 \) не може да бъде решение, тъй като това би означавало 6 участници, продължили на 2-ри кръг с общо 30 точки или средно по 5 точки на човек, докато отпадналите 10 ще имат общо 90 точки или средно по 9 на човек.<br>
+Остава да покажем, че такъв турнир е възможен с 25 шахматиста.<br>
+При \( n= 25 \) имаме 15 участници, които продължават на 2-ри кръг, и отново 10 отпаднали. Понеже участниците са много, можем да потърсим симетричен развой на събитията, примерно като предположим, че игрите между 15-те победители винаги са завършвали реми. Това би дало на всеки от тях по \( \dfrac {15-1}{2} = 7 \) точки. Аналогично, ако всички игри между 10-имата отпаднали са завършвали с реми, то всеки от тях ще е получил по \( 4.5 \) точки. За 10-те игри, които всеки класирал се за 2-ри кръг е изиграл с отпадналите, можем да имаме 6 победи, 2 ремита и 2 загуби, добавяйки към резултата на всеки класирал се по 7 точки. Това дава на всеки отпаднал 3 победи, 9 загуби и 3 пъти реми, добавяйки към резултата на всеки от тях по  \( 4.5 \) точки.<br>
+<b>Отговор: 25</b>
 		</div>
 	</div>
 	<h3 id="week4,question2">Везна с тежести</h3>
@@ -357,7 +392,34 @@ public long getUpperBound () {
 	<div>
 		<input type="checkbox" id=solution42><label class="explanationbutton" for=solution42><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+Търговецът се нуждае най-малко от 3 тежести, които да са съответно 1 кг, 3 кг и 9 кг.<br>
+Всяко цяло число килограми стока може да бъде измерени по следния начин:
+<ol>
+	<li>\(1\)</li>
+	<li>\(3-1\)</li>
+	<li>\(3\)</li>
+	<li>\(3+1\)</li>
+	<li>\(9-3-1\)</li>
+	<li>\(9-3\)</li>
+	<li>\(9-3+1\)</li>
+	<li>\(9-1\)</li>
+	<li>\(9\)</li>
+	<li>\(9+1\)</li>
+	<li>\(9+3-1\)</li>
+	<li>\(9+3\)</li>
+	<li>\(9+3+1\)</li>
+</ol>
+Защо това е оптималното откъм брой тежести решение?<br>
+Всяко конкретно тегло можем да измерим по един единствен начин, а липсата на дублиращи се конфигурации, макар и все още да не е пълно доказателство, е един добър признак при търсене на оптимално решение.<br>
+В контекста на премерването на дадено цяло число килограми стока върху везната имаме 3 възможности за една конкретна тежест:
+<ul><li>да участва в измерването (+)</li>
+	<li>да участва, но от другата страна на везната, т.е. с отрицателен знак (-)</li>
+	<li>да не участва въобще при това измерване (0)</li>
+</ul>
+Това ни навежда на мисълта, че ако погледнем на задачата в контекста на теорията на информацията, ще работим с тритове (<a href="https://en.wikipedia.org/wiki/Ternary_numeral_system" target=_blank>trits</a>), вместо с популярните битове. Премерването на конкретно цяло число килограми можем да кодираме с помощта на толкова трита, колкото тежести имаме. Ако дадената тежест не участва в конкретното измерване, отбелязваме тежестта условно с 0, ако участва с положителен знак я отбелязваме с 1, а ако участва с отрицателен знак - с 2.<br>
+По този начин с 3 тежести можем еднозначно да дефинираме (или кодираме) 3<sup>3</sup> = 27 числа. Защо 27, а не 13? Особеното тук е, че по този начин дефинираме и числото 0, както и отрицателните числа от -1 до -13. Можем ли да избегнем тези излишни за нас случаи и да получим още по-оптимално решение? Всъщност за всяка конфигурация за положителна стойност тегло ще съществува и огледална такава, при която просто сменяме местата на тежестите върху везната и това ще представлява съответното решение в отрицателно число. Също така нулата (липсата на каквито и да е било тежести при дадено измерване), макар и конфигурация без практическа стойност, формално винаги ще бъде възможна и следователно ще съществува код за нея. С тези разсъждения и поради факта, че за представянето на 27 числа са нужни поне 3 трита, можем да сме сигурни, че задачата няма решения с по-малък брой тежести.
+<hr>
+Подходът на решението се запазва и когато искаме да премерим по-голямо тегло стока. Примерно за стока до 40 кг ще имаме нужда от само 4 тежести - съответно 1, 3, 9 и 27 кг, като за тегло на тежестите винаги ползваме степените на 3.
 		</div>
 	</div>
 	<h3 id="week4,question3">Изчисли функцията</h3>
@@ -371,77 +433,281 @@ public long getUpperBound () {
 	<div>
 		<input type="checkbox" id=solution43><label class="explanationbutton" for=solution43><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+При такъв тип задачи е удачно да започнем с някои очевидни наблюдения, примерно да се опитаме да намерим стойността на функцията за конкретни стойности на \( x \).
+<ul>
+	<li>Гранични стойности:<br>
+		При \( x=0 \) от първото уравнение получаваме \(f(0) = \dfrac{1}{2}f(3*0) \implies f(0)=\dfrac{1}{2}f(0) \implies f(0)=0\).<br>
+		При \( x=1 \) от второто уравнение получаваме \(f(1-1) = 1 - f(1) \implies f(1) = 1-f(0) \implies f(1)=1\).
+	</li>
+	<li>Тъй като \(1-\dfrac{1}{2}=\dfrac{1}{2}\), за \(x=\dfrac{1}{2}\) от второто уравнение получаваме \(f\left(1-\dfrac{1}{2}\right) = 1 - f\left(\dfrac{1}{2}\right) \implies f\left(\dfrac{1}{2}\right) = \dfrac{1}{2}\).<br>
+		Тук, обаче, можем и по-добре.<br>
+		При \( x=1 \) от първото уравнение получаваме \(f\left(\dfrac{1}{3}\right) = \dfrac{1}{2}f(1) \implies f\left(\dfrac{1}{3}\right) = \dfrac{1}{2}\).<br>
+		При \(x=\dfrac{2}{3}\) от второто уравнение получаваме \(f\left(1-\dfrac{2}{3}\right) = 1 - f\left(\dfrac{2}{3}\right)  \implies f\left(\dfrac{1}{3}\right) = 1 - f\left(\dfrac{2}{3}\right) \implies f\left(\dfrac{2}{3}\right) = \dfrac{1}{2}\).<br>
+		От това че \( f\left(\dfrac{1}{3}\right) = f\left(\dfrac{2}{3}\right) = \dfrac{1}{2}\) и от условието, че функцията не е намаляваща, следва, че \( f(x) = \dfrac{1}{2} \) за всяко \(x\) в интервала \( \left[\dfrac{1}{3}, \dfrac{2}{3}\right] \).
+	</li>
+</ul>
+\( \dfrac{2021}{2022} \gt 0.9995 \), т.е. сме доста далече от интервала \( \left[\dfrac{1}{3}, \dfrac{2}{3}\right] \). Целта ни е като използваме двете свойства на функцията, да съставим уравнение за \( f\left(\dfrac{2021}{2022}\right) \), в което евентуално участва \( f(a) \text{ при а } \in \left[\dfrac{1}{3}, \dfrac{2}{3}\right] \). Mожем да ползваме веднъж второто правило, с което за \(x= \dfrac{2021}{2022}\) получаваме <br> \(f\left(1-\dfrac{2021}{2022}\right) = 1-f\left(\dfrac{2021}{2022}\right) \implies f\left(\dfrac{2021}{2022}\right) = 1 - f\left(\dfrac{1}{2022}\right)\) <br>
+Замествайки \( x \) с \( 3y \) в първото правило, получаваме еквивалентното \(f(y) = \dfrac{1}{2}f(3y)\) за \(y\) от интервала [0, 1/3].<br>
+Това правило можем да приложим няколко пъти последователно, като получаваме съответно:<br>
+\( f\left(\dfrac{2021}{2022}\right) = 1 - f\left(\dfrac{1}{2022}\right) = 1-\dfrac{1}{2}f\left(\dfrac{3}{2022}\right) = 1-\dfrac{1}{2^2}f\left(\dfrac{3^2}{2022}\right) = 1-\dfrac{1}{2^3}f\left(\dfrac{3^3}{2022}\right) = \cdots \\ =  1-\dfrac{1}{2^6}f\left(\dfrac{3^6}{2022}\right)\) 
+<br>
+Тъй като \( \dfrac{1}{3} \lt \dfrac{3^6}{2022} \lt \dfrac{2}{3} \), то \( f\left(\dfrac{3^6}{2022}\right) = \dfrac{1}{2} \)
+\( \implies f\left(\dfrac{2021}{2022}\right) = 1-\dfrac{1}{2^6}*\dfrac{1}{2} = 1-\dfrac{1}{2^7} = \dfrac{127}{128} \)
+<hr>
+Едно важно допълнение към пълното математическо решение на задачата е да се покаже, че намереният резултат е единственият възможен.<br>
+През 1991 г. Donald R. Chalice доказва, че фунцията на Кантор (<a href="https://en.wikipedia.org/wiki/Cantor_function" target=_blank>Cantor Function</a>) е единствената, която отговаря на така зададените условия на задачата.<br>
+Използвайки оригиналната дефиниция на функцията, можем да изчислим стойността ѝ със следния алгоритъм:
+<ol>
+	<li>Представяме числото \(\dfrac{2021}{2022}=0.99950544015\dots_{(10)} \) в троична бройна система, получавайки \( 0.2222221220210111211\dots_{(3)} \)</li>
+	<li>Заместваме всяка цифра след първото срещане на 1 с 0: \(0.2222221220210111211\dots \to 0.2222221000000000000\dots\)</li>
+	<li>Заместваме всяко останало срещане на цифрата 2 с цифрата 1: \(0.2222221 \to 0.1111111 \)</li>
+	<li>Интерпретираме новополученото число като написано в двоична бройна система, като това е и крайният резултат: \( 0.1111111_{(2)} = 0.9921875_{(10)} = \dfrac{127}{128} \) </li>
+</ol>
 		</div>
 	</div>
 </div>
 <!-- end of week 4-->
-<!--
 <input type="checkbox" id=week5Toggle>
 <label for=week5Toggle class="week">
 <h2 id=week5>Седмица №5<span></span></h2>
 </label>	
 <div>
-	<h3 id="week5,question1">week5,question1</h3>
-	<p> Q 5.1 </p>
+	<h3 id="week5,question1">Прости числа</h3>
+	<p>Колко са простите числа, в чиито десетичен запис всяка представка е също просто число?<br>
+Броят се и всички едноцифрени прости числа.<br>
+<small>Пример: Числата 2399, 239, 23 и 2 отговарят на условието и трябва да ги преброим всичките.</small><br></p>
 	<div>
 		<input type="checkbox" id=solution51><label class="explanationbutton" for=solution51><span>Обяснение</span></label>
 		<div class="explanation">
 	<h4 id="week5,solution51,ProgramSolution">Решението на програмиста:</h4>
-Q 5.1 Solution
+Тази задача вероятно не може да се реши с математически разсъждения. За сметка на това тя се решава сравнително лесно със следния рекурсивен алгоритъм: <br>
+<ul>
+<li>Разбира се, всички едноцифрени прости числа ( 2, 3, 5 и 7) отговарят на условието.</li>
+<li>За всяко от тях трябва да проверим дали можем да добавим цифра от дясно и пак да получим просто число. Цифрите, които има смисъл да проверяваме тук, са 1, 3, 7 и 9, тъй като за останалите ще получим число, което е или четно, или се дели на 5.</li>
+<li>Ако числото, което получим от предходната стъпка, се окаже просто, то трябва да го преброим, както и да повторим стъпката, като продължим да се опитваме да добавяме цифра към края му.</li>
+</ul>
+Предвид факта че не търсим всички, а само конкретни прости числа, които ние конструираме чрез нашия алгоритъм, можем да си позволим да използваме и съвсем тривиалната проверка за това дали едно число е просто или не:
+
+{:/}
+
+```java
+boolean isPrime(int num) {
+	for (int i = 2; i * i <= num; ++i) {
+		if (num % i == 0)
+			return false;
+	}
+	return true;
+}
+```
+Примерна реализация на алгоритъма:
+```java
+int[] SINGLE_DIGIT_PRIMES = {2, 3, 5, 7};
+int[] POSSIBLE_LAST_DIGITS = {1, 3, 7, 9};
+```
+```java
+int findPrimes(int currentPrime) {
+	int result = 1;
+	for (int nextDigit : POSSIBLE_LAST_DIGITS) {
+		int nextNumberToCheck = currentPrime*10 + nextDigit;
+		if (isPrime(nextNumberToCheck)) {
+			result += findPrimes(nextNumberToCheck);
+		}
+	}
+	return result;
+}
+```
+```java
+public static void main(String[] args) {
+	int primesCount= 0;	
+	for (int singleDigitPrime:SINGLE_DIGIT_PRIMES) {
+		primesCount += findPrimes(singleDigitPrime);
+	}
+	System.out.print("Total number of primes: ");
+	System.out.print(primesCount);
+}
+```
+{::nomarkdown}
+
+<div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%;">Total number of primes: 83</div><br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week5/PrimeWithPrimePrefixes.java" target=_blank>Примерен Java код</a>
+<hr>
+© Задача на Добромир Кралчев
 		</div> 
 	</div>
-	<h3 id="week5,question2">week5,question2</h3>
-	<p> Q 5.2</p>
+	<h3 id="week5,question2">Избори</h3>
+	<p>По време на изборите в една секция били подадени общо 400 бюлетини за Алисия и 300 бюлетини за Беатрис. След приключване на изборния ден бюлетините били преброени ръчно, като при броенето всеки път била взимана на случаен принцип една бюлетина и гласът ѝ бил добавян за съответния кандидат.<br> Каква е вероятността в хода на преброяването да е имало момент, в който текущо преброените гласове за Алисия да са били равни на текущо преброените гласове за Беатрис?</p>
 	<div>
 		<input type="checkbox" id=solution52><label class="explanationbutton" for=solution52><span>Обяснение</span></label>
 		<div class="explanation">
-Q 5.2 Solution
+Както обикновено, нека първо разгледаме по-лесен вариант на задачата, в който за Алисия и Беатрис  са подадени съответно 3 и 2 бюлетини. <br>
+Всички възможни последователности, в които могат да се изтеглят и преброят бюлетините, са общо 10: 
+<ul>
+<li>A A A Б Б</li>
+<li>A A Б A Б</li>
+<li>A Б *  A A Б</li>
+<li>Б A * A A Б</li>
+<li>A A Б Б * A</li>
+<li>A Б * A Б A</li>
+<li>Б A * A Б A</li>
+<li>A Б * Б A A</li>
+<li>Б A * Б A A</li>
+<li>Б Б A A * A</li>
+</ul>
+Тези от тях, при  които в някакъв момент е настъпило равенство на преброените бюлетини (за кратко ще наричаме това равновесие), са маркирани със *.
+Тъй като тези изходи са равновероятни, то за конкретния случай търсената вероятност е 8/10.<br>
+Всъщност можем да забележим, че в участъка до настъпване на първото равновесие, винаги има симетрия - ако в този участък разменим бюлетините за А с такива за Б и обратно, ще получим друга възможна последователност:
+<ul>
+<li>A A A Б Б</li>
+<li>A A Б A Б</li>
+<li>A Б *  A A Б + Б А *  A A Б</li>
+<li>A A Б Б * A + Б Б A A * A</li>
+<li>A Б * A Б A + Б A * A Б A</li>
+<li>A Б * Б A A + Б A * Б A A</li>
+</ul>
+Защо това е важно?<br>
+Защото това означава, че броят на последователностите, при които в някакъв момент настъпва равновесие и първоначално води Алисия (т.е. първата преброена бюлетина е за Алисия), ще бъде равен на броят на последователностите, при които първоначално води Беатрис.<br>
+От друга страна, ако първата преброена бюлетина е за Беатрис, то можем да сме сигурни, че в някакъв момент ще настъпи равновесие, тъй като по условие за Алисия са гласували повече хора.<br><br>
+Нека сега разгледаме общия случай, при който за Алисия и Беатрис са подадени съответно  \( a \) и \(b\) гласа, като  \( a \gt b\).<br>
+Вероятността първата изтеглена бюлетина да бъде за Беатрис е \( \dfrac{b}{a+b} \). Това е и вероятността да имаме равновесие с първоначален лидер Беатрис. Към тази вероятност трябва да прибавим вероятността за равновесие с първоначален лидер Алисия, която, както вече знаем, е същата: \( \dfrac{b}{a+b} \). <br>
+Така стигаме до извода, че равновесие настъпва с вероятност \( \dfrac{2b}{a+b} \), като за  \( a = 400\) и  \( b = 300\) получаваме \( \dfrac{2* 300}{400+300} = \dfrac{6}{7} \).<br><br>
+<b>Отговор: 6/7</b>
+<hr>
+В комбинаториката теоремата за гласуването на Бертранд (<a href="https://en.wikipedia.org/wiki/Bertrand's_ballot_theorem" target=_blank>Bertrand's ballot theorem</a>) решава малко по-различна задача. Отново имаме кандидат А с \(a\)  гласа и кандидат Б с \(b\) гласа  \( (a \gt b) \), но търсим вероятността кандидат А да има повече гласове през цялото време на преброяване на бюлетините. Сравнително лесно се вижда, че това се случва всеки път, когато не съществува момент на равенство при текущо преброените гласове, т.е. тази вероятност е равна на \( 1 - \dfrac{2b}{a+b} = \dfrac{a-b}{a+b}\).
 		</div> 
 	</div>
-	<h3 id="week5,question3">week5,question3</h3>
-	<p> Q5.3 </p>
+	<h3 id="week5,question3">Безкрайни периодични дроби</h3>
+	<p>Единичната дроб е реципрочната стойност на цяло положително число.<br> Единичните дроби със знаменатели от 2 до 10, записани и като десетична дроб, са съответно: <ul> <li>\(1/2=0.5\)</li> <li>\(1/3=0.(3)\)</li> <li>\(1/4=0.25\)</li> <li>\(1/5=0.2\)</li> <li>\(1/6=0.1(6)\)</li> <li>\(1/7=0.(142857)\)</li> <li>\(1/8=0.125\)</li> <li>\(1/9=0.(1)\)</li> <li>\(1/10=0.1\)</li> </ul> С \( 0.1(6) \) е означено числото \(0.16666\dots \), което има едноцифров период (цикъл) на повторение.<br> Можем да забележим, че измежду тези дроби най-дълъг период на повторение имаме при \(1/7\) и той е с дължина 6 цифри.<br> Кое е най-малкото естествено число \( n \), за което съотношението \(1/n\), записано като десетична дроб, има период на повторение от точно 2022 цифри?</p>
 	<div>
 		<input type="checkbox" id=solution53><label class="explanationbutton" for=solution53><span>Обяснение</span></label>
 		<div class="explanation">
-Q 5.3 Solution
+Тъй като алгоритъмът за деление на две числа е добре познат, доста лесно можем да го модифицираме, така че да открива цикъла на повторение на получената безкрайна периодична дроб. 
+
+{:/}
+
+```java
+int getUnitFractionDecimalPeriod(int denominator) {
+	int currentRemainder = 1;
+	Map<Integer, Integer> remaindersCache = new HashMap<>();	
+	while (!remaindersCache.containsKey(currentRemainder)) { 	
+		remaindersCache.put(currentRemainder, remaindersCache.size());
+		currentRemainder = currentRemainder * 10 % denominator;
+		if (currentRemainder == 0) {
+			return 0;
+		}
+	}
+	return remaindersCache.size() - remaindersCache.get(currentRemainder);
+}
+```
+Въпреки че това решение не е оптимално, с достатъчно време за изпълнение би било напълно достатъчно за намирането на крайния резултат:
+```java
+OptionalInt result = IntStream.iterate(2, i -> i++)
+  .filter( n -> getUnitFractionDecimalPeriod(n) == 2022)
+  .findFirst();
+System.out.println("1/" + result.getAsInt() + " as a decimal fraction has period " + 2022);
+```
+
+{::nomarkdown}
+
+<div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%;">1/566161 as a decimal fraction has period 2022</div>
+
+Какви възможности за оптимизация имаме?<br>
+1. Можем да съобразим, че когато 10 (на някаква степен) e делител на  \(n\), то това не променя дължината на периода на повторение, т.е.  \( \dfrac{1}{n} \) и \( \dfrac{1}{n/10} \) ще имат един и същи период. Тъй като ние търсим най-малкото \(n\), можем да пропускаме проверката на всички числа, които се делят на 10.<br>
+Ако сме внимателни в изследването на периода на безкрайните периодични дроби (<a href="https://mathworld.wolfram.com/DecimalExpansion.html" target=_blank>Decimal Expansion</a>), ще забележим, че можем да пропуснем и всички четни числа, както и всички числа, които се делят на 5. Дори и с тези съображения, обаче, алгоритъмът все още е твърде неефективен.<br>
+2. Значително по-малко проверки ще се налага да правим, ако се възползваме от факта, че дължината на периода на \(1/n\) е делител на \( \phi(n) \), където  \( \phi \) е <a href="https://bg.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BD%D0%B0_%D0%9E%D0%B9%D0%BB%D0%B5%D1%80" target=_blank>функцията на Ойлер</a>, наричана още Тотиента (<a href="https://en.wikipedia.org/wiki/Euler%27s_totient_function" target=_blank>Euler's totient function</a>). На пръв поглед това само усложнява решението, защото алгоритъмът за намиране на \( \phi(n) \) използва простите числа, т.е. трябва да направим доста допълнителни изчисления. От друга страна, за намирането на простите числа (до някаква максимална и предварително известна стойност) имаме доста известен и ефективен алгоритъм - <a href="https://bg.wikipedia.org/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D1%82%D0%BE_%D0%BD%D0%B0_%D0%95%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%82%D0%B5%D0%BD" target=_blank>Решето на Ератостен</a>, а преизползването им след това позволява бързодействието на алгоритъма да се подобри повече от 10 пъти.<br><br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week5/UnitFraction_EulerTotientFunction.java" target=_blank>Примерен Java код</a><br>
+<br><b>Отговор: 566161</b>
 		</div> 
 	</div>
 </div>
--->
 <!-- end of week 5-->
-<!--
 <input type="checkbox" id=week6Toggle>
 <label for=week6Toggle class="week">
 <h2 id=week6>Седмица №6<span></span></h2>
 </label>	
 <div>
-	<h3 id="week6,question1">week6,question1</h3>
-	<p> Q 6.1 </p>
+	<h3 id="week6,question1">Цветни думи</h3>
+	<style>
+	table .noborders, table .noborders table {
+		border-collapse: collapse !important;
+		border-style: none !important;
+	}
+	.white {
+		color: darkgrey;
+		font-weight: bold;
+		padding-right: 1px;
+	}
+	.green {
+		color: darkgreen;
+		font-weight: bold;
+		padding-right: 1px;
+	}
+	.red {
+		color: darkred;
+		font-weight: bold;
+		padding-right: 1px;
+	}
+	.nocolor1, .nocolor2, .nocolor3, .nocolor4, .nocolor_after_dots  {
+		white-space:nowrap;
+	}
+	.nocolor1 sub {
+		padding-right: 15px;
+	}
+	.nocolor2 sub {
+		padding-right: 13px;
+		font-size: xx-small;
+	}
+	.nocolor3 sub {
+		padding-right: 10px;
+		font-size: xx-small;
+	}
+	.nocolor4 sub {
+		padding-right: 10px;
+	}
+	.nocolor_after_dots sub {
+		padding-right: 12px;
+		font-size: xx-small;
+	}
+</style>
+	<p>Петя съставяла думи, съдържащи само буквите <span class="white">Б</span>, <span class="green">З</span> и <span class="red">Ч</span> (съответно за цветовете бяло, зелено и червено).<br>
+Всяка своя дума тя опростявала посредством следния алгоритъм:
+<ol>
+	<li>Между всеки две съседни и еднакви букви тя добавяла същата буква;</li>
+	<li>Между всеки две съседни и различни букви тя добавяла третата (различната от тях) буква;</li>
+	<li>Петя изтривала оригиналните букви и в думата оставали само новодобавените букви от т.1 и т.2</li>
+</ol>
+Пример: <span style="white-space: nowrap;"><span class="white">ББ</span><span class="green">З</span><span class="red">Ч</span> → <sub>Б</sub><span class="white">Б</span><sub>Б</sub><span class="red">Ч</span><sub>З</sub><span class="white">Б</span><sub>Ч</sub> → <span class="white">Б</span><span class="red">Ч</span><span class="white">Б</span></span><br>
+Петя повтаряла тази процедура, докато накрая не оставала една единствена буква в думата.<br>
+В един момент Петя с изненада установила, че за всяка произволна дума с дължина 10 букви крайният резултат зависел единствено и само от първата и последната буква - тя просто трябвало да приложи правилото си върху думата, съставена от тези две букви. Това, обаче, не важало за думи с 11 букви.<br>
+Пример: <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></span> → <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></span> → <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span></span> → <span class="white">Б</span> дава същия резултат като <span style="white-space: nowrap;"><span class="white">Б</span><sub><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></sub><span class="white">Б</span> –→ <span class="white">ББ</span> → <span class="white">Б</span></span><br>
+Коя е следващата дължина (по-голяма от 10) на цветни думи, при която Петя ще може отново да извежда директно крайния резултат като ползва само първата и последната буква?</p>
 	<div>
 		<input type="checkbox" id=solution61><label class="explanationbutton" for=solution61><span>Обяснение</span></label>
 		<div class="explanation">
-Q 6.1 Solution
+Очаквайте скоро!
 		</div>
 	</div>
-	<h3 id="week6,question2">week6,question2</h3>
-	<p>Q 6.2</p>
+	<h3 id="week6,question2">Туристически маршрут</h3>
+	<p>36 туристически забележителности в един град са разположени в квадрат 6 × 6, както е показано на чертежа.<br> Екскурзовод трябва да преведе група туристи през всичките 36 обекта, като мине точно по веднъж през всеки обект. Групата може да се движи само по улиците на града, а те са с направление изток-запад (хоризонтално) и север-юг (вертикално). Групата тръгва от обект \(А\) (на 1-ви ред и 1-ва колона от чертежа) и трябва да приключи своята обиколка в обект \(B\) (на 6-ти ред и 5-та колона от чертежа), като екскурзоводът иска маршрутът да има точно 17 завоя и не иска групата да излиза от очертанията на квадрата.<br> <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=S10dyCa7vh_K_j98l8QWiJjH_HaYYwK3xKa0jeKKVos" style="max-width: 500px; " ><br> Колко такива маршрута съществуват (включително показания)?</p>
 	<div>
 		<input type="checkbox" id=solution62><label class="explanationbutton" for=solution62><span>Обяснение</span></label>
 		<div class="explanation">
-Q 6.2 Solution
+Очаквайте скоро!
 		</div>
 	</div>
-	<h3 id="week6,question3">week6,question3</h3>
-	<p>Q 6.3 </p>
+	<h3 id="week6,question3">Карти с числа</h3>
+	<p>На масата пред нас са подредени 2022 карти. На всяка карта е изобразено едно число, което ние виждаме. За всяко едно от числата от 1 до 2022 включително има точно една карта, която го изобразява. Имаме право да вземаме карти от масата по наша преценка, стига да спазваме следните две ограничения: 
+		<ul> 
+			<li>Нямаме право да държим карти, чиито числа се различават с 4</li> 
+			<li>Нямаме право да държим карти, чиито числа се различават с 7</li> 
+		</ul> 
+		Пример: ако сме взели карта с числото 10, то занапред нямаме право да вземаме картите с числа 6 и 14 (от първото ограничение) и картите с числа 3 и 17 (от второто ограничение).<br>Колко най-много на брой карти можем да вземем от масата?</p>
 	<div>
 		<input type="checkbox" id=solution63><label class="explanationbutton" for=solution63><span>Обяснение</span></label>
 		<div class="explanation">
-Q 6.3 Solution
+Очаквайте скоро!
 		</div>
 	</div>
 </div>
--->
 <!-- end of week 6-->
 <script>
 function hashChange() {
