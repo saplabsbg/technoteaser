@@ -1284,9 +1284,9 @@ private int getCollatzNumbersCount(long fromNumber, int atDistance) {
          if (atDistance == 0) {
                   return 1;
          }
-         int res = getCollatzNumbersCount(fromNumber*2, atDistance-1);
-         if (fromNumber>4 && fromNumber%6==4) { 
-                 res += getCollatzNumbersCount((fromNumber-1)/3, atDistance-1);
+         int res = getCollatzNumbersCount(fromNumber * 2, atDistance - 1);
+         if (fromNumber > 4 && fromNumber % 6 == 4) { 
+                 res += getCollatzNumbersCount((fromNumber - 1) / 3, atDistance - 1);
          }
          return res;
 }
