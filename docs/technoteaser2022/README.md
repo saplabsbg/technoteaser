@@ -627,9 +627,13 @@ System.out.println("1/" + result.getAsInt() + " as a decimal fraction has period
 <div>
 	<h3 id="week6,question1">Цветни думи</h3>
 	<style>
-	table .noborders, table .noborders table {
+	table.noborders, table .noborders table {
 		border-collapse: collapse !important;
 		border-style: none !important;
+		border-width: 0 !important;
+	}
+	table.noborders > tbody > tr > td  {
+		border-width: 0 !important;
 	}
 	.white {
 		color: darkgrey;
@@ -770,7 +774,7 @@ System.out.println("1/" + result.getAsInt() + " as a decimal fraction has period
 Как можем да направим следващата стъпка и да намерим по-голяма дължина думи, при която "бързото" правило ще работи отново?<br>
 Трябва просто да забележим, че можем да повторим 3 пъти думи с дължина 10 по начина, по който по-горе сме повторили 3 пъти думи с дължина 4: 
 
-<div style="overflow-x:scroll; padding: 5px 0 5px 0; margin: 0 0 5px 0;">
+<div style="padding: 5px 0 5px 0; margin: 0 0 5px 0;">
 <table class="noborders"><tr><td>
 <table>
 	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>10</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>19</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>28</sub></td></tr>
