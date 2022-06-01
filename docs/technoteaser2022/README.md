@@ -317,7 +317,7 @@ double pizzaAmmount = 100;
 	<li>Ако \( \dfrac{2022*b}{2023}\) е цяло число, то \( a \le \dfrac{2022*b}{2023} -1\)</li>
 	<li>Ако \( \dfrac{2022*b}{2023}\) не е цяло число, то \( a \le \left \lfloor \dfrac{2022*b}{2023} \right \rfloor\)</li>
 </ul>
-Използвайки целочислено деление в Java, тези ограничения могат да се имплементират като: 
+Използвайки целочислено деление в Java, тези ограничения могат да се имплементират по следния начин: 
 {:/}
 
 ```java
@@ -678,12 +678,145 @@ System.out.println("1/" + result.getAsInt() + " as a decimal fraction has period
 Пример: <span style="white-space: nowrap;"><span class="white">ББ</span><span class="green">З</span><span class="red">Ч</span> → <sub>Б</sub><span class="white">Б</span><sub>Б</sub><span class="red">Ч</span><sub>З</sub><span class="white">Б</span><sub>Ч</sub> → <span class="white">Б</span><span class="red">Ч</span><span class="white">Б</span></span><br>
 Петя повтаряла тази процедура, докато накрая не оставала една единствена буква в думата.<br>
 В един момент Петя с изненада установила, че за всяка произволна дума с дължина 10 букви крайният резултат зависел единствено и само от първата и последната буква - тя просто трябвало да приложи правилото си върху думата, съставена от тези две букви. Това, обаче, не важало за думи с 11 букви.<br>
-Пример: <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></span> → <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></span> → <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span></span> → <span class="white">Б</span> дава същия резултат като <span style="white-space: nowrap;"><span class="white">Б</span><sub><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></sub><span class="white">Б</span> –→ <span class="white">ББ</span> → <span class="white">Б</span></span><br>
+Пример: <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></span> → <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></span> → <span style="white-space: nowrap;"><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span></span> → <span style="white-space: nowrap;"><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span></span> → <span style="white-space: nowrap;"><span class="green">З</span><span class="red">Ч</span></span> → <span class="white">Б</span> дава същия резултат като <span style="white-space: nowrap;"><span class="white">Б</span><sub><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span><span class="white">Б</span><span class="green">З</span><span class="red">Ч</span></sub><span class="white">Б</span> ―→ <span class="white">ББ</span> → <span class="white">Б</span></span><br>
 Коя е следващата дължина (по-голяма от 10) на цветни думи, при която Петя ще може отново да извежда директно крайния резултат като ползва само първата и последната буква?</p>
 	<div>
 		<input type="checkbox" id=solution61><label class="explanationbutton" for=solution61><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+<h4>Изследване с програма</h4>
+Не е трудно да пресметнем колко точно думи има с дължина \(n\). Тъй като за всяка буква от думата имаме по 3 възможности, получаваме \(3^n\) възможни думи. Понеже броят на думите расте експоненциално, директна проверка на всяка една от тях би била възможна само за думи със сравнително малка дължина. Възможните оптимизации също не са много. Цветовете на буквите са взаимнозаменяеми, т.е. можем да проверим само 1/3 от всички думи и пак да сме сигурни, че проверката е пълна, но дори при този вариант все още имаме \(3^{n-1}\) проверки - отново твърде много.<br>
+От друга страна, за опровержението на правилото е нужна само една дума, при която то не работи. Затова, макар и без доказателствена стойност, можем да напишем програма, която проверява достатъчно голям набор от случайно генерирани думи с дадена дължина, за да направим поне предположение дали правилото е валидно, или не. Всъщност това дори е напълно достатъчно за намирането на верния отговор на задачата.<br>
+За улеснение можем да представяме цветовете с цифрите 0, 1 и 2. Правилото за добавяне на буква между две съседни букви \(l_1\) и \(l_2\) бихме могли да реализираме чрез обикновен аритметичен израз като \(l_{new} = (6 - l_1 - l_2) \text{ % } 3 \) 
+<br><br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week6/ColorWords.java" target=_blank>Примерен Java код</a>
+<div style="background: #000;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;font-size: 90%; ">Shortcut rule seems to work for words with length 28</div>
+<br>
+<h4>Решението на математика</h4>
+
+За да придобием по-добра интуиция за задачата, е редно да се запитаме при какви по-малки стойности на дължина на думите правилото ще работи.
+<ul>
+	<li>За дължина от 2 букви правилото очевидно е изпълнено - случай, който е по-скоро тривиален.</li>
+	<li>За дължина от 3 букви сравнително лесно се вижда, че правилото не работи: <span class="white">Б</span><span class="red">Ч</span><span class="white">Б</span>  →  <span class="green">З</span><span class="green">З</span>  →  <span class="green">З</span>, което е различно от <span class="white">Б</span><span class="red">Ч</span><span class="white">Б</span> –→ <span class="white">Б</span><span class="white">Б</span> → <span class="white">Б</span>.</li>
+	<li>За дължина от 4 букви правилото работи и това може да се покаже чрез проверка на всички 81 (или ако сме съобразителни на 1/3 от тях, т.е. 27) думи.</li>
+	<li>Ако сме изследвали задачата с програма, ще знаем, че следващата дължина, при която правилото отново работи, е 10.</li>
+</ul>
+Нека разгледаме произволна цветна дума от 10 букви. За да използваме факта, че съкратеното правило работи за думи с дължина 4 букви, ще разпишем първите няколко прилагания на правилото, като записваме всяка нова дума на нов ред:
+
+<table class="noborders">
+	<tr><td style="text-align: center;" class="nocolor1">L<sub>1</sub>L<sub>2</sub>L<sub>3</sub>L<sub>4</sub>L<sub>5</sub>L<sub>6</sub>L<sub>7</sub>L<sub>8</sub>L<sub>9</sub>L<sub>0</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">L<sub>12</sub>L<sub>23</sub>L<sub>34</sub>L<sub>45</sub>L<sub>56</sub>L<sub>67</sub>L<sub>78</sub>L<sub>89</sub>L<sub>90</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor3">L<sub>123</sub>L<sub>234</sub>L<sub>345</sub>L<sub>456</sub>L<sub>567</sub>L<sub>678</sub>L<sub>789</sub>L<sub>890</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor4">L<sub>14</sub>L<sub>25</sub>L<sub>36</sub>L<sub>47</sub>L<sub>58</sub>L<sub>69</sub>L<sub>70</sub></td></tr>
+</table>
+Фактът, че съкратеното правило работи за четирибуквени думи, означава, че четвъртият ред може да бъде изведен директно от първия.<br>
+Продължавайки със следващите 3 реда, получаваме:
+<table class="noborders">
+	<tr><td style="text-align: center;" class="nocolor1">L<sub>1</sub>L<sub>2</sub>L<sub>3</sub>L<sub>4</sub>L<sub>5</sub>L<sub>6</sub>L<sub>7</sub>L<sub>8</sub>L<sub>9</sub>L<sub>0</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>14</sub>L<sub>25</sub>L<sub>36</sub>L<sub>47</sub>L<sub>58</sub>L<sub>69</sub>L<sub>70</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>x1</sub>L<sub>x2</sub>L<sub>x3</sub>L<sub>x4</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>final</sub></sub></td></tr>
+</table>
+Прилагайки съкратеното правило за думи с дължина 4, можем да забележим, че:
+<ul>
+<li>Крайната буква L<sub>final</sub> зависи само от буквите L<sub>x1</sub> и L<sub>x4</sub>.</li>
+<li>Буква L<sub>x1</sub> зависи само от буквите L<sub>14</sub> и L<sub>47</sub>, които на свой ред зависят от L<sub>1</sub>, L<sub>4</sub> и L<sub>7</sub>.</li>
+<li>Буква L<sub>x4</sub> зависи само от буквите L<sub>47</sub> и L<sub>70</sub>, които на свой ред зависят от L<sub>4</sub> и L<sub>7</sub> и L<sub>0</sub>.</li>
+</ul>
+Нека сега премахнем буквите, за които знаем, че нямат отношение към крайния резултат:
+<table class="noborders"><tr><td><table>
+	<tr><td style="text-align: center;" class="nocolor1">L<sub>1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>4</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>7</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>0</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>14</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>47</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>70</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>x1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>x4</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>final</sub></sub></td></tr>
+</table></td><td valign="middle" style="font-size: x-large;">⟺</td><td><table>
+	<tr><td style="text-align: center;" class="nocolor1">L<sub>1</sub>L<sub>4</sub>L<sub>7</sub>L<sub>0</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>14</sub>L<sub>47</sub>L<sub>70</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>x1</sub>L<sub>x4</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>final</sub></sub></td></tr>
+</table></td><td valign="middle" style="font-size: x-large;">⟺</td><td><table>
+	<tr><td style="text-align: center;" class="nocolor1">L<sub>1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>0</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots"> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots"> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>final</sub></sub></td></tr>
+</table></td>
+
+</tr></table>
+Всъщност това, което виждаме от последната схема, е, че намирането на L<sub>final</sub> е еквивалентно на опростяването на думата от 4 букви L<sub>1</sub>L<sub>4</sub>L<sub>7</sub>L<sub>0</sub>, за която вече знаем, че зависи само от L<sub>1</sub> и L<sub>0</sub>. С това изведохме "бързото" правило за опростяване на думи с дължина 10 като ползвахме "бързото" правило за опростяване на думи с дължина 4.
+
+<table class="noborders">
+	<tr><td style="text-align: center;" class="nocolor1">L<sub>1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>0</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots"> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots"> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor2">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>final</sub></sub></td></tr>
+</table>
+Как можем да направим следващата стъпка и да намерим по-голяма дължина думи, при която "бързото" правило ще работи отново?<br>
+Трябва просто да забележим, че можем да повторим 3 пъти думи с дължина 10 по начина, по който по-горе сме повторили 3 пъти думи с дължина 4: 
+
+<div style="overflow-x:scroll; padding: 5px 0 5px 0; margin: 0 0 5px 0;">
+<table class="noborders"><tr><td>
+<table>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>10</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>19</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>28</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">•<sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>x1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>x2</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>x3</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>y1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>y2</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>final</sub></td></tr>
+</table>
+</td><td valign="middle" style="font-size: x-large;">⟺&nbsp;&nbsp;&nbsp; </td><td><table>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>1</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub>L<sub>28</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">• <sub>&nbsp;&nbsp;</sub> • <sub>&nbsp;&nbsp;</sub></td></tr>
+	<tr><td style="text-align: center;" class="nocolor_after_dots">L<sub>final</sub></td></tr>
+</table>
+</td></tr>
+</table>
+</div>
+Така доказахме, че "бързото" правило работи за думи с дължина <b>28 букви</b>.
+За да покажем, че няма други дължини на цветни думи между 10 и 28 букви, трябва да положим малко повече усилие. Тук е моментът, в който можем да се позовем на изследването с програма, с което започнахме. Чрез него можем да дадем контрапример за всяка една от тези дължини. <br><br>
+<b>Отговор: 28</b>
+<hr>
+Както можем да предположим, със всяка следваща стъпка и още по-голям триъгълник ще намираме следващо решение на задачата.  Триъгълниците, които можем да построим за тези решения, си приличат - всеки следващ триъгълник е по-голям мащаб на предишния, поради което сформират <a href="https://bg.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BA%D1%82%D0%B0%D0%BB" target=_blank>фрактал</a>, а при подходящ избор на изобразените букви фигурата се превръща в <a href="https://bg.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D1%8A%D0%B3%D1%8A%D0%BB%D0%BD%D0%B8%D0%BA_%D0%BD%D0%B0_%D0%A1%D0%B5%D1%80%D0%BF%D0%B8%D0%BD%D1%81%D0%BA%D0%B8" target=_blank>Триъгълник на Серпински</a> (<a href="https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle" target=_blank>Sierpiński triangle</a>).<br>
+В общия случай всички цветни думи с дължина \( 3^n + 1 \) са решение на задачата и за тях "бързото" правило ще работи.
 		</div>
 	</div>
 	<h3 id="week6,question2">Туристически маршрут</h3>
@@ -691,7 +824,497 @@ System.out.println("1/" + result.getAsInt() + " as a decimal fraction has period
 	<div>
 		<input type="checkbox" id=solution62><label class="explanationbutton" for=solution62><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+<h4 id="week3,solution31,ProgramSolution">Решението на програмиста:</h4>
+Задачата се решава по-лесно с компютърна програма, отколкото с математически разсъждения. Програмата работи рекурсивно:  достигайки до някоя точка, прави по една стъпка във всички възможни посоки.<br><br>
+<a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2022/week6/RoutesInTheCity.java" target=_blank>Примерен Java код</a><br><br>
+<div style="width:100%; height: 200px; overflow-y: scroll; background:black; color: white;">
+<span style="font-family: monospace;line-height: 80%;display: inline-block;  margin: 15px">
+Solution&nbsp;#1<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#2<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#3<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#4<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#5<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#6<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#7<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#8<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#9<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#10<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#11<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#12<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#13<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#14<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#15<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#16<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#17<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#18<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#19<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#20<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#21<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#22<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#23<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#24<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#25<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#26<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#27<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#28<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#29<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○――○――○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#30<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○&nbsp;&nbsp;○&nbsp;&nbsp;○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#31<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#32<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○――○――○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#33<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○&nbsp;&nbsp;○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○&nbsp;&nbsp;○――○――○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#34<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#35<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#36<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○――○――○&nbsp;&nbsp;○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○&nbsp;&nbsp;○――○<br>
+<br>
+Solution&nbsp;#37<br>
+○&nbsp;&nbsp;○――○――○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○&nbsp;&nbsp;○――○――○――○&nbsp;&nbsp;○<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|<br>
+○――○――○――○――○&nbsp;&nbsp;○<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○――○――○――○――○<br>
+|<br>
+○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○――○<br>
+|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+○――○&nbsp;&nbsp;○――○&nbsp;&nbsp;○――○<br>
+<span>
+</div>
+<br>
+<b>Отговор: 37</b>
+<hr>
+© Задача на Добромир Кралчев
 		</div>
 	</div>
 	<h3 id="week6,question3">Карти с числа</h3>
@@ -704,7 +1327,28 @@ System.out.println("1/" + result.getAsInt() + " as a decimal fraction has period
 	<div>
 		<input type="checkbox" id=solution63><label class="explanationbutton" for=solution63><span>Обяснение</span></label>
 		<div class="explanation">
-Очаквайте скоро!
+Нека първо разгледаме по-лесен вариант на задачата, когато на масата има малък брой карти. Колко точно да бъде той избираме по такъв начин, че да можем след това лесно да генерализираме решението до исканите 2022 карти. Една добра подсказка тук е фактът, че \( 4 + 7 = 11\).<br>
+Затова нека разгледаме множеството от първите 11 естествени числа \( \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 \} \) и се опитаме да решим задачата за него.<br>
+Сравнително лесно се забелязва, че максималният брой карти с числа, които можем да изберем, е 5,  примерно \( \{1, 4, 6, 7, 9\} \).<br>
+Освен чрез програма (и пълна проверка на всички възможности), това твърдение можем да докажем и чрез чисто математически разсъждения:<br>
+От първото правило знаем, че следните двойки числа не могат да бъдат едновременно част от решението: <nobr>\(\{1, 5\}, \{2, 6\}, \{3,7\}, \{4,8\}, \{5,9\}, \{6,10\} \) и \( \{7,11\} \).</nobr><br>
+Аналогично от второто правило знаем, че следните двойки  числа също не могат да бъдат едновременно част от решението: <nobr>\( \{1, 8\}, \{2, 9\}, \{3,10\} \) и  \( \{4,11\} \).</nobr><br>
+За да можем да използваме всички тези ограничения, можем да разделим нашето оригинално множество от 11 карти с числа на непразни подмножества (<a href="https://en.wikipedia.org/wiki/Partition_of_a_set" taregt=_blank>Partition of a set</a>), в които участват максимално много от тези ограничения, примерно: \(P = \{\{1, 8\}, \{2, 6\}, \{3, 7\}, \{4, 11\}, \{5, 9\}, \{10\} \} \).<br>
+Нека допуснем, че съществуват 6 числа, такива че и двете условия са изпълнени. За удобство означаваме това множество (от 6 числа) с \(S\). <br>
+Задължително \(S\) трябва да съдържа по един елемент от всичките 6 подмножества в \(Р\), като очевидно винаги \( 10 \in S \) и освен това от първото  подмножество или \( 1 \in S \), или \( 8 \in S \). Разглеждаме двата случая поотделно:
+<ul>
+<li>Ако  \( 1 \in S \), то  \( 5 \notin S  \implies 9 \in S \implies 2 \notin S \implies 6 \in S \implies 10 \notin S\), което е в противоречие на горното твърдение, тъй като 10 участва в \(S\) като задължителен елемент.</li>
+<li>Ако \( 8 \in S \), то \( 4 \notin S \implies 11 \in S \implies 7 \notin S \implies 3 \in S \implies 10 \notin S \), което отново води до същото противоречие. </li>
+</ul>
+С това доказахме, че твърдението ни за 6 карти с числа е грешно и когато на масата има 11 карти (с числата от 1 до 11),  можем да вземем най-много  5 от тях -  примерно тези с числата {1, 4, 6, 7, 9}.<br>
+Можем също така лесно да генерализираме този извод за кои да е 11 последователни числа \( \{i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9, i+10 \} \), като просто съобразим, че разликата между числата в множеството остава същата и следователно избирайки 1-вия, 4-тия, 6-тия, 7-мия и 9-тия елемент, ще сме сигурни, че изпълняваме и двете правила. Сигурни сме и че повече от 5 карти, които отговарят на правилата, отново няма.<br>
+Нека разгледаме задачата, когато на масата има 22 карти съответно с числата от 1 до 22. Ако използваме резултата от по-горе 2 пъти (съответно за карти от интервала [1, 11] и след това за картите от интервала [12,  22]), ще забележим, че никое от 5-те числа, които вземаме от първия интервал, не нарушава правилата спрямо 5-те числа от втория интервал. Нагледно това можем лесно да проверим, като подчертаем картите (числата), които вземаме, и последователно ги сравняваме спрямо следващите подчертани числа:<br>
+\(  \underline{1}, 2, 3, \underline{4},5, \underline{6}, \underline{7}, 8, \underline{9}, 10,11,\underline{12}, 13, 14, \underline{15}, 16,\underline{17}, \underline{18}, 19, \underline{20}, 21, 22\)<br>
+Чисто математическата обосновка на това наблюдение се свежда до факта, че \( x + 4 ≡ x - 7 (\text{mod } 11) \) и \(  x - 7 ≡ x + 4 (\text{mod } 11) \), т.е. забранените заради първото правило числа от първия интервал ще се окажат и забранени спрямо число от втория (или пък предишния, ако има такъв) интервал по второто правило. Пример: числото 10 не можем да изберем в първия интервал поради първото правило, защото е с 4 по-голямо от 6 и по второто правило, защото е със 7 по-малко от 17. <br>
+Това, че можем да разделим числата (и съответните им карти) на подмножества, за които знаем решението, както и фактът, че това решение не се инвалидира от съседните интервали, се превръща в достатъчно силен инструмент за решението на задачата. <br>
+Тъй като \(2022 = 183*11+9\), картите (числата) от 1 до 2022 можем да разделим на 183 подмножества от по 11 последователни числа, като 184-тото подмножество ще остане непълно и ще съдържа последните 9 числа (от 2014 до 2022). За наш късмет обаче последните 2 числа от всяко подмножество не са измежду числата, които ние избираме, поради което можем със сигурност да твърдим, че максималният брой карти, които можем да вземем от масата, е \( 184*5 = 920 \), като взимаме всички карти с числа, които при деление на 11 дават остатък 1, 4, 6, 7 или 9.<br><br>
+
+<b> Отговор: 920 </b>
 		</div>
 	</div>
 </div>
