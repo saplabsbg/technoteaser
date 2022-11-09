@@ -783,7 +783,7 @@ System.out.println(numberOfTriples);
 Една сутрин Ася решава да посети баба си, като преди това отиде до брега, за да съзерцава изгрева.<br>
 Ако приемем, че брегът е права линия, най-близката точка от брега до къщата на Ася е A<sub>0</sub>, най-близката точка от брега до къщата на бабата на Ася е B<sub>0</sub> и разстоянието от A<sub>0</sub> до B<sub>0</sub> е 10 км, какъв е най-късият път (в км), който Ася може да измине, спечелвайки по този начин най-много време за съзерцание?<br>
 Отговорете с точност две цифри след десетичната запетая (закръглете до стотни).
-	<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=1IadWtrk59n_XitiEV35fqwo8L8feotZR8GlzjdLa_M" style="display:block; max-width:100%;height:auto;border:0;">
+	<img src="/technoteaser/docs/images/2019/1IadWtrk59n_XitiEV35fqwo8L8feotZR8GlzjdLa_M.jfif" style="display:block; max-width:100%;height:auto;border:0;">
 </p>
 <div>
 	<input type="checkbox" id=solution52><label for=solution52 class=explanationbutton><span>Обяснение</span></label>
@@ -842,7 +842,7 @@ For X from 3.7399999999999998 to 3.7599999999999993 with step 0.001:<br>
 <h3 id="week5,solution52,Решение_на_математика">Решението на математика:</h3>
 
 Ще проектираме къщата на бабата (т. В) спрямо линията на брега в т. В‘ <br>
-<img style="max-width: 100%; object-fit: contain; " src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=w6KPyWwjaTev_d624zOaGNGPRXNqVMn2_B4hbV36Uhk"><br>
+<img style="max-width: 100%; object-fit: contain; " src="/technoteaser/docs/images/2019/w6KPyWwjaTev_d624zOaGNGPRXNqVMn2_B4hbV36Uhk.png"><br>
 Най-късият път от А до В‘ ще бъде правата линия от А до В‘. Ако АВ‘ пресича брега (А<sub>0</sub>B<sub>0</sub>) в т. С, то АС + СВ ще бъде най-късият път и за Ася. Това твърдение се доказва лесно, защото ако предположим, че има друга т. С<sub>1</sub> върху А<sub>0</sub>B<sub>0</sub>, такава че АС<sub>1</sub>+С<sub>1</sub>В &lt; АС+ВС , то понеже С<sub>1</sub>В=С<sub>1</sub>В‘ ще следва, че АС<sub>1</sub>+С<sub>1</sub>В‘ &lt; АВ‘, което е невъзможно, тъй като най-краткият път между А и В‘ е правата линия.
 Как да намерим АВ‘=АС+СВ‘?
 Тъй като △A<sub>0</sub>AC ~ △В<sub>0</sub>В‘С, то А<sub>0</sub>С/В<sub>0</sub>С=AA<sub>0</sub>/BB<sub>0</sub>=3/5, а ние знаем, че А<sub>0</sub>С+В<sub>0</sub>С=10 ⇒ A<sub>0</sub>C=3.75, В<sub>0</sub>С=6.25<br>
@@ -862,7 +862,7 @@ For X from 3.7399999999999998 to 3.7599999999999993 with step 0.001:<br>
 <p>
 Асен също живее на 3 км от брега и иска да отиде при дядо си, който в този момент е на лодка навътре в морето.<br>
 Ако лодката е на 5 км навътре в морето и на 10 км от къщата на Асен, каква е дължината на най-бързия път за Асен (в км), ако той плува два пъти по-бавно отколкото ходи?<br>Отговорете с точност 2 цифри след десетичната запетая (закръглете до стотни).
-	<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=c_8cYGziR3KEyp3CqfjYiZeLXIyeMOzV8-omlrSgpWE" style="display:block; max-width:100%;height:auto;border:0;">
+	<img src="/technoteaser/docs/images/2019/c_8cYGziR3KEyp3CqfjYiZeLXIyeMOzV8-omlrSgpWE.jfif" style="display:block; max-width:100%;height:auto;border:0;">
 </p>
 <div>
 	<input type="checkbox" id=solution53><label for=solution53 class=explanationbutton><span>Обяснение</span></label>
@@ -918,7 +918,7 @@ For x from 3.8519999999999985 to 3.8539999999999983 with step 1.0E-4:<br>
 Получаваме разстояние от 10,32474671162657 ≈ <b>10,32</b> км
 <h3 id="week5,solution53,Решение_на_математика" title="Tук трябва да сте сигурни в познанията си по математически анализ!">Решението на математика:</h3>
 
-<img style="max-width: 100%; object-fit: contain; " src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=A0DGbB3Js6CQx1Gscr8cbGdfiLL3MVJs-qoIWZYvQzE"><br>
+<img style="max-width: 100%; object-fit: contain; " src="/technoteaser/docs/images/2019/A0DGbB3Js6CQx1Gscr8cbGdfiLL3MVJs-qoIWZYvQzE.png"><br>
 
 \(A_0B_0=\sqrt{3,75^2-3^2}+\sqrt{6,25^2-5^2}=6 \)<br>
 \(AX=d_1=\sqrt{3^2+x^2}\)<br>
@@ -1256,7 +1256,7 @@ Result: 4419100800
 <div>
 	<input type="checkbox" id=solution63><label class="explanationbutton" for=solution63><span>Обяснение</span></label>
 	<div class="explanation">
-<img style="width: 150px; object-fit: contain; float: right; margin-left: 5px;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=qFjcXvx-DM4rBer1Uo-8Z1t41tzk0KttJYMqtWMF-dA">Задачата, свързана с това правило, е известна под много наименования. Може би най-популярна е като <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target=_blank>хипотезата на Колац</a>, според която всяко естествено число ще достигне до 1 след карен брой прилагания на правилото.
+<img style="width: 150px; object-fit: contain; float: right; margin-left: 5px;" src="/technoteaser/docs/images/2019/qFjcXvx-DM4rBer1Uo-8Z1t41tzk0KttJYMqtWMF-dA.png">Задачата, свързана с това правило, е известна под много наименования. Може би най-популярна е като <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target=_blank>хипотезата на Колац</a>, според която всяко естествено число ще достигне до 1 след карен брой прилагания на правилото.
 
 Най-голямото число, което е на разстояние 61 от 1, е това число, което на всяка стъпка намалява наполовина, т.е. 2<sup>61</sup><br>
 Изчисляването на разстоянията на всички числа до 2<sup>61</sup> обаче няма да е ефективно. Вместо това ще се опитаме да изведем правило, което работи в обратна посока, т.е. за дадено \(n\) да намерим числата, които са на разстояние 1 от \(n\). Така ще можем да намерим последователно кои са числата \(N_1\) на разстояние 1 от 1, кои са числата \(N_2\) на разстояние 1 от \(N_1\) и следователно на разстояние 2 от 1 т.н.<br>
@@ -1495,7 +1495,7 @@ System.out.println(maxSumOfProducts);
 <div style=" background: grey;border: 1px solid #ccc; color: white; display: block;padding: 5px;width: 100%;">1019089</div>
 <a href="https://github.com/saplabsbg/technoteaser/blob/master/src/saptechnoteaser2019/specialedition/MaxSumOfProducts.java" target=_blank>Примерен Java код</a><br>
 <h3 id="game2,game2solution5,Решение_на_математика">Решението на математика:</h3>
-<img style="max-width: 250px; object-fit: contain; float:right;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=5FwROhTk4DZEFI8DgX8mGqTRYhyg3Yfplqe4EhyxjXU">
+<img style="max-width: 250px; object-fit: contain; float:right;" src="/technoteaser/docs/images/2019/5FwROhTk4DZEFI8DgX8mGqTRYhyg3Yfplqe4EhyxjXU.jfif">
 Вариант на тази задача (с условие \(a+b+c+d=63\)) е дадена на олимпиада по математика в Австралия през 2013 г. за ученици.
 Разбира се учениците не могат да ползват математически анализ, а задачата има по-лесно решение.<br>
 Нека конструираме 3 правоъгълника, които имат лица съответно \( ab \), \( bc \) и \( cd \), както е показано на графиката.<br>
@@ -1533,7 +1533,7 @@ hashChange();
 </script>
 <br>
 <div class="footer">
-<a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><p class="footer-element">Виж повече за развойния център на SAP в София</p></a><a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/sap_logo.png" width="40" height="20"></a> <a href="https://www.facebook.com/saplabsbg" target="_blank"><p class="footer-element">Харесай страницата ни във Facebook</p></a><a href="https://www.facebook.com/saplabsbg" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/fb_logo.png" width="30" height="20"></a> <a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><p class="footer-element">Разгледай отворените позиции при нас</p></a><a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/network.png" width="25" height="25"></a>
+<a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><p class="footer-element">Виж повече за развойния център на SAP в София</p></a><a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/sap_logo.png" width="40" height="20"></a> <a href="https://www.facebook.com/saplabsbg" target="_blank"><p class="footer-element">Харесай страницата ни във Facebook</p></a><a href="https://www.facebook.com/saplabsbg" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/fb_logo.png" width="30" height="20"></a> <a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><p class="footer-element">Разгледай отворените позиции при нас</p></a><a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/network.png" width="25" height="25"></a>
 </div>
 
 {:/}

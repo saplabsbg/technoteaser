@@ -1,7 +1,7 @@
 # SAP Техноблъсканица 2022
 
 {::nomarkdown}
-<div style="display:none"><img src="https://winwithsap.hana.ondemand.com/services/web/TechQuiz/user/images/sharePicture.jpg"></div>
+<div style="display:none"><img src="/technoteaser/docs/images/sharePicture.jpg"></div>
 <link rel="stylesheet" href="../styles/technoteaser.css">
 <link rel="stylesheet" href="../styles/footer.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
@@ -76,7 +76,7 @@
 </label>
 <div>
 	<h3 id="week2,question1">Съкровище в парка</h3>
-	<p>В парк има 29 алеи. По средата на една от алеите е заровено съкровище. Оказало се, че ако човек стигне от А до Б по нечетен брой алеи, без да минава по една и съща алея два пъти, той със сигурност ще пропусне алеята със съкровището. Ако пък стигне от А до Б по четен брой алеи, без да минава по една и съща алея два пъти, то една от изминатите алеи ще бъде алеята със съкровището.<br>Коя е алеята със съкровището?<br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=bZeKi0gYSq4bdc7DneeJmO5EGTvTOrGnffRpmIldmj0"></p>
+	<p>В парк има 29 алеи. По средата на една от алеите е заровено съкровище. Оказало се, че ако човек стигне от А до Б по нечетен брой алеи, без да минава по една и съща алея два пъти, той със сигурност ще пропусне алеята със съкровището. Ако пък стигне от А до Б по четен брой алеи, без да минава по една и съща алея два пъти, то една от изминатите алеи ще бъде алеята със съкровището.<br>Коя е алеята със съкровището?<br><img src="/technoteaser/docs/images/2022/bZeKi0gYSq4bdc7DneeJmO5EGTvTOrGnffRpmIldmj0.png"></p>
 	<div>
 		<input type="checkbox" id=solution21><label class="explanationbutton" for=solution21><span>Обяснение</span></label>
 		<div class="explanation">
@@ -824,7 +824,7 @@ System.out.println("1/" + result.getAsInt() + " as a decimal fraction has period
 		</div>
 	</div>
 	<h3 id="week6,question2">Туристически маршрут</h3>
-	<p>36 туристически забележителности в един град са разположени в квадрат 6 × 6, както е показано на чертежа.<br> Екскурзовод трябва да преведе група туристи през всичките 36 обекта, като мине точно по веднъж през всеки обект. Групата може да се движи само по улиците на града, а те са с направление изток-запад (хоризонтално) и север-юг (вертикално). Групата тръгва от обект \(А\) (на 1-ви ред и 1-ва колона от чертежа) и трябва да приключи своята обиколка в обект \(B\) (на 6-ти ред и 5-та колона от чертежа), като екскурзоводът иска маршрутът да има точно 17 завоя и не иска групата да излиза от очертанията на квадрата.<br> <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=S10dyCa7vh_K_j98l8QWiJjH_HaYYwK3xKa0jeKKVos" style="max-width: 500px; " ><br> Колко такива маршрута съществуват (включително показания)?</p>
+	<p>36 туристически забележителности в един град са разположени в квадрат 6 × 6, както е показано на чертежа.<br> Екскурзовод трябва да преведе група туристи през всичките 36 обекта, като мине точно по веднъж през всеки обект. Групата може да се движи само по улиците на града, а те са с направление изток-запад (хоризонтално) и север-юг (вертикално). Групата тръгва от обект \(А\) (на 1-ви ред и 1-ва колона от чертежа) и трябва да приключи своята обиколка в обект \(B\) (на 6-ти ред и 5-та колона от чертежа), като екскурзоводът иска маршрутът да има точно 17 завоя и не иска групата да излиза от очертанията на квадрата.<br> <img src="/technoteaser/docs/images/2022/S10dyCa7vh_K_j98l8QWiJjH_HaYYwK3xKa0jeKKVos.png" style="max-width: 500px; " ><br> Колко такива маршрута съществуват (включително показания)?</p>
 	<div>
 		<input type="checkbox" id=solution62><label class="explanationbutton" for=solution62><span>Обяснение</span></label>
 		<div class="explanation">
@@ -1374,7 +1374,7 @@ hashChange();
 </script>
 <br>
 <div class="footer">
-<a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><p class="footer-element">Виж повече за развойния център на SAP в София</p></a><a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/sap_logo.png" width="40" height="20"></a> <a href="https://www.facebook.com/saplabsbg" target="_blank"><p class="footer-element">Харесай страницата ни във Facebook</p></a><a href="https://www.facebook.com/saplabsbg" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/fb_logo.png" width="30" height="20"></a> <a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><p class="footer-element">Разгледай отворените позиции при нас</p></a><a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/network.png" width="25" height="25"></a>
+<a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><p class="footer-element">Виж повече за развойния център на SAP в София</p></a><a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/sap_logo.png" width="40" height="20"></a> <a href="https://www.facebook.com/saplabsbg" target="_blank"><p class="footer-element">Харесай страницата ни във Facebook</p></a><a href="https://www.facebook.com/saplabsbg" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/fb_logo.png" width="30" height="20"></a> <a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><p class="footer-element">Разгледай отворените позиции при нас</p></a><a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/network.png" width="25" height="25"></a>
 </div>
 
 {:/}

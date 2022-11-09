@@ -1,7 +1,7 @@
 # SAP Техноблъсканица 2021
 
 {::nomarkdown}
-<div style="display:none"><img src="https://winwithsap.hana.ondemand.com/services/web/TechQuiz/user/images/sharePicture.jpg"></div>
+<div style="display:none"><img src="/technoteaser/docs/images/2021/sharePicture.jpg"></div>
 <link rel="stylesheet" href="../styles/technoteaser.css">
 <link rel="stylesheet" href="../styles/footer.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
@@ -31,13 +31,13 @@
 <h3 id="week1,question2">Скъсаната верига</h3>
 <p>На ковач донесли 5 еднакви къса от верига, всеки от които имал по три халки, със задачата да ги съедини в една обща верига.<br>
 Колко най-малко на брой халки ще трябва да разтвори (и след това отново да затвори) ковачът, за да направи това? <br>
-Крайната верига трябва да съдържа всичките 15 халки и да има точно два свободни края (т.е. да не образува кръг и да няма разклонения).<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=I1sHSyQ4kso2737bSCBU38TrlgozxRNf6gs3Bdh0VFc" style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" ></p>
+Крайната верига трябва да съдържа всичките 15 халки и да има точно два свободни края (т.е. да не образува кръг и да няма разклонения).<img src="/technoteaser/docs/images/2021/I1sHSyQ4kso2737bSCBU38TrlgozxRNf6gs3Bdh0VFc.jfif" style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" ></p>
 <div>
 	<input type="checkbox" id=solution12><label class="explanationbutton" for=solution12><span>Обяснение</span></label>
 	<div class="explanation">
 Един доста интуитивен подход е да се разтворят 4 халки - последната халка на всеки от първите четири къса, с която да съединим текущия къс със следващия. Последният пети къс ще се окаже вече част от цялата верига и няма да има нужда от разтварянето на 5-та халка.<br>
 Можем, обаче, и по-добре, като разтворим всичките <b>3 халки</b> на единия къс и с тях съединим останалите 4 къса.<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=GKicqz2IKRyCk34Klra6yKH8ZmwH1FZBetSsPzRjneE" style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;">
+<img src="/technoteaser/docs/images/2021/GKicqz2IKRyCk34Klra6yKH8ZmwH1FZBetSsPzRjneE.png" style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;">
 	</div> 
 </div>
 
@@ -73,7 +73,7 @@
 <p>На дъската са наредени 8 карти, така че ние виждаме само едната им страна, както е показано на снимката по-долу. Знаем, че всяка карта без последната има цифра от едната си страна и буква от другата си страна. За последната карта, на която е изобразена чаша с кафе, не знаем нищо за другата ѝ страна. Радо e направил следното предположение:
 <blockquote><p>Всяка карта със <b>S</b> от едната страна има цифрата <b>1</b> от другата си страна.</p></blockquote>
 Колко най-малко на брой карти трябва да проверим (и кои са те), като ги погледнем и от другата страна, за да можем да потвърдим или опровергаем предположението на Радо?
-<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=oZg-MzDKtxI45aqGNjWKeTBXO_9e6F_BZL2TVzuX8HA"></p>
+<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="/technoteaser/docs/images/2021/oZg-MzDKtxI45aqGNjWKeTBXO_9e6F_BZL2TVzuX8HA.jfif"></p>
 <div>
 	<input type="checkbox" id=solution21><label class="explanationbutton" for=solution21><span>Обяснение</span></label>
 	<div class="explanation">
@@ -204,7 +204,7 @@ System.out.println (doSchedule(7, ""));
 	<li> Приблизително 5 скока</li>
 	<li> Приблизително 6 скока</li>
 </ul>
-<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=vOf9TvbKqXvKOE4kx8_XCIUAd2rDVG7cgNPTEPbmQ8c">
+<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="/technoteaser/docs/images/2021/vOf9TvbKqXvKOE4kx8_XCIUAd2rDVG7cgNPTEPbmQ8c.jfif">
 </p>
 <div>
 	<input type="checkbox" id=solution31><label class="explanationbutton" for=solution31><span>Обяснение</span></label>
@@ -264,7 +264,7 @@ System.out.println("average jumps per crossing: " + (double)numberOfJumps / numb
 	</div>
 </div>
 <h3 id="week3,question2">Часовникът</h3>
-<p><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=4Ll4ADznec0nVXN_-iiDuHWKwynP944SBrvbFOZZPac" width="180px" style="float:right"> Колко пъти в рамките на 1 денонощие всеки 2 от трите стрелки на часовник (показващи съответно часа, минутите и секундите) сключват помежду си един и същи ъгъл от 120 градуса?<br>
+<p><img src="/technoteaser/docs/images/2021/4Ll4ADznec0nVXN_-iiDuHWKwynP944SBrvbFOZZPac.png" width="180px" style="float:right"> Колко пъти в рамките на 1 денонощие всеки 2 от трите стрелки на часовник (показващи съответно часа, минутите и секундите) сключват помежду си един и същи ъгъл от 120 градуса?<br>
 Приемаме, че стрелките се движат плавно, без да прескачат от една позиция на друга и с времето острият ъгъл между всеки две стрелки, измерен в градуси, минава през всички реални числа от интервала [0, 180]. Tърсим моментите, когато ъглите между всеки 2 от стрелките е точно, а не приблизително, равен на 120 градуса.</p>
 <div>
 	<input type="checkbox" id=solution32><label class="explanationbutton" for=solution32><span>Обяснение</span></label>
@@ -426,7 +426,7 @@ System.out.println(result);
 	<li>Играчът, който играе втори, винаги може да спечели играта, независимо как играе другият играч.</li>
 	<li>Не съществува печеливша стратегия за нито един от играчите.</li>
 </ul>
-<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=X0TCeo6iev5mb6Sm4nZJ8nawIjcaZ0uafubp1qstOHU">
+<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="/technoteaser/docs/images/2021/X0TCeo6iev5mb6Sm4nZJ8nawIjcaZ0uafubp1qstOHU.jfif">
 </p>
 <div>
 	<input type="checkbox" id=solution42><label class="explanationbutton" for=solution42><span>Обяснение</span></label>
@@ -492,7 +492,7 @@ System.out.println(result);
 	<li> При игра между Зори и Чочо, по-вероятно е да бие Зори.</li>
 	<li> При игра между Зори и Чочо, по-вероятно е да бие Чочо.</li>
 </ul>
-<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=ru0sZG6BBTKYqnE3rgbIhc2s2PX27PTK6lQEBLomt14">
+<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="/technoteaser/docs/images/2021/ru0sZG6BBTKYqnE3rgbIhc2s2PX27PTK6lQEBLomt14.jfif">
 </p>
 <div>
 	<input type="checkbox" id=solution51><label class="explanationbutton" for=solution51><span>Обяснение</span></label>
@@ -967,7 +967,7 @@ if (redDiceWins > yellowDiceWins) {
 <div>
 <h3 id="week6,question1">Конец на цилиндър</h3>
 <p>Конец е навит симетрично около прав кръгов цилиндър.<br>
-Конецът обикаля цилиндъра точно 8 пъти, като започва от едната и достига до другата му основа. Цилиндърът има обиколка 4 см и дължина 24 см.<br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=EXhMiHWl955Jom7ZKYnUFpp_Ss5pHKQ64FgkmMRdZdc" style="padding-top:5px" width="150px"><br>
+Конецът обикаля цилиндъра точно 8 пъти, като започва от едната и достига до другата му основа. Цилиндърът има обиколка 4 см и дължина 24 см.<br><img src="/technoteaser/docs/images/2021/EXhMiHWl955Jom7ZKYnUFpp_Ss5pHKQ64FgkmMRdZdc.png" style="padding-top:5px" width="150px"><br>
 Каква е дължината на конеца в см?<br>
 Приемаме, че дебелината на конеца е пренебрежимо малка.<br>
 Отговорете с точност две цифри след десетичната запетая (закръглете до стотни).
@@ -982,7 +982,7 @@ if (redDiceWins > yellowDiceWins) {
 <div style="align:left; width: 1px; overflow: visible;">$$ L = \int_{\alpha}^{\beta} \sqrt{\left(\dfrac{dx}{dt}\right)^2 + \left(\dfrac{dy}{dt}\right)^2 + \left(\dfrac{dz}{dt}\right)^2}dt $$</div>
 
 Какво означава всичко това за нас?<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=IsMvUEo7Wo-yUqCfdt7bhpTSmIuLyFxdAmsZZQL2SO4" style="padding-top:5px; float:right; max-width:20%" width="150px">Нека обърнем цилиндъра така, че да стои вертикално и да си представим, че цилиндърът е прозрачен (както е оказано на графиката), така че да виждаме пътя на конеца. Тъй като обиколката на цилиндъра е 4 см, то за радиуса му получаваме \( 4 = 2\pi r \iff r=2/\pi \).
+<img src="/technoteaser/docs/images/2021/IsMvUEo7Wo-yUqCfdt7bhpTSmIuLyFxdAmsZZQL2SO4.png" style="padding-top:5px; float:right; max-width:20%" width="150px">Нека обърнем цилиндъра така, че да стои вертикално и да си представим, че цилиндърът е прозрачен (както е оказано на графиката), така че да виждаме пътя на конеца. Тъй като обиколката на цилиндъра е 4 см, то за радиуса му получаваме \( 4 = 2\pi r \iff r=2/\pi \).
 
 Подбираме координатна система, в която центърът на долната основа на цилиндъра е в т. (0,0,0), долната основа стои на равнината \(z=0\), а горната основа - съответно на равнината \(z=24\).<br>
 Параметричните уравнения за \(x\) и \(y\) са съответно \( x = r\cos(t)= \dfrac{2}{\pi}\cos(t)\) и \( y = r\sin(t)= \dfrac{2}{\pi}\sin(t)\). Тъй като конецът обикаля 8 пъти около цилиндъра, а периодичните функции синус и косинус имат период \( 2\pi\), то \(t\) трябва да бъде в интервала \([0, 16\pi]\). От това, че \(z \in [0, 24] \), за \(z\) получаваме уравнението \(z=\dfrac{3}{2\pi}t\).
@@ -991,11 +991,11 @@ if (redDiceWins > yellowDiceWins) {
 <div style="align:left; width: 1px; overflow: visible;">$$ L = \int_{0}^{16\pi} \sqrt{\dfrac{4}{\pi^2}(\sin^2 t + \cos^2 t) + \dfrac{9}{4\pi^2} } dt = \int_{0}^{16\pi} \dfrac{5}{2 \pi} dt  = 40 \text { см}$$</div>
 
 Нека бъдем честни - малцина непрофесионални математици биха стигнали дотук. Затова с основание можем да предположим, че има и по-лесно решение. За целта трябва да помислим как да опростим задачата, така че от триизмерна да я сведем до равнинна, като използваме трансформация, която запазва дължината на конеца. <br>
-Ако си представим, че цилиндърът и конецът току-що са били боядисани с различен цвят боя и търкулнем цилиндъра върху бял лист хартия, правейки точно един оборот, ще видим отпечатък, при който конецът оставя като следа успоредни линии, а отпечатъкът на самия цилиндър ще бъде правоъгълник с дължина 24 см и широчина 4 см. Ако сме съобразителни и започнем отпечатването точно от началото на конеца (там, където той достига една от основите на цилиндъра), то отпечатъкът на конеца ще представлява точно 8 успоредни линии.<br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=57X7pTlT_Rl7qUPM-4yYo3MPy098plxbm7V8sMyxock" width="400px" style="max-width: 95%;"><br>
+Ако си представим, че цилиндърът и конецът току-що са били боядисани с различен цвят боя и търкулнем цилиндъра върху бял лист хартия, правейки точно един оборот, ще видим отпечатък, при който конецът оставя като следа успоредни линии, а отпечатъкът на самия цилиндър ще бъде правоъгълник с дължина 24 см и широчина 4 см. Ако сме съобразителни и започнем отпечатването точно от началото на конеца (там, където той достига една от основите на цилиндъра), то отпечатъкът на конеца ще представлява точно 8 успоредни линии.<br><img src="/technoteaser/docs/images/2021/57X7pTlT_Rl7qUPM-4yYo3MPy098plxbm7V8sMyxock.png" width="400px" style="max-width: 95%;"><br>
 Дължината на всяка една от успоредните черти ще бъде равна на \( \sqrt{3^2 + 4^2} = 5 \), което означава, че общата дължина на отпечатъка на конеца ще бъде  <nobr>\( \ 8*5 = \)<b> 40 см.</b></nobr>
 	</div>
 </div>
-<h3 id="week6,question2">Римското зарче &nbsp;&nbsp;<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=Hkws5YWc3SLXpB26QO6t7srcyDOvLWOFVPgAIfbdeOc" width="30px"></h3>
+<h3 id="week6,question2">Римското зарче &nbsp;&nbsp;<img src="/technoteaser/docs/images/2021/Hkws5YWc3SLXpB26QO6t7srcyDOvLWOFVPgAIfbdeOc.png" width="30px"></h3>
 <style>
 	.romans {
 		border-collapse: collapse; 
@@ -1021,7 +1021,7 @@ if (redDiceWins > yellowDiceWins) {
 	}
 	.darkred {color:darkred;font-weight: bold; }
 </style>
-<p>Разполагаме със зарче с 8 страни (с формата на правилен октаедър), като всяка страна е равно вероятна като резултат при хвърляне. На 7 от страните на зарчето са изписани римските цифри <span class="darkred">I</span>, <span class="darkred">V</span>, <span class="darkred">X</span>, <span class="darkred">L</span>, <span class="darkred">C</span>, <span class="darkred">D</span>, <span class="darkred">M</span>, а на осмата страна - символа <span class="darkred">#</span>.<br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=c3Nm1WWY0fMu5cZ1b-ClFpL3fQxvMVTXljsZgt3ZBso" width="200px"><br>
+<p>Разполагаме със зарче с 8 страни (с формата на правилен октаедър), като всяка страна е равно вероятна като резултат при хвърляне. На 7 от страните на зарчето са изписани римските цифри <span class="darkred">I</span>, <span class="darkred">V</span>, <span class="darkred">X</span>, <span class="darkred">L</span>, <span class="darkred">C</span>, <span class="darkred">D</span>, <span class="darkred">M</span>, а на осмата страна - символа <span class="darkred">#</span>.<br><img src="/technoteaser/docs/images/2021/c3Nm1WWY0fMu5cZ1b-ClFpL3fQxvMVTXljsZgt3ZBso.png" width="200px"><br>
 Чрез последователни хвръляния на зарчето генерираме число, записано с римски цифри, по следните правила:
 <ul>
 <li>

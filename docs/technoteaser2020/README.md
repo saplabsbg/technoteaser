@@ -1,7 +1,7 @@
 # SAP Техноблъсканица 2020
 
 {::nomarkdown}
-<div style="display:none"><img src="https://winwithsap.hana.ondemand.com/services/web/TechQuiz/user/images/sharePicture.png"></div>
+<div style="display:none"><img src="/technoteaser/docs/images/sharePicture.png"></div>
 <link rel="stylesheet" href="../styles/technoteaser.css">
 <link rel="stylesheet" href="../styles/footer.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
@@ -52,7 +52,7 @@
 <h3 id="week1,question2">Здрависване с 9 човека</h3>
 <p>На първата мениджърска среща след COVID-19 пандемията присъстват на място в стаята 27 човека. <br>
 Възможно ли е всеки в стаята да се здрависа с точно 9 човека?<br>
-Разбира се, други хора не участват <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=XM8dNAdgLdQLXr82FT-8KNvS3JdX4Sg3XOnI5C9bj64" width="20px" alt="Усмивка" title="Усмивка">, закъснели няма <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=MgD-x1EIDmjmllRROG9xvGp9I34YL-vXULekz3nmBe4" width="20px" alt="Онемял" title="Онемял"> и всички са все още в добро психично здраве, т.е. никой не се здрависва сам със себе си <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=hCbLs0jTqHI9jYS92iQ7u1lSkHzoztPJEyuXGFiuVA8" width="20px" alt="Изчервяване" title="Изчервяване"></p>
+Разбира се, други хора не участват <img src="/technoteaser/docs/images/2020/XM8dNAdgLdQLXr82FT-8KNvS3JdX4Sg3XOnI5C9bj64.png" width="20px" alt="Усмивка" title="Усмивка">, закъснели няма <img src="/technoteaser/docs/images/2020/MgD-x1EIDmjmllRROG9xvGp9I34YL-vXULekz3nmBe4.png" width="20px" alt="Онемял" title="Онемял"> и всички са все още в добро психично здраве, т.е. никой не се здрависва сам със себе си <img src="/technoteaser/docs/images/2020/hCbLs0jTqHI9jYS92iQ7u1lSkHzoztPJEyuXGFiuVA8.png" width="20px" alt="Изчервяване" title="Изчервяване"></p>
 <div>
 	<input type="checkbox" id=solution12><label class="explanationbutton" for=solution12><span>Обяснение</span></label>
 	<div class="explanation">
@@ -61,7 +61,7 @@
 </div>
 
 <h3 id="week1,question3">Здрависване с х човека</h3>
-<p>Все още обсъждаме мениджърската среща <img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=FHKYiDwH8gHO-gAYwsykDJPznhss7NBYoMCgWl6MPuc" width="20px" alt="Изчервяване" title="Изчервяване">!<br>
+<p>Все още обсъждаме мениджърската среща <img src="/technoteaser/docs/images/2020/FHKYiDwH8gHO-gAYwsykDJPznhss7NBYoMCgWl6MPuc.png" width="20px" alt="Изчервяване" title="Изчервяване">!<br>
 В стаята все още има 27 човека.<br>
 Ако всеки се е здрависал с еднакъв брой хора, колко най-много може да е той, ако знаем, че не се е здрависал всеки с всеки?</p>
 <div>
@@ -137,7 +137,7 @@ Tъй като участие в 8 игри е теоретичният мини
 	</div>
 </div>
 <h3 id="week2,question3">4 камъка и везна</h3> 
-<p>Разполагаме с 4 камъка с различен цвят. Знаем, че един от тях тежи 1 грам, един тежи 2 грама, един тежи 3 грама и един тежи 4 грама, но не знаем конкретно кой камък колко тежи. Разполагаме и с везна, която показва от коя страна сме поставили по-голяма тежест или че от двете страни сме поставили едно и също тегло, но не и колко конкретно е теглото на някоя от страните.<img width=150px src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=ooyehJUtILEihlXxb3KC2H_G7t5SWodhbEiBhrAb_iM" style="float: right;"> Можем да поставяме прозволен брой камъни на всяка страна на везната.<br>
+<p>Разполагаме с 4 камъка с различен цвят. Знаем, че един от тях тежи 1 грам, един тежи 2 грама, един тежи 3 грама и един тежи 4 грама, но не знаем конкретно кой камък колко тежи. Разполагаме и с везна, която показва от коя страна сме поставили по-голяма тежест или че от двете страни сме поставили едно и също тегло, но не и колко конкретно е теглото на някоя от страните.<img width=150px src="/technoteaser/docs/images/2020/ooyehJUtILEihlXxb3KC2H_G7t5SWodhbEiBhrAb_iM.png" style="float: right;"> Можем да поставяме прозволен брой камъни на всяка страна на везната.<br>
 С колко най-малко претегляния можем да определим теглото на всеки камък (вкл. при най-лошия за нас сценарий, т.е. без да разчитаме на късмет)?</p>
 <div>
 	<input type="checkbox" id=solution23><label class="explanationbutton" for=solution23><span>Обяснение</span></label>
@@ -469,7 +469,7 @@ System.out.println(n);
 Топчетата мъниста от един цвят са еднакви и неразличими помежду си, т.е. разменяйки местата на две мънистa с еднакъв цвят, няма да променим огърлицата.<br>
 Пример: Трите огърлици от снимката са еднакви и трябва да бъдат преброени като една уникална огърлица, а номерирането на мънистата е условно.<br>
 Средната огърица получаваме след завъртане на лявата на 180°, а дясната получаваме от средната като я обърнем надясно.
-<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=u1IlL-QV0lNpsWPI9dfs7flyBfMJk4mYMYWHHhN8Ptc">
+<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="/technoteaser/docs/images/2020/u1IlL-QV0lNpsWPI9dfs7flyBfMJk4mYMYWHHhN8Ptc.jfif">
 </p>
 <div>
 	<input type="checkbox" id=solution43><label class="explanationbutton" for=solution43><span>Обяснение</span></label>
@@ -522,7 +522,7 @@ System.out.println(n);
 <p>Детска въртележка има 36 седалки, разположени по окръжност, на еднакво разстояние една от друга. На всяка от седалките може да седи най-много по едно дете. Въртележката може да работи безопасно само когато децата, които се возят на нея, седят по такъв начин, че тя е балансирана, т.е. ако приемем, че всички деца са с еднакво тегло, то центърът им на тежестта трябва да съвпада с центъра на въртележката (центъра на окръжността, която седалките описват).<br>
 При какъв брой деца, возещи се едновременно, съществува подредба, така че въртележката да може да работи безопасно? Маркирайте всички верни отговори!<br>
 Примери: Едно дете, където и да седи, не може да се вози безопасно. Две деца, ако седят на срещуположни седалки, ще могат да се возят безопасно.<br>
-<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=8rMMrusiucnaMYhUtlC-VggfXZx1ISei0bKUHZ8oNkA">
+<img style="display:block; max-width: 80%; height: auto; vertical-align: middle; border: 0;" src="/technoteaser/docs/images/2020/8rMMrusiucnaMYhUtlC-VggfXZx1ISei0bKUHZ8oNkA.jfif">
 </p>
 <div>
 	<input type="checkbox" id=solution51><label class="explanationbutton" for=solution51><span>Обяснение</span></label>
@@ -531,7 +531,7 @@ System.out.println(n);
 Mоже би най-интуитивният от тях е да подредим децата така, че да се образува <b>правилна геометрична фигура</b> (правилен многоъгълник) , което означава, че между всеки две съседни деца на въртележката ще има един и същи брой свободни седалки. В примера от условието имаме две деца, които стоят на срещуположни седалки, между които  (и от двете страни на окръжността) има по 17 празни седалки.<br>
 <b>1. Сегментиране</b><br>
 Друг поглед върху задачата е да третираме въртележката като "торта", която трябва да разрежем на еднакви парчета (сегменти). Така във всеки сегмент ще можем да поставим по едно дете (разбира се на едно и също място). 36 се дели без остатък на 2, 3, 4, 6, 9, 12, 18 и 36, и това са възможностите ни за "разрязване" на въртележката на еднакви сегменти. Като поставим по едно дете във всеки сегмент, получаваме балансирана подредба за съответно 2, 3, 4, 6, 9, 12, 18 и 36 деца. Ако третираме въртележката като един единствен сегмент, балансирана подредба не съществува (освен за 0 деца), т.е. въпреки че 36 се дели на 1, този случай трябва да бъде изключен.<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=T1IMESpPmrBvu5dzsfW5JjHEm3PUckI0dMYQNTuDQ8E" width=300px style="margin-left:35px; background-color: transparent;"><br>
+<img src="/technoteaser/docs/images/2020/T1IMESpPmrBvu5dzsfW5JjHEm3PUckI0dMYQNTuDQ8E.png" width=300px style="margin-left:35px; background-color: transparent;"><br>
 1.1 Можем ли да разширим възможностите за броя деца в балансирана подредба, като във всеки сегмент поставим по две (или повече) деца?<br>
 Всъщност можем и това не нарушава идеята за "правилна фигура", макар и връзката да не е толкова директна. Тъй като всеки сегмент е еднакъв (като брой седалки и подредба на деца), то и центърът на тежестта на всеки сегмент ще е на еднакво разстояние от центъра на въртележката, т.е. центровете на тежестта на сегментите отново ще образуват правилна фигура. Какво можем да постигнем по този начин:
 <ul>
@@ -540,13 +540,13 @@ Mоже би най-интуитивният от тях е да подреди�
 <li>9 сегмента (всеки с по 4 седалки) и с по 3 деца,  ще ни дадат безопасна подредба за 27 деца;</li>
 -->
 <li>2 сегмента, всеки с по 18 седалки и с по 17 деца, ще ни дадат <b>безопасна подредба за 34 деца;</b>
-<br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=sLMhi0US7E4obhNJ-rkAO5nbTih5KYlhVMboW0NWCH0" width=300px style="background-color: transparent;">
+<br><img src="/technoteaser/docs/images/2020/sLMhi0US7E4obhNJ-rkAO5nbTih5KYlhVMboW0NWCH0.png" width=300px style="background-color: transparent;">
 </li>
 <li>3 сегмента, всеки с по 12 седалки и с по 11 деца, ще ни дадат <b>безопасна подредба за 33 деца;</b>
 <br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=zywCqrmiR07HuF6uoeIzA5VzQABBa5yPzN1CkcB9Dvs" width=300px style="background-color: transparent;">
+<img src="/technoteaser/docs/images/2020/zywCqrmiR07HuF6uoeIzA5VzQABBa5yPzN1CkcB9Dvs.png" width=300px style="background-color: transparent;">
 </li>
-<li>4 сегмента, всеки с по 9 седалки и с по 8 деца, ще ни дадат <b>безопасна подредба за 32 деца;</b><br><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=eFe9-PAstwoZYLBtD3HkujEiumJMe975qBpz-Nn2Bdo" width=300px style="background-color: transparent;"><br></li>
+<li>4 сегмента, всеки с по 9 седалки и с по 8 деца, ще ни дадат <b>безопасна подредба за 32 деца;</b><br><img src="/technoteaser/docs/images/2020/eFe9-PAstwoZYLBtD3HkujEiumJMe975qBpz-Nn2Bdo.png" width=300px style="background-color: transparent;"><br></li>
 </ul>
 
 За съжаление, само с този подход, дори и след пълна проверка на всички възможности, няма да можем да достигнем до всички решения на задачата. <br>
@@ -561,20 +561,20 @@ Mоже би най-интуитивният от тях е да подреди�
 
 <table border=0 style="margin: 10px 0 10px 0; background-color: transparent;">
 <tr style="background-color: transparent; border-width: 0;"><td rowspan=2 style="border-width: 0;">
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=lpVeHDvV8gbdA9XUc9uPT-fJBuSeruMqw6ToxpL9oJs" width=300px style="background-color: transparent;">
+<img src="/technoteaser/docs/images/2020/lpVeHDvV8gbdA9XUc9uPT-fJBuSeruMqw6ToxpL9oJs.png" width=300px style="background-color: transparent;">
 </td>
 <td style="font-size: xx-large; padding:20px 10px 0px 10px; vertical-align: bottom; border-width: 0;"> + </td>
 <td rowspan=2 style="border-width: 0;">
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=cIx2T0u3KnpcXIA4x42YTw6iNCJAP8pSzsuM4mEzaWU" width=300px style="background-color: transparent;">
+<img src="/technoteaser/docs/images/2020/cIx2T0u3KnpcXIA4x42YTw6iNCJAP8pSzsuM4mEzaWU.png" width=300px style="background-color: transparent;">
 </td></tr>
 <tr style="background-color: transparent; border-width: 0;"><td style="font-size: xx-large; padding:0px 10px 10px 10px; vertical-align: bottom; border-width: 0;">  &#8595; </td></tr>
-<tr style="background-color: transparent; border-width: 0;"><td colspan=3 style="align:center; text-align:center; border-width: 0;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=yWxrzQRyfuj1wyx0Wp-2HGpbDKHR4GxxD6lHXswM1kI" width=300px style="background-color: transparent;"></td></tr>
+<tr style="background-color: transparent; border-width: 0;"><td colspan=3 style="align:center; text-align:center; border-width: 0;"><img src="/technoteaser/docs/images/2020/yWxrzQRyfuj1wyx0Wp-2HGpbDKHR4GxxD6lHXswM1kI.png" width=300px style="background-color: transparent;"></td></tr>
 <tr style="background-color: transparent; border-width: 0;">
 <td style="border-width: 0;"></td>
 <td style="font-size: xx-large; align:center; text-align:center; border-width: 0; ">  &#8595;  </td>
 <td style="align:left; text-align:left; padding: 0 0 5px 0; font-size: large; vertical-align: bottom; border-width: 0;"> (огледално решение)</td>
 </tr>
-<tr style="background-color: transparent; border-width: 0;"><td colspan=3 style="padding: 5px 0 0 0; align:center; text-align:center; border-width: 0;"><img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=mYUQ8FZQodLo4V4x6mXi5XaX3F_qDZCLRdkLV0KZ1mQ" width=300px style="background-color: transparent;"></td></tr>
+<tr style="background-color: transparent; border-width: 0;"><td colspan=3 style="padding: 5px 0 0 0; align:center; text-align:center; border-width: 0;"><img src="/technoteaser/docs/images/2020/mYUQ8FZQodLo4V4x6mXi5XaX3F_qDZCLRdkLV0KZ1mQ.png" width=300px style="background-color: transparent;"></td></tr>
 </table>
 Може ли да има безопасна подредба за 35 деца? <br>
 От подхода за намиране на огледални решения следва, че ако има подредба за 35 деца, то ще има такава и за 1 дете, а това, както е указано и в примерите към условието, очевидно не е възможно.<br>
@@ -724,12 +724,12 @@ Kакто вече видяхме по-горе, последната цифра
 <li>Нека представим шестимата души като върхове на граф, като връзката между двама души, които са приятели, е синя, а връзката между двама души, които са непознати, е червена.<br>
 От всеки връх имаме точно 5 връзки (по една към останалите 5 върха), т.е. или имаме поне 3 сини, или поне 3 червени връзки.<br>
 Нека предположим, че имаме поне 3 сини връзки (случаят с поне 3 червени връзки ще бъде аналогичен).<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=1O2eXrRY1HUC4AjjH27pMZXsSa6ERCYeBXMa47pkYPQ" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;">
+<img src="/technoteaser/docs/images/2020/1O2eXrRY1HUC4AjjH27pMZXsSa6ERCYeBXMa47pkYPQ.png" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;">
 Разглеждаме трите върха, към които имаме синя връзка  - това са трима човека с общ приятел.
 Ако измежду тях има синя връзка (двама, които се познават), то те, заедно с първоначалния връх (общ познат), ще образуват група от трима пълни приятели.
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=iRRIhZIlgq_xzmLUsXhhysgooEYy2OTmzbbuBbVvVQE" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;">
+<img src="/technoteaser/docs/images/2020/iRRIhZIlgq_xzmLUsXhhysgooEYy2OTmzbbuBbVvVQE.png" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;">
 Ако измежду тях няма синя връзка (т.е. всички връзки са червени), то те тримата ще бъдат напълно непознати.
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=ynsg_Cc5-irCCW2Cr3GJ4kPPk5nMeZNRaemycZUcruw" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
+<img src="/technoteaser/docs/images/2020/ynsg_Cc5-irCCW2Cr3GJ4kPPk5nMeZNRaemycZUcruw.png" width="100px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 <font color="darkgreen">✔ Винаги можем да намерим трима, които са или пълни приятели, или напълно непознати.</font><br><br>
 Това твърдение е познато като Теорема за приятелите и непознатите (<a href="https://en.wikipedia.org/wiki/Theorem_on_friends_and_strangers" target=_blank>Theorem on friends and strangers</a>).<hr>
 </li>
@@ -744,21 +744,21 @@ Kакто вече видяхме по-горе, последната цифра
 </li>
 <li>
 На представения по-долу граф, в който всеки човек е номериран от 1 до 6, a приятелствата са представени като връзки, е показано как може всеки да познава точно двама въпреки групата от трима напълно непознати (1, 2 и 3).  
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=EcmvTuyaJEaNLho6BEYcxqYFECc9-7USfMYIzp97C7E" width="200px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
+<img src="/technoteaser/docs/images/2020/EcmvTuyaJEaNLho6BEYcxqYFECc9-7USfMYIzp97C7E.png" width="200px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 Т.е. не е вярно, че: <br>
 <font color="darkred">✘ Ако имаме група oт трима напълно непознати, то няма как всеки от шестимата да познава по точно двама души.</font>
 <hr>
 </li>
 <li>
 Ако двама човека се познават помежду си и познават всички останали (нека това са 1 и 2), а останалите (3, 4, 5 и 6) не се познават помежду си, тогава всеки двама души ще имат общ приятел. Фактът, че 3, 4, 5 и 6 не се познават, означава, че нямаме група от 4 пълни приятели.<br>
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=E_h_YoRqIC8eEEt1_s6IFDQtKyirGmK_jOF96eGWoq0" width="250px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
+<img src="/technoteaser/docs/images/2020/E_h_YoRqIC8eEEt1_s6IFDQtKyirGmK_jOF96eGWoq0.png" width="250px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 Т.е. не е вярно, че: <br>
 <font color="darkred">✘ Ако знаем, че всеки двама имат поне по един общ приятел, то задължително има група от четирима пълни приятели.</font>
 <hr>
 </li>
 <li>
 В <a href="https://bg.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%BD%D0%B0_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%82%D0%B5" target=_blank>теорията на графите</a> приятелски граф (<a href="https://en.wikipedia.org/wiki/Friendship_graph" target=_blank>Friendship graph</a>, наричан още Dutch windmill graph или n-fan) е граф с един централен връх, който е свързан с всички останали (периферни) върхове, които на свой ред имат точно една допълнителна (втора) връзка с друг периферен връх. Формата наподобява вятърна мелница или вентилатор. Графите се обозначават като F<sub>n</sub>, където индексът n указва броя на "перките" (цикличните графи C<sub>3</sub>), като на графиката можем да видим съответно графите F<sub>2</sub>, F<sub>3</sub> и F<sub>4</sub>.
-<img src="https://winwithsap.hana.ondemand.com/services/js/TechQuiz/DocumentService/GetDocument.js?id=NZo9VMXoOeyKgpAMZijA-xUCnfk2eudFivnAFGnjtr0" width="500px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
+<img src="/technoteaser/docs/images/2020/NZo9VMXoOeyKgpAMZijA-xUCnfk2eudFivnAFGnjtr0.png" width="500px" style="margin-right: 10px; padding-right: 10px; display: block; background-color: transparent;"><br>
 Съществува и Приятелска теорема, според която краен граф със свойството всеки два върха да имат точно 1 общ съсед, е задължително приятелски граф от вече описания вид. Но приятелските графи имат 5 (за F<sub>2</sub>) или 7 (за F<sub>3</sub>) върха, т.е. не съществува приятелски граф с 6 върха, което означава, че: <br>
 <font color="darkgreen">✔ Няма как всеки двама души да имат точно по един общ приятел (измежду останалите четирима).</font><hr> 
 </li>
@@ -924,7 +924,7 @@ hashChange();
 </script>
 <br>
 <div class="footer">
-<a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><p class="footer-element">Виж повече за развойния център на SAP в София</p></a><a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/sap_logo.png" width="40" height="20"></a> <a href="https://www.facebook.com/saplabsbg" target="_blank"><p class="footer-element">Харесай страницата ни във Facebook</p></a><a href="https://www.facebook.com/saplabsbg" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/fb_logo.png" width="30" height="20"></a> <a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><p class="footer-element">Разгледай отворените позиции при нас</p></a><a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><img class="footer-image" src="https://saplabsbg.github.io/technoteaser/docs/images/network.png" width="25" height="25"></a>
+<a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><p class="footer-element">Виж повече за развойния център на SAP в София</p></a><a href="https://www.sap.com/about/careers/who-we-are/locations/sap-labs-bulgaria.html" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/sap_logo.png" width="40" height="20"></a> <a href="https://www.facebook.com/saplabsbg" target="_blank"><p class="footer-element">Харесай страницата ни във Facebook</p></a><a href="https://www.facebook.com/saplabsbg" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/fb_logo.png" width="30" height="20"></a> <a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><p class="footer-element">Разгледай отворените позиции при нас</p></a><a href="https://jobs.sap.com/search/?q=&locationsearch=bulgaria" target="_blank"><img class="footer-image" src="/technoteaser/docs/images/network.png" width="25" height="25"></a>
 </div>
 
 {:/}
